@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablas ejemplo 5</title>
+    <style>
+        caption {
+            color: rgb(0, 83, 139);
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: separate;
+            color: rgb(241, 241, 241);
+            margin: 10px;
+        }
+
+        th,
+        td {
+            border: 2px solid rgb(0, 60, 255);
+            background-color: blueviolet;
+            text-align: center;
+        }
+
+        thead {
+            color: rgb(22, 138, 12);
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <!--  table + intro tr>th*4 (encabezado) + intro tr>td*4 (cuerpo)
+        paddin. 5px para espaciar las celdas, se pondria en th y td
+        Las tablas se completan en horizontal
+        margin 10px para poner un margen frente al resto de elementos de la web, se pondria en table
+    control+z para darle para atras -->
+    <table>
+        <caption>Cursos de Diseño Grafico</caption>
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>hora</th>
+                <th>plaza</th>
+                <th>horario</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>Html</td>
+            <td>20</td>
+            <td>20</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>css</td>
+            <td>20</td>
+            <td>23</td>
+
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>taller</td>
+            <td>30</td>
+            <td>30</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Ajax</td>
+            <td>50</td>
+            <td>30</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <!-- Fusiones:  se puden hacer en horizontal y vertical
+vertical se fusionan filas (rowspan) 
+horizontal se fusionan columnas(colspan)
+para ambos casos, la celda fusionada hay que borrarla del codigo
+Puedes juntar vertical y vertical codigo de ejemplo <td colspan="2" rowspan="3"-->
+    <table>
+        <caption>Cursos de Diseño Grafico</caption>
+        <tr>
+            <th>nombre</th>
+            <th>hora</th>
+            <th>plaza</th>
+            <th>horario</th>
+        </tr>
+        <tr>
+            <td>Html</td>
+            <td colspan="2">20</td>
+
+            <td rowspan="2">4</td>
+        </tr>
+        <tr>
+            <td>css</td>
+            <td>20</td>
+            <td>23</td>
+
+        </tr>
+        <tr>
+            <td>taller</td>
+            <td>40</td>
+            <td rowspan="2">30</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Ajax</td>
+            <td>50</td>
+
+            <td>3</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
