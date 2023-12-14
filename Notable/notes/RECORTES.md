@@ -1,7 +1,7 @@
 ---
 title: RECORTES
 created: '2023-12-11T16:17:41.689Z'
-modified: '2023-12-13T17:43:52.510Z'
+modified: '2023-12-14T16:17:28.600Z'
 ---
 
 # RECORTES
@@ -34,13 +34,13 @@ Comandos de git que voy a utlizar:
 - git push: mandar el repositorio local al remoto (nube)
 
 - git pull: mandar desde la nube al area de trabajo.
-- git restore : deshacer /cambiar desde terminal cualquier codigo que has cambiadoy este mal.
+- git restore : deshacer /cambiar desde terminal cualquier codigo que has cambiadoy este mal/ git restore "archivo" deshacer ambios en el archivo
 - git log : historial de commit
 - git blame : historal de quien ha tocado el codigo y para salir le das a "Q"
 - git remote add : copia de seguridad en otros repositorios.
 
 Las ramas: Modulos de trabajo en equipo: en area de trabajo
-- git branch: crear una rama "git branch esther"// te dice en que rama estas si solo ponoes git branch// si quieres borrar rama git branch -r
+- git branch: crear una rama "git branch esther"// te dice en que rama estas si solo ponoes git branch// si quieres borrar rama git branch -d
 - git chetout: para pasar de una rama a otra
 - git diff  "archivo 1 archivo 2" : para comparar archivos.
 - git merge : fusionas ramas
@@ -54,6 +54,9 @@ para mandarlo Git commit -m "x" (sale un mensaje hay que copiar  git config --gl
 git push +intro 
 
 git status + git add . + git commit -m "" + git push // git pull
+
+Crear clone repositorio de Ivan:
+
 
 =============================================
 Extensiones para el VSCode: 
