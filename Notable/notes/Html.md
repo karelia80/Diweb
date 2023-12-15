@@ -2,7 +2,7 @@
 pinned: true
 title: Html
 created: '2023-11-29T17:44:11.483Z'
-modified: '2023-12-13T19:00:10.069Z'
+modified: '2023-12-15T18:57:12.702Z'
 ---
 
 # Html
@@ -67,11 +67,12 @@ echo "Hola Mundo";
     - tr 3-> Fila
     - th 4-> Celda cabecera
     - td 4-> Celda
-    - thead 3-> Cabecera de tabla *etiqueta semantica*
-    - tbody 3-> Cuerpo de la tabla *etiqueta semantica*
-    - tfoot 3-> Pie de la tabla *etiqueta semantica*
+    - thead 3-> Cabecera de tabla *etiqueta semantica* tr>th
+    - tbody 3-> Cuerpo de la tabla *etiqueta semantica*tr>td
+    - tfoot 3-> Pie de la tabla *etiqueta semantica* el foot se considera como la cabecera tr>th
   Las tablas estan compuestas por filas y celdas. ejemplo de table con cabecera. 
   table>(tr>th*4)+(tr*4>td*4)
+  para fusionar columnas colspan/ por columnas y rowspan
 
   - form 2-> Formularios 
   *El form es la unica forma que tiene para interactuar con el usuario. Hay dos tipos de form (get/post) Get ejemplo sistema de busqueda de amazon (no esta incriptado) o google, Post es para acceder a una pagina web (siempre incriptado).* <form action="" method="post"></form>
@@ -111,17 +112,26 @@ html envia inf no recibe.
 Siempre va en el body!
 
 - header -> Cabecera de página
-- nav -> Barra de navegación
-- main -> Zona principal
+- nav -> Barra de navegación, define una seccion de navegacion de una seccion. poder navegar por toda la pagina
+- main -> Zona principal, lo central de la pagina(puede incluir aside/section/article...)
 - section -> Secciones (hay que poner h2...h6)
 - aside -> barra lateral
 - footer -> Pie
 - Article -> Articulos o contenidos relacionados
-   (hay que poner h2...h6)
-- hgroup -> Agrupación de cabeceras
+   (hay que poner h2...h6) tienen que tener el titulo 
+
 - figure -> Imágenes o vídeos
   - figcaption -> Titulo de Imágene o Vídeo
+- details -> define comunicaciones que se puede usar o ocultar
+  - summary -> el titulo del details. va dentro del details
+ 
+- time : el tiempo
+- mark: remarcado de palabras.
+
+ 
 
 
+*Normas: no puede haber la misma etiqueta semantica dentro de otra (section dentro de un section no se puede). Main solo puede haber 1, las etiquetas article y section SIEMPRE tienen que tener un encabezado h2,h3,h4...*
+*No existe una solucion unica, puedes maquetar como quieras siempre que sigas la estuctura.*
 
 
