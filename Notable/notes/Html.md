@@ -2,7 +2,7 @@
 pinned: true
 title: Html
 created: '2023-11-29T17:44:11.483Z'
-modified: '2023-12-15T18:57:12.702Z'
+modified: '2023-12-17T17:45:04.070Z'
 ---
 
 # Html
@@ -88,6 +88,14 @@ html envia inf no recibe.
 
   
  *Para poner comentarios control k + control c y para quitar comentario control k + control u* 
+
+ hr es poner una linea entre "p" "field" / <p>&nbsp;</p> espacio en blanco / requerid : requerido, para poner un campo obligatorio. En input puedes poner el atributo placeholder que es el titulo que va dentro del input.
+    "for" y "id" tienen que ser iguales// el comando es label+input:number/tel/etc input:checbox+label (emmet)/(input:checkbox+label+br)*3
+    el name es la variable, el nombre del a variable/ cuando una variable tiene mas de 1 dato es Array (coleccion de datos)En el checkbox siempre hay mas de una variable y se pone en la variable SIEMPRE [] ej: name="materia[]" / en el radio hay que pòner la misma variable y de esa manera solo se puede poner 1 de las opciones.
+    Javascript: vamos a usar js para unir dos input: oninput "valores de id" siendo primero rango y luego valrango
+    en java se funciona por eventos, para java ve la pagina como un conjunto de objeto.
+
+_input: checkbox: /input: color /input: date / input: email / input file: para selecionar el archivo/ inpunt hidden /inpunt password /impunt radio/ inpunt range / input reset / inpunt submit / inpunt tel / inpunt tex / inpunt url /inpunt number / input. selec (lista desplegable)_
     
   
 
