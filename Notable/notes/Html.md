@@ -2,7 +2,7 @@
 pinned: true
 title: Html
 created: '2023-11-29T17:44:11.483Z'
-modified: '2023-12-17T17:45:04.070Z'
+modified: '2023-12-18T15:50:18.077Z'
 ---
 
 # Html
@@ -122,7 +122,7 @@ Siempre va en el body!
 - header -> Cabecera de página
 - nav -> Barra de navegación, define una seccion de navegacion de una seccion. poder navegar por toda la pagina
 - main -> Zona principal, lo central de la pagina(puede incluir aside/section/article...)
-- section -> Secciones (hay que poner h2...h6)
+- section -> Secciones (para no poner h2...h6)
 - aside -> barra lateral
 - footer -> Pie
 - Article -> Articulos o contenidos relacionados
