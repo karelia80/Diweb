@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso tabla y formulario</title>
+</head>
+<body>
+    <table border="1"> <!-- border 1 para hacer un borde a la tabla y ver como queda -->
+<thead>
+    <tr>
+        <th colspan="4">Animales en peligro de extincion</th>
+        
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <th>Cabezas</th>
+        <th>2010</th>
+        <th>2020</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Ballena</td>
+        <td>6000</td>
+        <td>4000</td>
+        <td>1500</td>
+    </tr>
+    <tr>
+        <td>Oso Pardo</td>
+        <td>50</td>
+        <td colspan="2" rowspan="2">0</td>
+        
+    </tr>
+    <tr>
+        <td>Lince</td>
+        <td>10</td>
+        
+    </tr>
+    <tr>
+        <td>Tigre</td>
+        <td>300</td>
+        <td colspan="2">210</td>
+       
+    </tr>
+</tbody>
+    </table>
+    <form action="#" method="get"></form>
+    <h2>Información del producto</h2>
+
+    <fieldset>
+        <legend>Datos básicos</legend>
+
+        <label for="nombre">Nombre</label><br>
+        <input type="text" name="nombre" id="nombre"><br>
+
+        <label for="descripcion">Descripión</label><br>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Pon descripción"></textarea><br>
+
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto"><br>
+
+        <input type="checkbox" name="contador" id="contador" value="si">
+        <label for="contador">Añadir contador</label>
+    </fieldset>
+
+    <fieldset>
+       
+        <legend>Datos econonómicos</legend>
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" id="precio"><label for="precio">€</label>
+        <label for="imp">Impuestos</label>
+        <select name="imp" id="imp">
+            <option value="4" selected="selected">4%</option>
+            <option value="7">7%</option>
+            <option value="16">16%</option>
+            <option value="25">25%</option>
+            </select><br>
+           <p>Promoción</p>
+            <input type="radio" name="pr" id="ninguno" value="ninguno"><label for="ninguno">Ninguno</label><br>
+            <input type="radio" name="pr" id="transporte" value="transporte"><label for="transporte">Transporte gratuito</label><br>
+            <input type="radio" name="pr" id="descuento" value="descuento"><label for="descuento">Descuento 5%</label><br>
+    </fieldset>
+    <input type="submit" value="enviar">
+    <!-- El codigo del radio (input:radio+label)*3 cada radio tiene que llevar el value -->
+
+
+    
+    
+</body>
+</html>
