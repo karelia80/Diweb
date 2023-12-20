@@ -47,7 +47,7 @@
                     <li><a href="#">Ofertas</a></li>
                 </ul>
             </nav>
-            <form action="#" method="get"></form>
+            <form action="Buscar" method="get"></form>
             <fieldset>
                 <input type="submit" value="">
                 <label for="Buscar"></label>
@@ -267,14 +267,17 @@
                     <label for="Mail">Correo electronico</label>
                     <input type="email" name="Mail" id="Mail">
                 </fieldset>
-                <strong>Gestiona tus preferencias</strong><input type="radio" name="ModaMujer" id="ModaMujer"> Moda
-                Mujer <br>
-                ¿Cuál es tu preferencia <input type="radio" name="Modahombre" id="Modahombre"> Moda Hombre
+                <p><strong>Gestiona tus preferencias</strong> </p><br>
+                    <p>¿Cuál es tu preferencia</p>
+               
+                <input type="radio" name="sexo" id="ModaMujer"><label for="ModaMujer">Moda
+                Mujer</label> <br>
+                <input type="radio" name="sexo" id="Modahombre"> <label for="Modahombre">Moda Hombre</label>
             </aside>
             <details>
                 <summary>Opciones de Contenido</summary>
-                <input type="checkbox" name="Notificaciones" id="Notificaciones"> Notificaciones de árticulos <br>
-                <input type="checkbox" name="Tusmarcas" id="Tusmarcas"> Tus marcas y creadores <br>
+                <input type="checkbox" name="ele[]" id="Notificaciones"><label for="Notificaciones">Notificaciones de árticulos </label> <br>
+                <input type="checkbox" name="ele[]" id="Tusmarcas"><label for="Tusmarcas">Tus marcas y creadores</label>  <br>
 
             </details>
         </section>
