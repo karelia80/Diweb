@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <section>
+        <h1>Formularios</h1>
+        <form action="#" method="get">
+        <fieldset>
+            <legend>Rellenar</legend>
+            <input type="radio" name="materia" id="lengua" value="lengua"><label for="lengua">Lengua</label><br>
+            <input type="radio" name="materia" id="mates" value="mates"><label for="mates">Matemáticas</label><br>
+            <input type="radio" name="materia" id="historia" value="historia"><label for="historia">Historia</label><br>
+            <input type="radio" name="materia" id="geo" value="geo"><label for="geo">Geografia</label><br>
+
+            <input type="checkbox" name="note[]" id="note" value="note"><label for="note">Notepad</label>
+            <input type="checkbox" name="emacs[]" id="emacs" value="emacs"><label for="emacs">Emacs</label>
+            <input type="checkbox" name="otro[]" id="otro" value="otro"><label for="otro">Otro</label><br>
+
+            <textarea name="texto" id="texto" cols="59" rows="5" placeholder="Escriba aquí, por favor"></textarea><br>
+
+            <select name="procesador" id="procesador">
+                <option value="amd">AMD</option>
+                <option value="inteli5">Intel i5</option>
+                <option value="inteli7">Intel i7</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferencias</legend>
+            <select name="velocidad" id="velocidad" multiple="multiple">
+                <option value="100mb">100 Mbits</option>
+                <option value="1000mb">1000 Mbits</option>
+            </select><br>
+            <label for="dni">DNI</label><input type="text" name="dni" id="dni"><br>
+            <label for="nombre">Nombre</label><input type="text" name="nombre" id="nombre"><br>
+            <label for="apell">Apellidos</label><input type="text" name="apell" id="apell"><br>
+            <label for="mail">Email</label><input type="text" name="mail" id="mail"><br>
+            <label for="mail2">Email alternativo</label><input type="email" name="mail2" id="mail2"><br>
+
+            <label for="color">Elija un color</label><input type="color" name="color" id="color"><br>
+
+            <textarea name="tex" id="tex" cols="49" rows="8" placeholder="Por favor, escriba aquí"></textarea><br>
+
+            <input type="checkbox" name="os[]" id="linux" value="linux"><label for="linux">Linux</label><br>
+            <input type="checkbox" name="os[]" id="windows11" value="windows11"><label for="windows11">Windows 11</label><br>
+            <input type="checkbox" name="os[]" id="windows7" value="windows7"><label for="windows7">Windows 7</label><br>
+
+            <label for="time">Elija una hora</label><input type="time" name="time" id="time"><br>
+
+          <input type="radio" name="red" id="2g" value="2g"><label for="2g">2G</label><br>
+          <input type="radio" name="red" id="3g" value="3g"><label for="3g">3G</label><br>
+          <input type="radio" name="red" id="4g" value="4g"><label for="4g">4G</label><br>
+          
+          <label for="archivo">Elija archivo</label><input type="file" name="archivo" id="archivo"><br>
+
+          <label for="rango">Rango</label>
+          <input type="range" name="rango" id="rango" min="0" max="50" step="10"
+          oninput="valrango.value=rango.value">
+          <input type="number" name="valrango" id="valrango"
+          oninput="rango.value=valrango.value">
+
+        </fieldset>
+        <input type="reset" value="Borrar"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    </section>
+
+</body>
+</html>
