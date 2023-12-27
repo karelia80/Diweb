@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Ejercicio 3 - CSS</title>
+    <style>
+      main {
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: paleturquoise;
+      }
+
+      main > header,
+      main > header + nav,
+      aside,
+      main > nav:nth-child(4),
+      main > nav:nth-child(4) > section,
+      main > nav:nth-child(4) > section aside,
+      footer {
+        border: 2px solid #777;
+      }
+
+      /* IMPORTANTE: clear para despejar contenedores*/
+      /* EL UNICO CLASS DE TODA LA PÁGINA!! */
+      .clear {
+        clear: both;
+      }
+
+      aside > section:first-child,
+       aside > section:nth-child(2),
+      main > nav:nth-child(4) > section,
+      main > nav:nth-child(4) > section aside {
+        background-color: paleturquoise
+      }
+
+      main > header,
+      main > header + nav {
+        clear: both;
+      }
+
+      /* --------- CABECERA ---------*/
+      main > header {
+        background-color: paleturquoise; 
+      }
+      h1 span {padding: 1em;}
+      nav form {padding: 1em;}
+      main > header > section { padding: 0.5em; margin-top: 0.5em; margin-bottom: 0.5em;
+        float: left;
+        
+      }
+
+      main > header nav {
+        float: right;
+      }
+
+      /* -------- MENU SUPERIOR -----------*/
+      main > header + nav {
+        background-color: paleturquoise;
+      }
+
+      main > header + nav ul,
+      main > header + nav li {
+        display: inline;
+        float: left;
+      }
+
+      /* -------- CAJA LATERAL ----------- */
+      main > aside {
+        float: left;
+        width: 20%;
+      }
+
+      main > aside > section:nth-child(2) {
+        background-color: paleturquoise;
+      }
+
+      /* ############ CAJA CONTENIDO ############# */
+      main > nav:nth-child(4) {
+        float: right;
+        width: 78%;
+      }
+
+      /* --------- CAJA PRINCIPAL --------*/
+      main > nav:nth-child(4) > section {
+        float: left;
+        width: 68%;
+      }
+
+      img {
+        border: none;
+      }
+
+      article img {
+        width: 150px;
+        float: left;
+      }
+
+      article {
+        font-size: 15px;
+      }
+
+      /* -------------- COLUMNA DERECHA -----------*/
+      main > nav:nth-child(4) > section aside {
+        float: right; /*se ha cambiado de left a right*/
+        width: 28%;
+      }
+
+      /* ############ FIN CAJA CONTENIDO ############# */
+
+      /* ------------ CAJA PIE ------------*/
+      footer .enlaces { margin-top: 0.1em; margin-bottom: 0.1em;
+        float: left;
+      }
+      footer .copyright {
+        float: right;
+      }
+
+      /* ######## REGLAS GENÉRICAS ####### */
+      ul,
+      ul li {
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+      }
+
+      h1, h3, p, form {
+        margin: 0;
+        padding: 0;
+      }
+
+      main > nav:nth-child(4) > section h2 {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <!--inicio cabecera-->
+        <section>
+          <h1><span>Mis Noticias</span></h1>
+        </section>
+        <nav>
+          <form action="php/Ejercicio03.php" method="post">
+            Buscar: <input type="search" placeholder="realice su busqueda" >
+          </form>
+        </nav>
+        <nav class="clear"></nav>
+      </header>
+      <!--fin cabecera-->
+
+      <!--inicio menu principal-->
+      <nav>
+        <ul>
+          <li><a href="#"> enviar historia</a> |</li>
+          <li><a href="#"> portada</a> |</li>
+          <li><a href="#"> pendientes</a> |</li>
+          <li><a href="#"> populares</a> |</li>
+          <li><a href="#"> más visitadas</a> |</li>
+          <li><a href="#"> destacadas</a> |</li>
+        </ul>
+        <p class="clear"></p>
+      </nav>
+      <!--fin menu principal-->
+
+      <!--Inicio Lateral Izquierdo -->
+      <aside>
+        <!--Inicio Sección Noticias. Enlaces -->
+        <section>
+          <h3><a href="#">Noticias</a></h3>
+          <p><span class="fecha">dd/mm/aaaa</span></p>
+          <p><a href="#">Lorem ipsum dolor</a></p>
+          <p><span class="fecha">dd/mm/aaaa</span></p>
+          <p><a href="#">Lorem ipsum dolor</a></p>
+          <p><span class="fecha">dd/mm/aaaa</span></p>
+          <p><a href="#">Lorem ipsum dolor</a></p>
+          <p><span class="fecha">dd/mm/aaaa</span></p>
+          <p><a href="#">Lorem ipsum dolor</a></p>
+          <p><span class="fecha">dd/mm/aaaa</span></p>
+          <p><a href="#">Lorem ipsum dolor</a></p>
+          <br>
+          <h3><a href="#">Enlaces relacionados</a></h3>
+          <ul>
+            <li><a href="#"> ipsum</a></li>
+            <li><a href="#"> dolor</a></li>
+            <li><a href="#"> sit</a></li>
+          </ul>
+        </section>
+        <!--Fin Sección Noticias. Enlaces -->
+        <!-- Inicio Sección Publicidad-->
+        <section>
+          <h3><a href="#">Publicidad</a></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Vivamus quis arcu massa.</p>
+          <p>Etiam nec risus sit amet lorem tempor hendrerit.</p>
+          <p><a href="#">Seguir leyendo...</a></p>
+        </section>
+        <!-- Fin Sección Publicidad-->
+      </aside>
+      <!-- Fin Lateral Izquierdo-->
+
+      <!-- Inicio Contenido-->
+      <nav>
+        <!-- Inicio Cuerpo Principal-->
+        <section>
+          <h2>Contenido Principal</h2>
+          <!-- Inicio Artículo 1 -->
+          <article>
+            <h3>El precio de la libertad de Android</h3>
+            <img src="https://shorturl.at/bqwA5" alt="Mi Futuro móvil" >
+            <p>
+              Que Android es un sistema operativo libre (en el sentido de Open
+              Source, se entiende) es algo que estamos hartos de oir. Sin
+              embargo a veces hay ciertas noticias que nos hacen dudar que esta
+              libertad sea tal como en un principio puede parecer. Puesto que la
+              principal diferencia de base de Android con respecto a sus
+              competidores es ser ‘libre’, creemos que este tema merece una
+              buena explicación para aclarar todo lo que hay detrás de esta
+              supuesta libertad.
+            </p>
+            <p>
+              <a href="https://shorturl.at/dlnUY"> Seguir leyendo...</a>
+            </p>
+          </article>
+          <!-- Fin Artículo 1 -->
+
+          <!-- Inicio Artículo 2 -->
+          <article>
+            <h3>
+              Richard Stallman: "Tener el control de tu informática es un
+              derecho humano"
+            </h3>
+            <img src="https://shorturl.at/tCHZ8" alt="El mesias ;p">
+            <p>
+              "Ecuador es el mejor ejemplo de una política estatal de migración
+              a software libre de las agencias públicas. Con el software libre
+              los usuarios tienen el control del programa, si éste no es libre,
+              es el programa quien controla a los usuarios. Cuando el usuario es
+              el Estado, estamos hablando del control de su soberanía
+              informática. Cualquier país debe migrar al software libre para
+              echar al software privativo, ahora mismo Ecuador tiene la mejor
+              política en ese sentido."
+            </p>
+            <p>
+              <a href="https://shorturl.at/etuC8" >Seguir leyendo...</a>
+            </p>
+          </article>
+          <!-- Fin Artículo 2 -->
+        </section>
+        <!-- Fin Cuerpo Principal-->
+
+        <!-- Inicio Cuerpo Secundario-->
+        <aside>
+          <h3>Las mejores catástrofes culinarias de Pinterest</h3>
+          <p>
+            La vida no es como aparece en Pinterest. Y la cocina, menos. Y la
+            repostería, menos todavía.
+          </p>
+          <p><a href="#">Seguir leyendo...</a></p>
+          <br>
+          <h3>
+            La madre que usó una tarjeta perdida para comprar pañales, a prisión
+            en 15 días
+          </h3>
+          <p>
+            Emilia Soria, la joven que hace seis años utilizó una tarjeta que se
+            encontró en la calle para comprar pañales y comida para sus hijas,
+            irá a la cárcel en un plazo máximo de quince días.
+          </p>
+          <p><a href="#">Seguir leyendo...</a></p>
+        </aside>
+        <!-- Fin Cuerpo Secundario-->
+      </nav>
+      <!-- Fin Contenido -->
+      <nav class="clear"></nav>
+
+      <!--Inicio Pie -->
+      <footer>
+        <span class="enlaces">
+          <a href="#"> todas</a> | <a href="#"> actualidad</a> |
+          <a href="#"> cultura</a> | <a href="#"> ocio</a> |
+          <a href="#"> tecnología</a>
+        </span>
+        <span class="copyright"> &copy; 2013 Iván Rodríguez </span>
+        <nav class="clear"></nav>
+      </footer>
+      <!--Fin Pie -->
+    </main>
+    <!--Fin Contenedor -->
+  </body>
+</html>
