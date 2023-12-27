@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Ejercicio 3 - CSS</title>
+    <title>Ejercicio 3 - CSS</title>   
+    /*el ejercicio 3 pg 57, ejercicio 4 pg 63, ejercicio 5 pg 72*/
     <style>
       main {
         width: 90%;
@@ -13,11 +14,11 @@
       }
 
       main > header,
-      main > header + nav,
+      main > header + nav, es la lista 
       aside,
       main > nav:nth-child(4),
       main > nav:nth-child(4) > section,
-      main > nav:nth-child(4) > section aside,
+      main > nav:nth-child(4) > section + aside,
       footer {
         border: 2px solid #777;
       }
@@ -31,7 +32,7 @@
       aside > section:first-child,
        aside > section:nth-child(2),
       main > nav:nth-child(4) > section,
-      main > nav:nth-child(4) > section aside {
+      main > nav:nth-child(4) > section + aside {
         background-color: paleturquoise
       }
 
@@ -44,8 +45,7 @@
       main > header {
         background-color: paleturquoise; 
       }
-      h1 span {padding: 1em;}
-      nav form {padding: 1em;}
+      
       main > header > section { padding: 0.5em; margin-top: 0.5em; margin-bottom: 0.5em;
         float: left;
         
@@ -73,7 +73,7 @@
       }
 
       main > aside > section:nth-child(2) {
-        background-color: paleturquoise;
+        background-color: rgb(109, 138, 218);
       }
 
       /* ############ CAJA CONTENIDO ############# */
@@ -83,10 +83,10 @@
       }
 
       /* --------- CAJA PRINCIPAL --------*/
-      main > nav:nth-child(4) > section {
+      main > nav:nth-child(4) > section { 
         float: left;
         width: 68%;
-      }
+      } articulo 1 y 2
 
       img {
         border: none;
@@ -101,8 +101,8 @@
         font-size: 15px;
       }
 
-      /* -------------- COLUMNA DERECHA -----------*/
-      main > nav:nth-child(4) > section aside {
+      /* -------------- COLUMNA DERECHA  nav aside -----------*/
+      main > nav:nth-child(4) > section + aside {
         float: right; /*se ha cambiado de left a right*/
         width: 28%;
       }
@@ -169,7 +169,7 @@
       <!--Inicio Lateral Izquierdo -->
       <aside>
         <!--Inicio Sección Noticias. Enlaces -->
-        <section>
+        <section> 1
           <h3><a href="#">Noticias</a></h3>
           <p><span class="fecha">dd/mm/aaaa</span></p>
           <p><a href="#">Lorem ipsum dolor</a></p>
@@ -191,7 +191,7 @@
         </section>
         <!--Fin Sección Noticias. Enlaces -->
         <!-- Inicio Sección Publicidad-->
-        <section>
+        <section> 2
           <h3><a href="#">Publicidad</a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p>Vivamus quis arcu massa.</p>
