@@ -4,8 +4,8 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Ejercicio 3 - CSS</title>   
-    /*el ejercicio 3 pg 57, ejercicio 4 pg 63, ejercicio 5 pg 72*/
-    <style>
+    
+    <style>/*el ejercicio 3 pg 57, ejercicio 4 pg 63, ejercicio 5 pg 72*/
       main {
         width: 90%;
         max-width: 900px;
@@ -43,21 +43,25 @@
 
       /* --------- CABECERA ---------*/
       main > header {
-        background-color: paleturquoise; 
+        padding: 1em;
       }
-      
-      main > header > section { padding: 0.5em; margin-top: 0.5em; margin-bottom: 0.5em;
-        float: left;
+     
+     
+      main > header > section { 
+        float: left; border: 1px solid yellow; 
         
       }
 
       main > header nav {
-        float: right;
+        float: right; 
       }
 
-      /* -------- MENU SUPERIOR -----------*/
+      /* -------- MENU SUPERIOR -----------*//*se refiere al menu en el enunciado del ejercicio*/
       main > header + nav {
-        background-color: paleturquoise;
+        background-color: rgb(52, 190, 47);
+        padding: 0.5em; 
+        margin-top: 0.5em; 
+        margin-bottom: 0.5em;
       }
 
       main > header + nav ul,
@@ -110,6 +114,9 @@
       /* ############ FIN CAJA CONTENIDO ############# */
 
       /* ------------ CAJA PIE ------------*/
+      footer{
+        padding-top: 0.1em; padding-bottom: 0.1em;
+      }
       footer .enlaces { margin-top: 0.1em; margin-bottom: 0.1em;
         float: left;
       }
