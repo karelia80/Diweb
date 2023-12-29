@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <style>
+        /* Formularios*/
+        form label{
+            width: 5%; float: left;
+        }
+        form input {
+            margin: 0 0 5px 25px; 
+        }
+     legend {
+        border: 1px solid black; background-color: grey; font-style: italic;
+     }
+    
+      form input:hover{
+        background-color: pink;
+     } /* para rellenar el input cuando pasas por encima con el raton*/
+     form input:focus{
+        background-color: red;
+     } /* se usa para cuando pulsas en el input cambie de color*/
+
+form input[type="submit"] {
+        margin-top: 15px; }
+
+     fieldset {
+       float: left; width: 40%; background-color: grey; height: 150px;
+     }
+    /* esto es una propiedad de ccs3 mdn.com para ver ejemplo, el border radio te redondea las esquinas. se ponen por px o % 
+   
+    */
+    fieldset {
+        border-radius: 10%;
+    }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="#" method="post">
+
+            <Fieldset>
+                <legend>Acceso</legend>
+                <label for="correo">Correo</label>
+                <input type="email" name="correo" id="correo"><br>
+                <label for="clave">Contraseña</label>
+                <input type="password" name="clave" id="clave">
+            </Fieldset>
+            <Fieldset>
+                <legend>Mis Datos</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre"><br>
+                <label for="fechanac">Fecha de Nacimiento</label>
+                <input type="date" name="fechanac" id="fechanac"><br>
+            </Fieldset>
+            <input type="submit" value="enviar">
+        </form>
+       
+
+    </main>
+
+</body>
+
+</html>
+<!-- esto es una propiedad de ccs3
+
+
+mdn el mozzile depeloved network,
+-->

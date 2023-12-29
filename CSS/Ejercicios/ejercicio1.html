@@ -10,18 +10,18 @@
         width: 90%;
         max-width: 900px;
         margin: 0 auto;
-        background-color: paleturquoise;
+         /*esta es*/
       }
 
-      main > header,
+      /*main > header,
       main > header + nav, es la lista 
       aside,
       main > nav:nth-child(4),
       main > nav:nth-child(4) > section,
       main > nav:nth-child(4) > section + aside,
-      footer {
-        border: 2px solid #777;
-      }
+      footer */
+       
+      
 
       /* IMPORTANTE: clear para despejar contenedores*/
       /* EL UNICO CLASS DE TODA LA PÁGINA!! */
@@ -48,7 +48,7 @@
      
      
       main > header > section { 
-        float: left; border: 1px solid yellow; 
+        float: left; 
         
       }
 
@@ -70,7 +70,7 @@
         float: left;
       }
 
-      /* -------- CAJA LATERAL ----------- */
+      /* -------- CAJA LATERAL ----------- aside */
       main > aside {
         float: left;
         width: 20%;
@@ -86,11 +86,11 @@
         width: 78%;
       }
 
-      /* --------- CAJA PRINCIPAL --------*/
+      /* --------- CAJA PRINCIPAL -------- nav/articulo 1 y 2 */
       main > nav:nth-child(4) > section { 
         float: left;
         width: 68%;
-      } articulo 1 y 2
+      } 
 
       img {
         border: none;
@@ -111,7 +111,7 @@
         width: 28%;
       }
 
-      /* ############ FIN CAJA CONTENIDO ############# */
+      /* ############ FIN CAJA CONTENIDO ############# fotter */
 
       /* ------------ CAJA PIE ------------*/
       footer{
@@ -139,6 +139,44 @@
 
       main > nav:nth-child(4) > section h2 {
         display: none;
+      }
+      ========================================================================================================================
+      main > header {
+        padding: 1em;
+      }
+      main > header + nav {
+        background-color: rgb(52, 190, 47);
+        padding: 0.5em; 
+        margin-top: 0.5em; 
+        margin-bottom: 0.5em;
+        border-bottom: 3px solid blue;
+        background-image: ;
+      }
+
+      main > aside > section:nth-child(1){ border: 3px solid #C5C5C5;
+        padding: 0.1em; background-color: #D8D8D8;
+      }
+      main > aside > section:nth-child(2) {border: dashed 3px #CC6600;
+        padding: 0.1em; margin-top: 1em; background-color: #FFF6CD;
+      }
+      main > nav:nth-child(4) > section{border: 1px solid yellow;
+        padding: 0.1em;
+      }
+      img, img {
+        margin: 0.5em;
+      }
+      main article + article {background-color: white;
+        margin-top: 1em;
+      }
+      main > nav:nth-child(4) > section + aside{border: 3px solid #CC6600;
+        padding: 0.1em;
+      }
+      main > nav > aside > h3 {
+        padding: 0.2em; background-color: #BD905C;
+      }
+      main > footer {border-top: 3px solid #C5C5C5; border-bottom: 3px solid #C5C5C5;
+        padding-top: 0.1em; padding-bottom: 0.1em; margin-top: 1em; background-color: #D8D8D8;
+
       }
 
     </style>
@@ -175,8 +213,8 @@
 
       <!--Inicio Lateral Izquierdo -->
       <aside>
-        <!--Inicio Sección Noticias. Enlaces -->
-        <section> 1
+        <!--Inicio Sección Noticias. Enlaces 1 -->
+        <section> 
           <h3><a href="#">Noticias</a></h3>
           <p><span class="fecha">dd/mm/aaaa</span></p>
           <p><a href="#">Lorem ipsum dolor</a></p>
@@ -197,8 +235,8 @@
           </ul>
         </section>
         <!--Fin Sección Noticias. Enlaces -->
-        <!-- Inicio Sección Publicidad-->
-        <section> 2
+        <!-- Inicio Sección Publicidad 2-->
+        <section> 
           <h3><a href="#">Publicidad</a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p>Vivamus quis arcu massa.</p>
