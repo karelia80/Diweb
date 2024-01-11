@@ -1,7 +1,7 @@
 ---
 title: Base de Datos
 created: '2024-01-08T15:20:00.111Z'
-modified: '2024-01-11T12:09:13.767Z'
+modified: '2024-01-11T18:49:01.006Z'
 ---
 
 # Base de Datos
@@ -78,6 +78,19 @@ SELECT Continent, GROUP_CONCAT(Name) AS paises, AVG(SurfaceArea) AS superficie_p
 FROM country
 GROUP BY Continent
 ORDER BY Continent;
+#9 
+SELECT Continent, AVG(Population*LifeExpectancy) AS mortalidad
+FROM country 
+GROUP BY Continent;
+#10
+SELECT city.Population, city.Name
+FROM country, city
+WHERE country.Code = city.CountryCode
+AND SurfaceArea = 10000
+LIMIT 5;
+#11 =1k
+SELECT DISTINCT District
+FROM city;
 
 ## Ejemplos de base de datos:
 
