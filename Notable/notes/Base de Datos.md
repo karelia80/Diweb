@@ -1,7 +1,7 @@
 ---
 title: Base de Datos
 created: '2024-01-08T15:20:00.111Z'
-modified: '2024-01-11T18:49:01.006Z'
+modified: '2024-01-12T10:52:56.508Z'
 ---
 
 # Base de Datos
@@ -89,8 +89,14 @@ WHERE country.Code = city.CountryCode
 AND SurfaceArea = 10000
 LIMIT 5;
 #11 =1k
-SELECT DISTINCT District
-FROM city;
+#12
+SELECT Language, COUNT(DISTINCT CountryCode) AS Cantidad_Paises
+FROM CountryLanguage
+GROUP BY Language
+HAVING Cantidad_Paises > 10;
+
+
+
 
 ## Ejemplos de base de datos:
 
