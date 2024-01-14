@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 3 - CSS</title>
+
+  <style>
+    /*el ejercicio 3 pg 57, ejercicio 4 pg 63, ejercicio 5 pg 72 pg 108*/
+    
+    
+    main {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      /*esta es*/
+    }
+
+    /*main > header,
+      main > header + nav, es la lista 
+      aside,
+      main > nav:nth-child(4),
+      main > nav:nth-child(4) > section,
+      main > nav:nth-child(4) > section + aside,
+      footer */
+
+
+
+    /* IMPORTANTE: clear para despejar contenedores*/
+    /* EL UNICO CLASS DE TODA LA PÁGINA!! */
+    .clear {
+      clear: both;
+    }
+
+    aside>section:first-child,
+    aside>section:nth-child(2),
+    main>nav:nth-child(4)>section,
+    main>nav:nth-child(4)>section+aside main>header,
+    main>header+nav {
+      clear: both;
+    }
+
+    /* --------- CABECERA ---------*/
+    main>header {
+      padding: 1em;
+    }
+
+
+    main>header>section {
+      float: left;
+
+    }
+
+    main>header nav {
+      float: right;
+      ;
+    }
+
+    /* -------- MENU SUPERIOR -----------*/
+    /*se refiere al menu en el enunciado del ejercicio*/
+    main>header+nav {
+      background-color: rgb(52, 190, 47);
+      padding: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    main>header+nav ul,
+    main>header+nav li {
+      display: inline;
+      float: left;
+    }
+
+    /* -------- CAJA LATERAL ----------- aside */
+    main>aside {
+      float: left;
+      width: 20%;
+    }
+
+    main>aside>section:nth-child(2) {
+      background-color: rgb(109, 138, 218);
+    }
+
+    /* ############ CAJA CONTENIDO ############# */
+    main>nav:nth-child(4) {
+      float: right;
+      width: 78%;
+    }
+
+    /* --------- CAJA PRINCIPAL -------- nav/articulo 1 y 2 */
+    main>nav:nth-child(4)>section {
+      float: left;
+      width: 68%;
+    }
+
+    img {
+      border: none;
+    }
+
+    article img {
+      width: 150px;
+      float: left;
+    }
+
+    article {
+      font-size: 15px;
+    }
+
+    /* -------------- COLUMNA DERECHA  nav aside -----------*/
+    main>nav:nth-child(4)>section+aside {
+      float: right;
+      /*se ha cambiado de left a right*/
+      width: 28%;
+    }
+
+    /* ############ FIN CAJA CONTENIDO ############# fotter */
+
+    /* ------------ CAJA PIE ------------*/
+    footer {
+      padding-top: 0.1em;
+      padding-bottom: 0.1em;
+    }
+
+    footer .enlaces {
+      margin-top: 0.1em;
+      margin-bottom: 0.1em;
+      float: left;
+    }
+
+    footer .copyright {
+      float: right;
+    }
+
+    /* ######## REGLAS GENÉRICAS ####### */
+    ul,
+    ul li {
+      margin: 0;
+      padding: 10px;
+      list-style: none;
+    }
+
+    h1,
+    h3,
+    p,
+    form {
+      margin: 0;
+      padding: 0;
+    }
+
+    main>nav:nth-child(4)>section h2 {
+      display: none;
+    }
+
+    /*Mi ejercicio*/
+
+    body { font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      font-size: 0.9em;
+      line-height: 1.4em;
+    }
+
+    main>header {
+      padding: 1em;
+    }
+
+    main>header>section>h1>span>img {
+      width: 50px;
+      text-indent: 200px;
+      height: 50px;
+      background-repeat: no-repeat;
+      padding-top: -10px;
+      padding-left: -10px;
+    }
+
+    main>header>section+nav {
+      margin-top: 35px;
+    }
+
+    main>header+nav {
+      background-image: url(../img/fondo9.jpg);
+      padding: 0.3px;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 3px solid blue;
+      background-repeat: no-repeat;
+      background-size: cover;
+     
+     /* background-size: 100% 100%; asi la imagen queda estirada dentro*/
+
+    }
+
+    main>nav>ul>li>a {
+      color: white;
+      font-size: -1.3em;
+      margin: 1em;
+    }
+
+    main>aside {
+      font-size: 1em;
+    }
+
+    .fecha {
+      color: #999;
+      display: block;
+      width: 100%;
+    }
+
+    main>aside>section>h3 {
+      color: #003366;
+    }
+
+    main>aside>section:nth-child(1) {
+      border: 3px solid #C5C5C5;
+      padding: 0.1em;
+      background-color: #D8D8D8;
+    }
+    /*estos 2 reglas es para que la lista este pegada a la derecha*/
+    main>aside>section>ul {list-style: none; padding: 0; margin: 0;} /*1*/
+
+    main > aside > section {
+  text-align: left;}/*2*/
+
+
+
+
+    main>aside>section:nth-child(2) {
+      border: dashed 3px #CC6600;
+      padding: 0.1em;
+      margin-top: 1em;
+      background-color: #FFF6CD;
+    }
+
+    main>nav:nth-child(4)>section {
+      padding: 0.1em;
+    }
+
+    main>nav:nth-child(4)>section>article>h3 {
+
+      color: #CC6600;
+      font-size: 1.6em;
+      line-height: 1.2em;
+      margin-bottom: 0.3em;
+    }
+
+    img,
+    img {
+      margin: 0.5em;
+    }
+
+    main article+article {
+      background-color: white;
+      margin-top: 1em;
+    }
+
+    main>nav:nth-child(4)>section>article>p>a {
+      color: #CC6600;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    main>nav:nth-child(4)>aside:nth-child(2) { padding: 5px;
+      font-size: 1em;
+    }
+
+    main>nav:nth-child(4)>section+aside {
+      border: 3px solid #CC6600;
+      padding: 0.1em;
+    }
+
+    main>nav>aside>h3 {
+      padding: 0.2em;
+      background-color: #BD905C; color: white;
+    }
+
+    main>footer {
+      border-top: 3px solid #C5C5C5;
+      border-bottom: 3px solid #C5C5C5;
+      padding-top: 0.1em;
+      padding-bottom: 0.1em;
+      margin-top: 1em;
+      background-color: #D8D8D8;
+
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <!--inicio cabecera-->
+      <section>
+        <h1><span><img src="../img/Meneame.png" alt=""></span></h1>
+      </section>
+      <nav>
+        <form action="php/Ejercicio03.php" method="post">
+          Buscar: <input type="search" placeholder="realice su busqueda">
+        </form>
+      </nav>
+      <nav class="clear"></nav>
+    </header>
+    <!--fin cabecera-->
+
+    <!--inicio menu principal-->
+    <nav>
+      <ul>
+        <li><a href="#"> enviar historia</a> |</li>
+        <li><a href="#"> portada</a> |</li>
+        <li><a href="#"> pendientes</a> |</li>
+        <li><a href="#"> populares</a> |</li>
+        <li><a href="#"> más visitadas</a> |</li>
+        <li><a href="#"> destacadas</a> |</li>
+      </ul>
+      <p class="clear"></p>
+    </nav>
+    <!--fin menu principal-->
+
+    <!--Inicio Lateral Izquierdo -->
+    <aside>
+      <!--Inicio Sección Noticias. Enlaces 1 -->
+      <section>
+        <h3><a href="#">Noticias</a></h3>
+        <p><span class="fecha">dd/mm/aaaa</span></p>
+        <p><a href="#">Lorem ipsum dolor</a></p>
+        <p><span class="fecha">dd/mm/aaaa</span></p>
+        <p><a href="#">Lorem ipsum dolor</a></p>
+        <p><span class="fecha">dd/mm/aaaa</span></p>
+        <p><a href="#">Lorem ipsum dolor</a></p>
+        <p><span class="fecha">dd/mm/aaaa</span></p>
+        <p><a href="#">Lorem ipsum dolor</a></p>
+        <p><span class="fecha">dd/mm/aaaa</span></p>
+        <p><a href="#">Lorem ipsum dolor</a></p>
+        <br>
+        <h3><a href="#">Enlaces relacionados</a></h3>
+        <ul>
+          <li><a href="#"> ipsum</a></li>
+          <li><a href="#"> dolor</a></li>
+          <li><a href="#"> sit</a></li>
+        </ul>
+      </section>
+      <!--Fin Sección Noticias. Enlaces -->
+      <!-- Inicio Sección Publicidad 2-->
+      <section>
+        <h3><a href="#">Publicidad</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Vivamus quis arcu massa.</p>
+        <p>Etiam nec risus sit amet lorem tempor hendrerit.</p>
+        <p><a href="#">Seguir leyendo...</a></p>
+      </section>
+      <!-- Fin Sección Publicidad-->
+    </aside>
+    <!-- Fin Lateral Izquierdo-->
+
+    <!-- Inicio Contenido-->
+    <nav>
+      <!-- Inicio Cuerpo Principal-->
+      <section>
+        <h2>Contenido Principal</h2>
+        <!-- Inicio Artículo 1 -->
+        <article>
+          <h3>El precio de la libertad de Android</h3>
+          <img src="https://shorturl.at/bqwA5" alt="Mi Futuro móvil">
+          <p>
+            Que Android es un sistema operativo libre (en el sentido de Open
+            Source, se entiende) es algo que estamos hartos de oir. Sin
+            embargo a veces hay ciertas noticias que nos hacen dudar que esta
+            libertad sea tal como en un principio puede parecer. Puesto que la
+            principal diferencia de base de Android con respecto a sus
+            competidores es ser ‘libre’, creemos que este tema merece una
+            buena explicación para aclarar todo lo que hay detrás de esta
+            supuesta libertad.
+          </p>
+          <p>
+            <a href="https://shorturl.at/dlnUY"> Seguir leyendo...</a>
+          </p>
+        </article>
+        <!-- Fin Artículo 1 -->
+
+        <!-- Inicio Artículo 2 -->
+        <article>
+          <h3>
+            Richard Stallman: "Tener el control de tu informática es un
+            derecho humano"
+          </h3>
+          <img src="https://shorturl.at/tCHZ8" alt="El mesias ;p">
+          <p>
+            "Ecuador es el mejor ejemplo de una política estatal de migración
+            a software libre de las agencias públicas. Con el software libre
+            los usuarios tienen el control del programa, si éste no es libre,
+            es el programa quien controla a los usuarios. Cuando el usuario es
+            el Estado, estamos hablando del control de su soberanía
+            informática. Cualquier país debe migrar al software libre para
+            echar al software privativo, ahora mismo Ecuador tiene la mejor
+            política en ese sentido."
+          </p>
+          <p>
+            <a href="https://shorturl.at/etuC8">Seguir leyendo...</a>
+          </p>
+        </article>
+        <!-- Fin Artículo 2 -->
+      </section>
+      <!-- Fin Cuerpo Principal-->
+
+      <!-- Inicio Cuerpo Secundario-->
+      <aside>
+        <h3>Las mejores catástrofes culinarias de Pinterest</h3>
+        <p>
+          La vida no es como aparece en Pinterest. Y la cocina, menos. Y la
+          repostería, menos todavía.
+        </p>
+        <p><a href="#">Seguir leyendo...</a></p>
+        <br>
+        <h3>
+          La madre que usó una tarjeta perdida para comprar pañales, a prisión
+          en 15 días
+        </h3>
+        <p>
+          Emilia Soria, la joven que hace seis años utilizó una tarjeta que se
+          encontró en la calle para comprar pañales y comida para sus hijas,
+          irá a la cárcel en un plazo máximo de quince días.
+        </p>
+        <p><a href="#">Seguir leyendo...</a></p>
+      </aside>
+      <!-- Fin Cuerpo Secundario-->
+    </nav>
+    <!-- Fin Contenido -->
+    <nav class="clear"></nav>
+
+    <!--Inicio Pie -->
+    <footer>
+      <span class="enlaces">
+        <a href="#"> todas</a> | <a href="#"> actualidad</a> |
+        <a href="#"> cultura</a> | <a href="#"> ocio</a> |
+        <a href="#"> tecnología</a>
+      </span>
+      <span class="copyright"> &copy; 2013 Iván Rodríguez </span>
+      <nav class="clear"></nav>
+    </footer>
+    <!--Fin Pie -->
+  </main>
+  <!--Fin Contenedor -->
+</body>
+
+</html>

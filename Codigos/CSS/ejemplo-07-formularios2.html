@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    </form>
+    <form action="#" method="get">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" name="mail" id="correo"><br>
+
+        <label for="clave">Contraseña</label>
+        <input type="password" name="c" id="clave"><br>
+
+        <input type="reset" value="Borrar">
+        <input type="submit" value="Enviar">
+
+
+    </form><br><hr>
+    <form action="#" method="get">
+        
+        <fieldset>
+            <legend>Datos personales</legend>
+
+        <label for="nombre">nombre</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+
+        <label for="">edad</label>
+        <input type="number" name="edad" id="edad" required><br>
+
+        </fieldset>
+    <fieldset>
+        <label for="color">color</label>
+        <input type="color" name="color" id="color"><br>
+
+        <label for="fecha">fecha</label>
+        <input type="date" name="fecha" id="fecha"><br>
+
+       <label for="rango">rango</label>
+       <input type="range" name="rango" id="rango" 
+       min="20" max="30" step="2"
+       oninput="valrango.value = rango.value">
+
+       <input type="number" name="valrango" id="valrango"
+       min="20" max="30" step="2"
+        oninput="rango.value = valrango.value"><br>
+        
+
+    
+
+ </fieldset>
+
+
+ <fieldset>
+    <legend>Asignaturas</legend>
+    <p>Marca tus elecciones:</p>
+   <input type="checkbox" name="materia[]" id="html" value="html">
+    <label for="html">html</label><br>
+    <input type="checkbox" name="materia[]" id="css" value="css">
+    <label for="css">ccs</label><br>
+    <input type="checkbox" name="materia[]" id="js" value="js">
+    <label for="js">js</label><br>
+
+</fieldset>
+<hr>
+<fieldset>
+    <legend>Sexo</legend>
+    <p>Marca solo uno:</p>
+<input type="radio" name="sexo" id="Mujer" value="mujer">
+<label for="mujer">mujer</label><br>
+<input type="radio" name="sexo" id="hombre" value="hombre">
+<label for="hombre">hombre</label><br>
+<input type="hidden" name="pagina" value="3">
+
+</fieldset>
+
+<fieldset>
+    <legend>Seleccion Provincias</legend>
+    <select name="provincia" id="pronvincia">
+        <option disabled selected>Elije opcion</option>
+        <option value="svq">Sevilla</option>
+        <optgroup label="El resto">
+            <option value="Mal">Malaga</option>
+            <option value="Cai">Cadiz</option>
+            <option value="Cor">Cordoba</option>
+            <option value="alm">Almeria</option>
+    
+        </optgroup>
+        
+    </select>
+    <input type="submit" value="Enviar">
+<!-- Si en opcion borramos el valor sale la opcion por defecto no seleccionable, para ello: <option diseable selected> elije opcion</option> -->
+</fieldset>
+
+ </form> <hr>
+
+
+
+<!--hr es poner una linea entre "p" "field" / <p>&nbsp;</p> espacio en blanco / requerid : requerido, para poner un campo obligatorio. En input puedes poner el atributo placeholder que es el titulo que va dentro del input.
+    "for" y "id" tienen que ser iguales// el comando es label+input:number/tel/etc input:checbox+label (emmet)/(input:checkbox+label+br)*3
+    el name es la variable, el nombre del a variable/ cuando una variable tiene mas de 1 dato es Array (coleccion de datos)En el checkbox siempre hay mas de una variable y se pone en la variable SIEMPRE [] ej: name="materia[]" / en el radio hay que pòner la misma variable y de esa manera solo se puede poner 1 de las opciones.
+    Javascript: vamos a usar js para unir dos input: oninput "valores de id" siendo primero rango y luego valrango
+    en java se funciona por eventos, para java ve la pagina como un conjunto de objeto.
+input: checkbox: /input: color /input: date / input: email / input file: para selecionar el archivo/ inpunt hidden /inpunt password /impunt radio/ inpunt range / input reset / inpunt submit / inpunt tel / inpunt tex / inpunt url /inpunt number / input. selec (lista desplegable)
+-->
+
+
+</body>
+
+</html>

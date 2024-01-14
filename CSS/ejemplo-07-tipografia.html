@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display capas</title>
+    <style>
+        /*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
+        @font-face {
+            font-family: roboto;
+            src: url(fuente/Roboto/Roboto-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: opensans;
+            src: url(fuente/Open_Sans/static/OpenSans-Regular.ttf);
+        }
+
+        h1 {
+            color: blue;
+            font-family: "roboto";
+            font-size: 50px;
+            font-weight: 100;
+            font-style: italic;
+            font-variant: small-caps;
+        }
+
+        h2 {
+            color: chartreuse;
+            font-family: "opensans";
+        }
+
+        main p:nth-of-type(5) {
+            width: 20%;
+            text-align: justify;
+            line-height: 1.5em;
+            /* la altura, separacion entre bordes alineacion de texto*/
+            text-decoration: underline;
+            /*line-trought es tachado*/
+            text-transform: capitalize;
+            /*capitalize: la 1º letra de cada palabra en mayus, opercase todo texto en mayus, lowercase todo texto en minuscula*/
+            text-indent: 2em;
+            /*sangre de primera linea*/
+            letter-spacing: 0.1em;
+            /*espaciado entre letras*/
+            word-spacing: 0.3em;
+            /*espaciado entre palabras*/
+        }
+
+        main p:nth-of-type(5)::first-letter {
+            font-size: 40px;
+            color: red;
+            padding: 2px;
+            background-color: blue;
+            border: 2px solid grey;
+        }
+
+        /* Seudoelemento primera letra, esto sirve para la primera letra, se le conoce como letra capital*/
+        main p:nth-of-type(5)::first-line {
+            color: green;
+        }
+
+        /*seudoelemento primera linea*/
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <h1>Titulo de la página</h1>
+        <h2>Subtitulo</h2>
+        <p>Párrafo1</p>
+        <hr>
+        <p>Párrafo2</p>
+        <p>Párrafo3</p>
+        <p>Párrafo4</p>
+        <p>El lenguaje de programación Java fue desarrollado originalmente por James Gosling, de Sun Microsystems
+            (constituida en 1983 y posteriormente adquirida el 27 de enero de 2010 por la compañía Oracle),4​ y
+            publicado en 1995 como un componente fundamental de la plataforma Java de Sun Microsystems. Su sintaxis
+            deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las
+            aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina
+            virtual Java (JVM) sin importar la arquitectura de la computadora subyacente.</p>
+
+    </main>
+
+</body>
+
+</html>
+<!-- tipografia: importar fuentes externas, como se hace: elegir fuente en, por ejemplo, googlefont.com, en import copiar, pero lo mejor es descargarlo y añadirlo a tu trabajo ccs
+    que son las versalitas? te convierte todo en mayus pero lo que este en mayus te lo hace mas grande. pg 99
+    pag 103 
+    Vertical align: pag 103 entra en el exam. se utiliza mucho cuando tienes una imagen y un texto alrededor de la imagen.
+text -indent sangria de primera linea.
+white-space: como tratar los espacios en blanco, es para respetar o cambiar los spacios en blanco
+Seudoelemento: MUY IMPORTANTE : pg107
+
+-->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display capas</title>
+    <style>
+        hr {
+            visibility: hidden;
+        }
+
+        /*oculto*/
+        main p:nth-of-type(2) {
+            display: none;
+        }
+
+        /*sin mostrar*/
+        h1 {
+            border: 1px solid blue;
+            display: inline;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        main p:nth-of-type(5) {
+            border: 1px solid green;
+            width: 40%;
+            height: 100px;
+            overflow: scroll;
+        }
+
+        main p:nth-of-type(3),
+        main p:nth-of-type(4) {
+            border: 2px solid red;
+            width: 30%;
+            padding: 20px;
+        }
+
+        main p:nth-of-type(3) {
+            position: absolute;
+            top: 100px;
+            left: 400px;
+            background-color: aqua;
+            z-index: 2;
+        }
+
+        main p:nth-of-type(4) {
+            position: absolute;
+            top: 120px;
+            left: 420px;
+            background-color: beige;
+            z-index: 1;
+
+        }
+
+        /*poner la web zoom 200%*/
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <h1>Titulo de la página</h1>
+        <h2>Subtitulo</h2>
+        <p>Párrafo1</p>
+        <hr>
+        <p>Párrafo2</p>
+        <p>Párrafo3</p>
+        <p>Párrafo4</p>
+        <p>El lenguaje de programación Java fue desarrollado originalmente por James Gosling, de Sun Microsystems
+            (constituida en 1983 y posteriormente adquirida el 27 de enero de 2010 por la compañía Oracle),4​ y
+            publicado en 1995 como un componente fundamental de la plataforma Java de Sun Microsystems. Su sintaxis
+            deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las
+            aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina
+            virtual Java (JVM) sin importar la arquitectura de la computadora subyacente.</p>
+
+    </main>
+
+</body>
+
+</html>
+<!-- pag 94 z-indiex: las capas, el que tenga el valor mas alto es el que sale primero, por ello en nuestro ejemplo sale el p3 delante del p4
+
+
+
+pag 88 tipos de display:
+inline: para convertir el bloque en linea.
+block: 
+none: sin mostrar
+
+pg 93: overflow: desbordamiento, se sale. hay diferentes propiedades para ajustar el desbordamiento, el scroll es el mas ultilizado y es para subir y bajar en scroll.
+
+
+-->

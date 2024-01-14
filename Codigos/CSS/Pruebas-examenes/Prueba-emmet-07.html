@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+             border-collapse: collapse;
+        }
+        th, td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <section>
+        <figure>
+            <h1><a href="#"><img src="https://shorturl.at/bdlI7" alt="zalando" width="100"></a></h1>
+        </figure>
+    </section>
+</header>
+<main>
+    <section aria-label="tabla">
+        <table>
+            <caption>Curso diseño grafico</caption>
+           <colgroup>
+            <col span="1" style="background-color: pink;">
+          </colgroup>
+
+          <colgroup>
+            <col span="3">
+          </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Horas</th>
+                    <th>Plazas</th>
+                    <th>Horario</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Introducción a HTML5</td>
+                    <td colspan="2">20</td>
+                    
+                    <td>09:00-13:00</td>
+                </tr>
+                <tr>
+                    <td>CSS avanzado</td>
+                    <td rowspan="2">40</td>
+                    <td>15</td>
+                    <td rowspan="2">16:00-20:00</td>
+                </tr>
+                <tr>
+                    <td>Taller de usabilidad</td>
+                    
+                    <td>10</td>
+                    
+                </tr>
+                <tr>
+                    <td>Introduccion AJAX</td>
+                    <td>60</td>
+                    <td>20</td>
+                    <td>08:00-12:30</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section aria-label="html">
+        <article>
+             <h2>¿Qué es HTML?</h2>
+             <p>
+                <strong>HTML</strong>, siglas de HyperText Markup Language («lenguaje de marcado de hipertexto»), hace
+referencia al lenguaje de marcado predominante para la elaboración de páginas web que se utiliza
+para describir y traducir la estructura y la información en forma de texto, así como para
+complementar el texto con objetos tales como imágenes. El <abbr title="Lenguaje de marcado de hipertexto">HTML</abbr> se escribe en forma de
+«etiquetas», rodeadas por corchetes angulares.
+             </p>
+        </article>
+    </section>
+    <aside>
+        <h2>Contenidos</h2>
+        <ul>
+            <li><a href="#"><strong>Inicio</strong></a></li>
+            <li><a href="#">Trama</a></li>
+            <li><a href="#">Jugabilidad</a></li>
+        </ul>
+        <details>
+            <Summary><a href="#">Desarollo</a></Summary>
+            <ul>
+                <li><a href="#">Comienzo</a></li>
+                <li><a href="#">Primeros contratiempos</a></li>
+                <li><a href="#">Continuacion</a></li>
+            </ul>
+        </details>
+        <ul>
+            <li><a href="#">Referencias</a></li>
+            <li><a href="#">Enlaces externos</a></li>
+        </ul>
+    </aside>
+ </main>   
+ <footer>
+    <section aria-label="form">
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Rellena los campos</legend>
+            <label for="nom">Nombre</label><input type="text" name="nom" id="nom">
+            <label for="apell">Apellidos</label><input type="text" name="apell" id="apell"><br>
+            <label for="mail">Correo Eléctronico</label><input type="email" name="mail" id="mail"><br>
+            <select name="datos" id="datos">
+                <option disabled selected>Elige</option>
+                <option value="usb">usb</option>
+                <optgroup label="otros">
+                    <option value="cd">Disco duro</option>
+                    <option value="nub">Nube</option>
+                </optgroup>
+            </select><br>
+            <label for="cumple">Fecha de nacimiento</label><input type="date" name="cumple" id="cumple"><br>
+            
+            <input type="checkbox" name="dispositivo[]" id="pc" value="pc"><label for="pc">Pc</label><br>
+            <input type="checkbox" name="dispositivo[]" id="ps4" value="ps4"><label for="ps4">Ps4</label><br>
+            <input type="checkbox" name="dispositivo[]" id="xbox" value="xbox"><label for="xbox">Xbox</label><br>
+            <input type="checkbox" name="dispositivo[]" id="nintendo" value="nintendo"><label for="nintendo">Nsw</label><br>
+            <label for="col">Color</label><input type="color" name="col" id="col"><br>
+
+            <input type="radio" name="sex" id="hombre" value="hombre"><label for="hombre">Hombre</label>
+            <input type="radio" name="sex" id="mujer" value="mujer"><label for="mujer">Mujer</label>
+
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+
+    </section>
+ </footer>
+</body>
+</html>

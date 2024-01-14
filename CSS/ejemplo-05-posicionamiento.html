@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+
+    <style>
+        h1,
+        h2,
+        p {
+            width: 40%;
+            background-color: aquamarine;
+        }
+
+        h1 {
+            position: static;
+        }
+
+        h2 {
+            position: relative;
+            top: 20px;
+            left: 550px;
+        }
+
+        main p:nth-of-type(1) {
+            border: 2px solid blue;
+            position: absolute;
+            top: 20px;
+            left: 550px;
+
+        }
+
+        main p:nth-of-type(2) {
+            border: 2px solid red;
+            position: fixed;
+            top: 50px;
+            left: 550px;
+        }
+
+        main p:last-of-type {
+            border: 2px solid green;
+
+        }
+
+
+        main p:nth-of-type(3) {
+            color: red;
+            float: left;
+
+        }
+
+        main p:nth-of-type(4) {
+            color: red;
+            float: right;
+        }
+
+        h3 {
+            margin-top: 100px;
+            visibility: hidden;
+        }
+
+        /*
+        main p:nth-of-type(1) {
+            boder: 2px solid blue;
+        }
+
+         main>h2+p {
+            border: 2px solid blue
+        }
+
+        main>hr+p,
+        main>hr+p+p {
+            border: 2px solid red
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Titulo de la página</h1>
+        <h2>Subtitulo</h2>
+        <p>Párrafo1</p>
+        <hr>
+        <p>Párrafo2</p>
+        <p>Párrafo3</p>
+        <p>Párrafo4</p>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+        <h3>.</h3>
+    </main>
+
+</body>
+
+</html>
+<!-- hay cinco formas de posicionar cajas:
+1. estatico el que te da el navegador
+2. relatico variante de posicionamiento estatico
+3. absoluto posicion con respecto al contendor (punto izquierda arriba de la web o su contenedor)sale del flujo de la pagina, pierdes la referencia
+4. fijo, respecto al absoluto, elemento inamovible, independientemente si subimos y bajamos la pagina en el navegador. pierdes la referencia
+5. flotante
+/*pagina74*/
+visibility y display pag 86
+visibility hidden no se ve en la pagina pero esta ahi
+display none, lo eleminas del lugar donde estaba y no se muestra.
+https://cybmeta.com/display-none-vs-visibility-hidden-y-tu-como-escondes-las-cosas
+
+-->

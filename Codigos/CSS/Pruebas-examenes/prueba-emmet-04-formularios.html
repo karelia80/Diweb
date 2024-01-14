@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Formulario de registro</h1>
+
+        <form action="#" method="get"></form>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre"><br>
+
+        <label for="apell">Apellidos</label>
+        <input type="text" name="apell" id="apell"><br>
+
+        <p>Sexo</p>
+        <input type="radio" name="genero" id="hombre" value="hombre"><label for="hombre">Hombre</label>
+        <input type="radio" name="genero" id="mujer" value="mujer"><label for="mujer">Mujer</label><br>
+
+        <label for="mail">Correo</label>
+        <input type="text" name="mail" id="mail"><br>
+
+        <input type="checkbox" name="novedades[]" id="novedades" value="si">
+        <label for="novedades">Deseo recibir información sobre novedades y ofertas</label>
+        <input type="checkbox" name="datos[]" id="datos" value="si">
+        <label for="datos">Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre proteccion de datos</label><br>
+
+        <input type="submit" value="Enviar">
+
+    
+
+
+<form action="#" method="get"></form>
+<fieldset>
+    <legend>Rellener</legend>
+        <input type="radio" name="mat" id="ingles" value="ingles"><label for="ingles">Inglés</label><br>
+        <input type="radio" name="mat" id="aleman" value="aleman"><label for="aleman">Alemán</label><br>
+        <input type="radio" name="mat" id="frances" value="frances"><label for="frances">Francés</label><br>
+
+        <select name="USB" id="USB">
+                <option value="USB">USB</option>
+                <option value="paralelo">Paralelo</option>
+                <option value="PS2">PS2</option>
+        </select><br>
+      <label for="nom">Nombre</label><input type="text" name="nom" id="nom"><br>
+      <label for="ape">Apellidos</label><input type="text" name="ape" id="ape">  
+</fieldset>
+<fieldset>
+    <legend>Indique sus preferencias</legend>
+   <select name="sexo" id="sexo" multiple="multiple">
+    <option value="machos">macho</option>
+    <option value="hembra">hembra</option>
+   </select><br>
+
+   <input type="checkbox" name="sexu[]" id="hembra" value="hembra"><label for="hembra">Hembra</label><br>
+   <input type="checkbox" name="sexu[]" id="macho" value="macho"><label for="macho">Macho</label><br>
+   
+   <label for="date">Elija fecha</label>
+   <input type="date" name="date" id="date">
+</fieldset>
+
+</section>
+</body>
+</html>

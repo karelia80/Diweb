@@ -1,0 +1,5 @@
+/*estilo.css*/
+
+p {
+    color: red; /*para saltarte la prioridad habria que poner color: red !important*/
+}

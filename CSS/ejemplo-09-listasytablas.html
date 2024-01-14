@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas y Tablas</title>
+    <style>
+        /* estilos para los enlaces*/
+
+        ul li {
+            list-style-type: lower-greek;
+            list-style-position: inside;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: red;
+        }
+
+        ol li {
+            list-style-image: url(img/snowflake-solid.svg);
+
+        }
+
+        /*estilo para las tablas*/
+        table {
+            border-collapse: separate;
+            border-spacing: 10px;
+            caption-side: bottom;
+        }
+
+        th,
+        td {
+            border: 1px solid blue;
+            padding: 5px;
+            empty-cells: hide;
+            width: 100px; /*borras el contenido de th para y poniendo empty cells hide haces desaparecer la celda*/
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <ul>
+            <li><a href="#">enlace1</a></li>
+            <li><a href="#">enlace2</a></li>
+            <li><a href="#">enlace3</a></li>
+        </ul>
+        <ol>
+            <li>elemento1</li>
+            <li>elemento2</li>
+            <li>elemento3</li>
+        </ol>
+
+        <!-- ul>li*3>a[href="#"]{Enlaces$} -->
+
+        <hr><br>
+        <table>
+            <caption>
+                Titulo
+            </caption>
+            <thead>
+                <tr>
+                    <th>cabecera1</th>
+                    <th></th>
+                    <th>cabecera3</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>celda1</td>
+                    <td>celda2</td>
+                    <td>celda3</td>
+                    <td>celda4</td>
+                </tr>
+                <tr>
+                    <td>celda1</td>
+                    <td>celda2</td>
+                    <td>celda3</td>
+                    <td>celda4</td>
+                </tr>
+                <tr>
+                    <td>celda1</td>
+                    <td>celda2</td>
+                    <td>celda3</td>
+                    <td>celda4</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+</body>
+
+</html>
+<!--
+
+
+mdn el mozzile depeloved network,
+-->
