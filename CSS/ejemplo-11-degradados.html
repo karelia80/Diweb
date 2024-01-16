@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degradados</title>
+    <style>
+        h1 {
+            border: 1px solid blue;
+            width: 60%;
+            height: 200px;
+            background: linear-gradient(red,blue,green);
+            background: linear-gradient(to left, yellow,blue); /*se puede poner top-bottom, botton-top, left-right, right-left)*/
+            outline: 2px dashed red; /*outline-offset:5px, una linea mas separada*/
+            
+        }
+        h2 {
+            border: 1px solid blue;
+            width: 60%;
+            height: 200px;
+            background: radial-gradient(red,blue);
+            background: radial-gradient(closest-side, yellow, blue,purple);/*tb se puede poner con valores (radial-gradient(yellow 30%, blue 60%)*/
+            opacity: 50%;
+        }
+        body {
+            background-color: rgba(0,255,255,0.5);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Titulo de la pagina</h1><br>
+    <h2>Subtitulo</h2>
+    
+</body>
+</html>
