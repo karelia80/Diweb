@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 1selectores</title>
+    <style>
+.intro      Selecciona elementos con la clase "intro"
+#Lastname   Selecciona el elemento con el ID "Lastname"
+
+h1          Selecciona todos los elementos <h1>.
+h1, p       Selecciona todos los elementos <h1> y <p>.
+div p       Selecciona todos los elementos <p> que están dentro de un <div>
+div > p     Selecciona todos los elementos <p> que son hijos directos de un <div>.
+ul + p      Selecciona un <p> que es inmediatamente precedido por un <ul> elemento hermano.
+ul ~ table  Selecciona todas las tablas que son precedidas por un <ul>.
+*           Selector universal. Selecciona todos los elementos
+p.myquote   Selecciona elementos <p> con la clase "myquote".
+
+[id]                Selecciona elementos con un atributo "id"
+[id=my-Address]     Selecciona elementos con un atributo "id" con el valor "my-Address".
+[id$=ess]           Selecciona elementos cuyo atributo "id" termina con "ess"
+[id|=my]            Selecciona elementos cuyo atributo "id" comienza con "my
+[id^=L]             Selecciona elementos cuyo atributo "id" comienza con la letra "L"
+[title~=beautiful]  Selecciona elementos con un atributo "title" que contiene la palabra "beautiful".
+[id*=s]             Selecciona elementos cuyo atributo "id" contiene la letra "s".
+
+p:first-child       Selecciona el primer hijo que es un elemento <p> dentro de su padre.
+p::first-letter     Selecciona la primera letra de cada elemento <p>.
+p::first-line       Selecciona la primera línea de cada elemento <p>.
+p:first-of-type     Selecciona el primer elemento de su tipo (en este caso, <p>).
+h1:hover            Selecciona el elemento <h1> cuando el cursor está sobre él.
+input:in-range      Selecciona elementos de entrada que tienen un valor dentro del rango especificado.
+input:out-of-range  Selecciona elementos de entrada que tienen un valor fuera del rango especificado.
+input:invalid       Selecciona elementos de entrada con un valor inválido según su tipo.
+input:valid         Selecciona elementos de entrada con un valor válido según su tipo.
+p:lang(it)          Selecciona elementos <p> con el atributo de idioma "it" (italiano)
+p:last-child        Selecciona el último hijo que es un elemento <p> dentro de su padre.
+p:last-of-type      Selecciona el último elemento de su tipo (en este caso, <p>).
+tr:nth-child(even)  Selecciona las filas pares de una tabla
+tr:nth-child(odd)   Selecciona las filas impares de una tabla
+li:nth-child(1)     Selecciona el primer elemento <li> de su padre.
+li:nth-last-child(1)Selecciona el último elemento <li> de su padre.    
+li:nth-of-type(2)   Selecciona el segundo elemento <li> de su padre.
+li:nth-last-of-type(2)Selecciona el penúltimo elemento <li> de su padre.
+b:only-child        Selecciona elementos <b> que son el único hijo de su padre.
+h3:only-of-type     Selecciona elementos <h3> que son el único elemento de su tipo en su padre.
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Homepage</h1> h1
+<div class="intro"> div p / div > p
+<p>My name is Donald <span id="Lastname">Duck.</span></p> h1, p / ul + p / p:first-child
+
+<p id="my-Address">I live in Duckburg</p> h1, p
+
+<p>I have many friends:</p> h1, p
+
+</div>
+
+<ul id="Listfriends>
+<li>Goofy</li>  li:nth-child(1)
+<li>Mickey</li>  li:nth-of-type(2)
+<li>Daisy</li>   li:nth-last-of-type(2)
+<li>Pluto</li> li:nth-last-child(1)
+</ul>
+<p class="myquote">All my friends are great!<br> h1, p
+But I really like Daisy!!</p>
+
+<p lang="it" title="Hello beautiful">Ciao bella</p> h1, p
+
+<h3>We are all animals!</h3>
+<p><b>My latest discoveries have led me to believe that we are all animals:</b></p> h1, p
+
+<table> ul ~ table
+Name	Type of Animal tr:nth-child(odd)
+Mickey	Mouse    tr:nth-child(even)
+Goofey	Dog tr:nth-child(odd)
+Daisy	Duck     tr:nth-child(even)
+Pluto	Dog tr:nth-child(odd)
+</table>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablas css</title>
+ 
+    <style>
+        /*tabla 1*/
+ #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+/*tabla 2*/
+table, th, td {
+  border: 1px solid;
+}
+/*tabla 3*/ 
+table {
+  width: 100%;
+}
+/*tabla4*/
+table {
+  border: 1px solid;
+}
+/*tabla 5*/ 
+table {
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
+/*tabla 6 ejemplo de tabla que ocupe la mitad de la pagina*/
+table {
+  width: 50%;
+}
+/*tabla 7  ejemplo con text aling, que se usa para alinear en horizontal(dech,izq y centro)*/
+td {
+  text-align: center;
+}
+/*ejemplo 8 vertical aling, en vertical (bottom,top, middle) */
+td {
+  height: 50px;
+  vertical-align: bottom;
+}
+/*ejemplo 9, padding, espacio entre el borde y el contenido de una tabla*/
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+/*ejemplo 10 border-bottom*/
+th, td {
+  border-bottom: 1px solid grey;
+}
+/*ejemplo 11, :hover, resaltar las filas de la tabla al pasar el mouse sobre ellas*/
+tr:hover {background-color: coral;}
+/*ejemplo 12, nth-child(even) para tablas rayadas en cebra*/
+tr:nth-child(even) {background-color: green;}
+/*ejemplo 13, para cambiar  fondo y color de la letra*/
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+/*ejemplo 14 La propiedad overflow-x: auto; agrega automáticamente una barra de desplazamiento horizontal si el contenido es más ancho que el contenedor.*/
+#customers {
+  overflow-x: auto;
+  width: 100%;}
+
+    </style>
+</head>
+<body>
+    <h1>Tabla 1</h1> 
+
+<table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+</table>
+
+</body>
+</html>
