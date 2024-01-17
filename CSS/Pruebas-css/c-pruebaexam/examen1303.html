@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    var cerraranuncio = anuncio => {
+      document.getElementById(anuncio).style.display = "none";
+
+      setTimeout(() => {
+        document.getElementById(anuncio).style.display = "block";
+      }, 30000) //cuatro segundos
+    }
+  </script>
+  <link rel="stylesheet" href="examen1303.css">
+  <style>
+    /*Poner aquí la carga de la fuente!*/
+   @font-face {
+    font-family: inter;
+    src: url(../c-pruebaexam/font/Inter.ttf);
+   }
+    body {
+      font-size: 0.7em;
+      background-color: #ccc;
+      font-family: inter;
+    }
+    header {
+      height: 80px;
+      width: 100%;
+      background: linear-gradient(to right, #ccc, white);
+      border-radius: 20px;
+
+    }
+    aside {
+      border: 5px solid white;
+      border-radius: 20px;
+      border-top-style: dotted;
+    }
+    header > figure, header > nav {
+      float: left;
+      top: 20px;
+    }
+    header > nav > form { 
+      margin-top: 15px;
+      width: 45%;
+      margin-left: 200px;
+      text-align: right;
+    }
+    header > nav > form  input {
+      border: 1px solid  #df5521;
+      padding: 5px, 15px;
+      box-shadow: 5xp 5px 10px #df5521;
+      border-radius: 10px;
+    }
+    header nav img:active {
+      transform: scale(2);
+      margin-right: 20px;
+    }
+    header nav:nth-child(1) {
+      position: absolute;
+      right: 40px;
+      top: 40%;
+    }
+    header > nav > a {
+      text-decoration: none;
+      color: rgb(100, 100 , 100);
+      opacity: 90%;
+      margin: 0px 10px;
+      font-size: 15px;
+    }
+    #primeranuncio{
+      padding: 5px;
+      width: 280px;
+      height: 80px;
+      background-color: linen;
+      border-radius: 1em;
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 550px;
+      z-index: 30; /*nivel de capa*/
+    }
+    #primeranuncio button {
+      position: relative;
+      bottom: 30px;
+      right: 10px;
+      float: right;
+      display: inline; /*nivel de capa*/
+    }
+    aside {
+      position: absolute;
+      width: 18%;
+      margin-left: 30px;
+      padding: 10px;
+      z-index: 10;
+    }
+      
+    aside > section:first-child  h2 {
+      color: #df5521;
+    }
+
+    #primeranuncio {
+      position: fixed;
+    }
+
+    body aside:nth-last-of-type(2){ 
+      top: 100px;
+      margin-right: 10px;
+    }
+
+    aside form > label {/*etiqueta*/
+      display: block;
+    }
+    aside form input[type="text"]{/*campo de texto*/
+      border: 1px solid #df5521;
+      padding: 2px;
+      box-shadow: 10px 10px 10px #df5521;
+      width: 60%;
+      margin: 10px, 0px;
+    }
+    aside form input[type="text"]:hover{
+      background-color: pink;
+    }
+
+    aside form input[type="submit"] {
+     
+      border: 1px solid #df5521;
+      border-radius: 5px;
+      display: block;
+      margin-top: 15px;
+      padding: 5px 10px;
+    }
+    aside > section:nth-child(2)  h2{
+     
+      text-decoration: underline;
+      text-transform: capitalize;
+    }
+    aside section:nth-child(2) a, aside form label {
+      color: rgba( 100, 100, 100, 0.8);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    aside section:nth-child(2) li{
+      list-style: circle;
+    }
+    aside section:nth-child(2) li + li {
+      text-indent: 10px; 
+      list-style-position: inside;
+    }
+    main{
+      position: absolute;
+      top: 100px;
+      left: 20%;
+      padding: 10px;
+      width: 45%;
+    }
+    main h1 {
+      color: #df5521;
+    }
+    main h1:active {
+      transition-property: color, font-size, margin-bottom;
+      transition-duration: 4s;
+      transition-timing-function: linear;
+
+
+      color: blue; 
+      font-size: 20p;
+      margin-bottom: 45px;
+    }
+    main img {
+      float: right;
+      margin: -10 -15 10 40;
+      width: 30%;
+    }
+    main article header h2 {
+      border: 1px solid #df5521;
+      border-radius: 5px;
+      padding: 5px;
+      margin-right: 15px;
+    }
+    main article header h2 a {
+      text-decoration: none;
+      color: #df5521;
+    }
+
+    main article header h2, main article header {
+      float: left;
+    }
+    main article header h3 {
+      clear: both; /*que ocupe todo el ancho*/
+    }
+
+    /*Al final del examen, COPIAR y PEGAR al CSS*/
+  </style>
+</head>
+
+<!-- EL HTML NO SE TOCA!!! -->
+<!-- ########################################################### -->
+
+<body>
+
+  <!-- HEADER -->
+  <!-- ############################ -->
+  <header>
+    <figure>
+      <img src="img/meneame.png" alt="...">
+    </figure>
+    <nav>
+      <form action="#">
+        <img src="img/buscar.png" alt="...">
+        <input type="text" id="buscar" name="buscar">
+        <input type="submit" value="Buscar">
+      </form>
+    </nav>
+    <nav>
+      <a href="#">Login</a>
+      <a href="#">Registrate</a>
+    </nav>
+  </header>
+
+  <!-- SECTION CON CAPA (CON MORALEJA ;D) -->
+  <!-- ############################ -->
+  <section id="primeranuncio" class="anuncio">
+    <h4>Examen CSS</h4>
+    <p>No te angusties si no te queda igual ;)</p>
+    <button class="boton" onclick="cerraranuncio('primeranuncio')">x</button>
+  </section>
+
+  <!-- ASIDE IZQUIERDO -->
+  <!-- ############################ -->
+  <aside>
+    <section>
+      <h2>Registro</h2>
+      <form action="#">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario">
+        <label for="clave">Contraseña:</label>
+        <input type="text" id="clave" name="clave">
+        <input type="submit" value="Acceso">
+      </form>
+    </section>
+    <section>
+      <h2>Otras secciones</h2>
+      <ul>
+        <li id="portada"><a href="#">Portada</a></li>
+        <li><a href="#">Nuevas</a></li>
+        <li><a href="#">Artículos</a></li>
+        <li><a href="#">Populares</a></li>
+        <li><a href="#">Mas visitadas</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- MAIN -->
+  <!-- ############################ -->
+  <main>
+    <h1>Menéame</h1>
+    <article>
+      <header>
+        <h2><a href="#">Únete a Tecnología</a></h2>
+        <p>Hace 1 día | Por ccguy a zdnet.com</p>
+        <h3>Descubierto un desagradable agujero de seguridad en el netfilter del firewall de Linux</h3>
+      </header>
+      <section>
+        <h4><a href="#">zdnet.com</a></h4>
+        <figure>
+          <img src="img/firewall_linux.jpeg" alt="...">
+        </figure>
+        <p>Detrás de casi todas las herramientas de cortafuegos de Linux, como iptables; su versión más reciente,
+          nftables; firewalld; y ufw, está netfilter, que controla el acceso a y desde la pila de red de Linux. </p>
+        <p>Es un programa de seguridad esencial para Linux, así que cuando se encuentra un agujero de seguridad en él,
+          es un gran problema. Este es un error grave. Específicamente, es un problema de escritura fuera de los límites
+          del heap con el filtro de red del kernel. Es "explotable para lograr la ejecución de código del kernel.</p>
+      </section>
+    </article>
+    <article>
+      <header>
+        <h2><a href="#">Únete a Cultura</a></h2>
+        <p>Hace 10h | Por wintersky a arquitectura.cl</p>
+        <h3>Un recorrido por la vivienda tradicional de España</h3>
+      </header>
+      <section>
+        <h4><a href="#">arquitectura.cl</a></h4>
+        <figure>
+          <img src="img/vivienda_tradicional.jpeg" alt="...">
+        </figure>
+        <p>La península es, además de un vasto y diverso entorno geográfico, un mapa de ejemplos de arquitectura que ha
+          sabido adaptarse: reinterpretando diferentes materiales, métodos técnicos y necesidades. </p>
+        <p>En este sentido, la arquitectura vernácula en España, refiriéndonos exclusivamente a la vivienda o casa
+          tradicional, goza tal vez de menor salud ahora que en sus mejores días; pero no cabe duda de que muchos son
+          los casos que todavía siguen en pie o incluso manteniéndose como propuestas de espacios para habitar.</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- ASIDE DERECHO -->
+  <!-- ############################ -->
+  <aside>
+    <h2>En comunidades</h2>
+    <table>
+      <caption>Otras noticias</caption>
+      <tr>
+        <td>11 meneos</td>
+        <td><a href="#">
+            <span>CÁÑAMO</span> Cuatro detenidos en Burgos y
+            Badajoz por tráfico de marihuana mediante
+            cultivo ilícito de cáñamo
+          </a></td>
+      </tr>
+      <tr>
+        <td>72 meneos</td>
+        <td><a href="#">
+            <span>SEQUÍA</span> España, en situación de
+            sequía meteorológica tras el segundo invierno
+            más seco desde 1961
+          </a></td>
+      </tr>
+      <tr>
+        <td>28 meneos</td>
+        <td><a href="#">
+            <span>ARTÍCULOS</span> La guerra y el PDF.
+            Un vínculo necesario
+          </a></td>
+      </tr>
+      <tr>
+        <td>07 meneos</td>
+        <td><a href="#">
+            <span>ARTÍCULOS</span> El conflicto
+            Rusia, EEUU, China, Europa... era inevitable
+          </a></td>
+      </tr>
+      <tr>
+        <td>07 meneos</td>
+        <td><a href="#">
+            <span>FOSILES</span> Así es ‘Horridus’,
+            el triceratops más completo que se ha
+            encontrado hasta ahora
+          </a></td>
+      </tr>
+    </table>
+  </aside>
+
+  <!-- FOOTER -->
+  <!-- ############################ -->
+  <footer>
+    <table>
+      <tr>
+        <td><a href="#">Ayuda</a></td>
+        <td><a href="#">Blog</a></td>
+        <td><a href="#">Nótame</a></td>
+      </tr>
+    </table>
+  </footer>
+
+</body>
+</html>
