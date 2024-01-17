@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.uppercase {
+  text-transform: uppercase; /*todo el texto en mayuscula*/
+}
+
+p.lowercase {
+  text-transform: lowercase; /*todo el texto en minuscula*/
+}
+
+p.capitalize {
+  text-transform: capitalize;/*la primera letra de cada palabra es mayuscula*/
+}
+p {
+  text-indent: 50px;/*Espacio "tabulado" al principio del parrafo.*/
+}
+h2 {
+  letter-spacing: 5px;/*espacio entre letras, el valor negativo las junta*/
+}
+p.small {
+  line-height: 0.7;/*espacio entre lineas, pequeño, se juntan*/
+}
+
+p.big {
+  line-height: 1.8;/*espacio entre lineas, grande, espacio muy separado*/
+}
+/*esto igual se puede usar con palabras "words"*/
+p.one {
+  word-spacing: 10px;
+}
+
+p.two {
+  word-spacing: -2px;/*el valor negativo las juntas*/
+}
+/*Text-shadow*/
+h1 {
+  text-shadow: 2px 2px red; /*sombra roja, para poner efecto desenfocado text-shadow: 2px 2px 5px red; con 3 desenfoques text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;*/
+}
+/*list-style-type: circle; square, upper-roman, lowe-alpha, list-style-image: url('sqpurple.gif'), list-style-type: none;
+list-style-position:outside,inside*/
+/*a:link, a:visited, a:hover, a:active*/
+/*Bordes redondeados ejemplos:*/
+#rcorners1 {
+  border-radius: 25px; 
+  background: #73AD21; /*con un fondo*/
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;/*con un borde*/
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#rcorners3 {
+  border-radius: 25px;
+  background: url(paper.gif); /*el fondo es una imagen, que se posiciona arriba a la izquierda y se repite*/
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+/*Se pone border-top-left-radius, border-top-right-radiusy .border-bottom-right-radiusborder-bottom-left-radius*/
+/*Para especificar cada borde hay 4 maneras:
+    1.Con 1 solo valor border-radius: 15px;
+    2 Con 2 valores border-radius: 15px 50px se aplica superior izq 15px y abajo dch 50px;
+    3 Con 3 valores border-radius: 15px 50px 30px; se aplica el primer valor se aplica a la esquina superior izquierda 15px, el segundo valor a arriba dch y abajo izq 50px, y el ultimo valor a abajo dch 30px;
+    4 Con 4 valores border-radius: 15px 50px 30px 5px, se aplica top-left 15px, top-right 50px, bottom-right 30px y bottom-left 5px.*/
+
+    /*Para elipses
+    #rcorners1 {
+  border-radius: 50px / 15px; dos valores. si pongo el valor 50% se forma un obalo.
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+} */
+    /*para bordes con imagen en resumen
+    div {
+  border-image-source: url('imagen.jpg'); para meter imagen
+  border-image-slice: 30%; dividir imagen
+  border-image-width: 10px; el ancho del borde
+  border-image-outset: 5px; expansion del borde
+  border-image-repeat: repeat; este valor puede ser tb: round para redondear, stretch para estrechar, repeat para repetir
+}*/
+
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
