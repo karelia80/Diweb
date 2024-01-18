@@ -12,8 +12,10 @@
         *{
             font-family: roboto;
         }
-table{border-collapse: separate;}
-th, td {border: 1px dotted blue; padding: 5px;}
+aside table:nth-child(2){border-collapse: separate; width: 355px; margin-left: 39px;}
+tr, td {padding: 4px;
+}
+
   /*CABECERA*/
   header img { 
     position: relative;
@@ -23,7 +25,7 @@ th, td {border: 1px dotted blue; padding: 5px;}
   header form { 
     position: absolute;
     top: 70px;
-    left: 35%;
+    left: 30%;
     max-width: 600px;
     
   }
@@ -58,34 +60,81 @@ th, td {border: 1px dotted blue; padding: 5px;}
 
   /*Lateral IZQUIERO*/
   aside:first-of-type{
-    border: 1px solid blue;
+    
     width: 250px;
     position: absolute;
     
     
-   
 
   }
 
   /*MAIN*/
-  main { border: 2px solid yellow;
+  main { 
     position: absolute;
     left: 20%;
     width: 800px;
     text-transform: capitalize;
+    border-left: 2px solid grey;
+    padding-left: 30px;
 
-
+  }
+  main section:nth-of-type(4) table td:nth-child(even){
+    background-color: lightgray;
+  }
+  main section:nth-of-type(4) table tfoot tr th:first-child {
+    text-align: left;
+  }
+  main section:nth-of-type(4) table tfoot tr th + th {
+    background-color: lightgrey;
   }
 
   /*Lateral DERECHO*/
   aside:nth-of-type(2) {
-    border: 1px solid red;
+   border: 1px solid rgb(224, 224, 224);
+   background-color: rgba(238, 231, 231, 0.2);
     position: relative;
-    left: 80%;
-  }
-  
-   
+    left: 82%;
+    width: 430px;
+    padding-top: 10px;
+    padding-bottom: 5px;
     
+  }
+  aside:nth-of-type(2) h2 {
+    background-image: url(../../../CSS/img/amarillo1.jpg);
+    text-align: center;
+    padding: 5px;
+    width: 342px;
+  }
+  aside:nth-of-type(2) figcaption {
+    text-align: center;
+    font-size: small;
+  }
+  aside:nth-of-type(2) table tr:first-child  td, aside:nth-of-type(2) table tr:nth-child(4) td {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(251, 218, 53);
+  }
+  aside:nth-of-type(2) table tr:hover {
+    background-color: rgb(70, 71, 63);
+    color: white
+  }  
+
+
+
+  /*Pie FOOTER*/
+    footer {
+        
+        width: 300px;
+        position:absolute;
+        left: 20%;
+        top: 241%;
+    }
+    footer li {
+        list-style-type: circle;
+    }
+    footer li a {
+        text-decoration: none;
+    }
   
     </style>
 
@@ -132,6 +181,7 @@ th, td {border: 1px dotted blue; padding: 5px;}
     <hr>
     <p> <strong>Islantilla</strong> es una playa y <a href="#">mancomunidad</a> conformada por los municipios costeros de Isla Cristina y Lepe, situada en la provincia de Huelva, Andalucía, en la conocida como Costa de la Luz, al suroeste de España. La mancomunidad nació en 1991 con el objetivo de ser uno de los referentes turísticos de la provincia de Huelva. Está situada entre la playa de Urbasur al oeste y La Antilla, al este. Su nombre deriva de la unión de Isla Cristina y La Antilla. En 2010 contaba con 1.261 habitantes (INE 2010) repartidos como sigue: 528 en Isla Cristina y 733 en Lepe. La trama urbana continua de más de 5 kilómetros de largo que va desde Urbasur hasta La Antilla suma una población estable en invierno de 2.799 habitantes (INE 2015), aunque en verano puede alcanzar los 100.000.</p>
     </section>
+
     <section>
         <h2>Historia</h2>
         <hr>
@@ -151,6 +201,7 @@ th, td {border: 1px dotted blue; padding: 5px;}
     </article>
 </section>
 <section>
+
     <h2>Comunicaciones y entorno</h2>
     <hr>
     <p>e encuentra a unos 20 km de Portugal, 40 km de la ciudad de Huelva y 120 km de Sevilla, cuenta con transporte público hasta estas dos ciudades, varios autobuses con origen en Isla Cristina y que, pasando por Islantilla, llegan hasta Huelva y Sevilla. Asimismo, su acceso desde la A-49 a través de vehículo privado permite una conexión rápida con las estaciones de ferrocarril y aeropuertos de la región.
@@ -173,6 +224,7 @@ th, td {border: 1px dotted blue; padding: 5px;}
     
 </tr>
         </thead>
+
         <tbody>
 <tr>
     <td>mes</td>
@@ -220,6 +272,7 @@ th, td {border: 1px dotted blue; padding: 5px;}
     <td>19.1</td>
 </tr>
         </tbody>
+
         <tfoot>
 <tr>
     <th>Humedad relativa (%)</th>
@@ -283,6 +336,7 @@ th, td {border: 1px dotted blue; padding: 5px;}
 </table>
 
 </aside>
+
 <footer>
 <section>
     <h3>Enlaces externos</h3>
@@ -290,8 +344,8 @@ th, td {border: 1px dotted blue; padding: 5px;}
     <ul>
         <li><a href="#">Mancomunidad de Islantilla</a></li>
         <li><a href="#">Ayuntamiento de Isla Cristina</a></li>
-        <li><a href="#"></a>Ayuntamiento de Lepe</li>
-        <li><a href="#"></a>Islantilla Cinefórum</li>
+        <li><a href="#">Ayuntamiento de Lepe</a></li>
+        <li><a href="#">Islantilla Cinefórum</a></li>
     </ul>
 </section>
 <section>
@@ -299,8 +353,8 @@ th, td {border: 1px dotted blue; padding: 5px;}
     <ol>
         <li><a href="#">Mancomunidad de Islantilla</a></li>
         <li><a href="#">Ayuntamiento de Isla Cristina</a></li>
-        <li><a href="#"></a>Ayuntamiento de Lepe</li>
-        <li><a href="#"></a>Islantilla Cinefórum</li>
+        <li><a href="#">Ayuntamiento de Lepe</a></li>
+        <li><a href="#">Islantilla Cinefórum</a></li>
     </ol>
     
 </section>
