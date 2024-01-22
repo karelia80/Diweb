@@ -1,8 +1,8 @@
 ---
-title: Instalar en ubuntu
 tags: [Import-6153]
+title: Instalar en ubuntu
 created: '2024-01-15T17:20:12.312Z'
-modified: '2024-01-15T17:27:27.002Z'
+modified: '2024-01-22T15:41:52.077Z'
 ---
 
 ---
@@ -39,3 +39,11 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62
 
  Hacemos la instalación
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+=====================================
+PDF TK
+
+sudo apt install pdftk -y
+pdftk *.pdf output "nombredelmanual.pdf"
+
+
