@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Examen1303</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="examen1303.css" />
+
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+
+    <!-- Sección Estilos -->
+    <style>
+      /*IMPORTANTE! Dejar esto en el style*/
+      /* SI ME PONE un comentario por ejercicio, te regalo 0.5pto */
+      /*Blanca Soler Navarro*/
+
+      /*Generales*/
+      /*1*/
+      @font-face {
+        font-family: "Montserrat";
+        src: url(Montserrat/Montserrat-VariableFont_wght.ttf);
+      }
+      /*2*/
+      body {
+        font-family: Montserrat;
+      }
+      /*3*/
+      body > aside { 
+        background-image: linear-gradient(#ccc, white);
+      }
+      /*4*/
+      body > aside {
+        position: absolute;
+        width: 20%;
+        top: 2%;
+        left: 2%;
+      }
+      /*5*/
+      body > aside img {
+        
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      /*6*/
+      body aside ul > li {
+        
+        list-style-type: none;
+        text-align: 1,125em;
+        font-size: 0.8em;
+        margin-left: -10px;
+        color: #0645ad;
+      }
+      /*7*/
+      body aside ul:first-child li:first-child {
+        text-shadow: blue 1px 1px 1px;
+      }
+      body aside ul:nth-child(2) li:first-child {
+        text-shadow: blue 1px 1px 1px;
+      }
+      body aside ul:nth-last-of-type(2) li:first-child  {
+        text-shadow: blue 1px 1px 1px;
+      }
+      body aside ul:nth-last-of-type(1) li:first-child {
+        text-shadow: blue 1px 1px 1px;
+      }
+
+      /*8*/
+      body aside ul:first-child li + li, body aside ul:nth-last-of-type(1) li + li, body aside ul:nth-last-of-type(2) li +li, body aside ul:nth-child(2) li + li { 
+        text-indent: 10px;
+      }
+      /*9*/
+      body aside h3 {
+        color: #333;
+        font-size: 1.1em;
+        margin-left: 10px;
+        font-variant: small-caps;
+      }
+
+      /*10*/
+      body main {
+        
+        background-color: white;
+        position: absolute;
+        width: 70%;
+        top: 2%;
+        left: 25%;
+      }
+      /*11*/
+      main header {
+        background-image: radial-gradient(elipses, #fff, white);
+      }
+      /*12*/
+      body main header nav ul {
+        width: 40%;
+        float: left;
+        padding: 10px;
+      }
+      /*13*/
+      body main header nav ul li {
+        list-style-type: none;
+        list-style-position: inside;
+      }
+      /*14*/
+      main form {
+        width: 60%;
+        float: left;
+      }
+      /*15*/
+      .fa {
+        /*lupa*/
+        position: relative;
+        top: 10px;
+        right: 130px;
+      }
+      /*16*/
+      .form-control {
+        float: left;
+        height: 30px;
+        width: 70%;
+      }
+      /*17*/
+      body main header nav form input:last-of-type {
+    
+        float: left;
+        margin-left: 5px;
+        height: 38px;
+        width: 80px;
+        background-color: blue;
+      }
+      /*18*/
+      body main header img {
+         
+         width: 90%;
+      }
+      /*19*/
+      body main header img:hover {
+        visibility: hidden;
+      }
+      /*20*/
+      main section {
+        width: 60%;
+        float: left;
+      }
+      /*21*/
+      main aside {
+        width: 35%;
+        float: left;
+      }
+      /*22*/
+      body main section p {
+        font-size: 0.9em;
+        line-height: 1.4em;
+        padding-right: 20px;
+        text-align: justify;
+        text-indent: 10%;
+        word-spacing: 0.5px;
+        letter-spacing: 1px;
+      }
+      /*23*/
+      body main article:first-of-type ul {
+        background-image: linear-gradient(to bottom,#ccc, white);
+        font-size: 0.8em;
+        width: 70%;
+        margin: auto;
+      }
+      /*24*/
+      body main article ul ul ul:last-of-type {
+        font-weight: bold;
+      }
+      /*25*/
+      body main article ul ul {
+        text-decoration: underline;
+        
+      }
+      /*26*/
+      body main article ul ul ul:last-of-type {
+        list-style-type: lower-roman;
+        list-style-position: inside;
+      }
+      /*27*/
+      body main article:last-of-type h3:hover {
+        text-shadow: #333 2px 2px 2px;
+      }
+      /*28*/
+      body main article:last-of-type h3{
+        font-size: 0.85em;
+      }
+      /*29*/
+      body main article:last-of-type table:active { 
+        transform-origin: 120% 40px 0px;
+      
+      }
+      /*30*/
+      body main article:last-of-type table th, td {
+        border: 1px solid #ccc;
+      }
+
+      /*31*/
+      body main article:last-of-type table td {
+        padding: 6px;
+      }
+      /*32*/
+      body main article:last-of-type table [type="rowspan"]{ 
+        border-collapse: collapse;
+        color: red;
+      }
+      /*33*/
+      main aside h3 {
+        margin-top: 20px;
+        font-variant:small-caps;
+        font-size: 3em;
+        padding: 15px;
+        border: 5px double #ccc #333;
+      }
+      /*34*/
+      main aside h3 { border: 1px solid #333;
+        border-radius: 10px/40px;
+      }
+      /*35*/
+      main aside tr:nth-of-type(2) td {
+        background-image: url(../EXAMEN/Picto_infobox_map.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+        height: 60px;
+      }
+      /*36*/
+      main aside p {
+        width: 240px;
+        height: 100px;
+        overflow: scroll;
+        background-image: linear-gradient(#ccc, white);
+      }
+
+      /*FOOTER*/
+      /*37*/
+      body main footer {
+        margin: 20px, 0;
+        float: left;
+        font-size: 1em;
+        width: 60%;
+      }
+      /*38*/
+      body main footer:active {
+        transition-property: width, font-size;
+        transition-duration: 5s;
+        transition-timing-function: ease-out;
+
+        width: 100%;
+        font-size: 1.5em;
+      }
+
+
+     
+
+    </style>
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <aside>
+      <img src="logo-wikipedia.png" alt="..." />
+      <ul>
+        <li>Portada</li>
+        <li>Portal de la comunidad</li>
+        <li>Actualidad</li>
+        <li>Cambios recientes</li>
+        <li>Páginas nuevas</li>
+        <li>Página aleatoria</li>
+        <li>Ayuda</li>
+        <li>Donaciones</li>
+        <li>Notificar un error</li>
+      </ul>
+      <h3>Herramientas</h3>
+      <hr />
+      <ul>
+        <li>Lo que enlaza aquí</li>
+        <li>Cambios en enlazadas</li>
+        <li>Subir archivo</li>
+        <li>Páginas especiales</li>
+        <li>Enlace permanente</li>
+        <li>Información de la página</li>
+        <li>Citar esta página</li>
+        <li>Elemento de Wikidata</li>
+      </ul>
+
+      <h3>Imprimir/exportar</h3>
+      <hr />
+      <ul>
+        <li>Crear un libro</li>
+        <li>Descargar como PDF</li>
+        <li>Versión para imprimir</li>
+      </ul>
+
+      <h3>En otros proyectos</h3>
+      <hr />
+      <table>
+        <tr>
+          <td>
+            <ul>
+              <li>Wikimedia Commons</li>
+              <li>Wikiquote</li>
+              <li>Wikiviajes</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </aside>
+
+    <main>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#">Leer</a></li>
+            <li><a href="#">Editar</a></li>
+            <li><a href="#">Ver Historial</a></li>
+          </ul>
+          <form>
+            <i class="fa fa-search"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar en Wikipedia"
+            />
+            <input type="submit" class="btn btn-primary" value="Buscar" />
+          </form>
+        </nav>
+        <img src="sound.png" alt="..." />
+      </header>
+
+      <section>
+        <h1>Jaén</h1>
+        <p>
+          Jaén es una ciudad y municipio español de la comunidad autónoma de
+          Andalucía, capital de la provincia homónima. Ostenta el título de «Muy
+          Noble y Muy Leal Ciudad de Jaén, Guarda y Defendimiento de los Reinos
+          de Castilla» y es conocida como la «capital del Santo Reino».Cuenta en
+          2021 con una población de 111 932 habitantes según el INE,53 799
+          hombres y 58 133 mujeres. La ciudad se enmarca dentro del área
+          metropolitana de Jaén de la que es cabecera, y absorbe una sexta parte
+          de la población total de la provincia de Jaén. Su superficie es de
+          424,30 km².También es sede del partido judicial número 1 de la
+          provincia y de la diócesis homónima.
+        </p>
+
+        <article>
+          <h3>Índice</h3>
+          <ul>
+            <li>
+              8 Servicios
+              <ul>
+                <li>8.1. Educación</li>
+                <li>8.2. Sanidad</li>
+                <li>8.3. Seguridad ciudadana</li>
+                <li>8.4. Servicios sociales</li>
+                <li>8.5. Recolección de residuos sólidos</li>
+                <li>8.6. Abastecimiento</li>
+                <li id="transporte">
+                  8.7. Transporte
+                  <ul>
+                    <li>8.7.1. Red de carreteras y distancias</li>
+                    <li>8.7.2. Transporte público</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Vértices geodésicos de Jaén</h3>
+          <table>
+            <tr>
+              <th>Punto geodésico</th>
+              <th>Altitud</th>
+              <th>Número</th>
+              <th>Hoja MTN</th>
+            </tr>
+            <tr class="sin-fusion">
+              <td>Cuevas</td>
+              <td>521,604</td>
+              <td>92 641</td>
+              <td>926</td>
+            </tr>
+            <tr>
+              <td>Grajales4</td>
+              <td>1658,276</td>
+              <td>94 740</td>
+              <td rowspan="2">947</td>
+            </tr>
+            <tr>
+              <td>Jabalcuz</td>
+              <td>1617,891</td>
+              <td>94 704</td>
+            </tr>
+            <tr>
+              <td>Madrigueras</td>
+              <td>464,676</td>
+              <td>92 633</td>
+              <td rowspan="2">926</td>
+            </tr>
+            <tr>
+              <td>Peñaflor</td>
+              <td>634,034</td>
+              <td>92 661</td>
+            </tr>
+            <tr>
+              <td>San Cristóbal</td>
+              <td>1003,375</td>
+              <td>94 744</td>
+              <td rowspan="3">947</td>
+            </tr>
+            <tr>
+              <td>San Juan de Dios</td>
+              <td>439,757</td>
+              <td>94 739</td>
+            </tr>
+            <tr>
+              <td>Torremocha46​</td>
+              <td>655,410</td>
+              <td>94 758</td>
+            </tr>
+          </table>
+        </article>
+      </section>
+
+      <aside>
+        <table>
+          <tr>
+            <td><h3>Jaén</h3></td>
+          </tr>
+          <tr>
+            <td>Municipio y ciudad de España</td>
+          </tr>
+          <tr>
+            <td><img src="bandera-escudo.png" alt="..." /></td>
+          </tr>
+          <tr>
+            <td><img src="galeria-fotos.png" alt="..." /></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <p>
+          De izquierda a derecha y de arriba abajo: el castillo de Santa
+          Catalina, la cruz del castillo, el Lagarto de la Magdalena, los baños
+          árabes, el palacio de Villardompardo y la catedral de la Asunción de
+          la Virgen.
+        </p>
+      </aside>
+      <footer>
+        <p class="alert alert-info">
+          Categorías: Jaén | Localidades de la provincia de Jaén
+        </p>
+      </footer>
+    </main>
+
+  </body>
+</html>
