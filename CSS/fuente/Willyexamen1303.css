@@ -1,0 +1,295 @@
+/* ANASTASIO MORON GARCIA*/
+
+/*IMPORTANTE! Dejar esto en el style*/
+      /* SI ME PONE un comentario por ejercicio, te regalo 0.5pto */
+
+      /* GENERALES */
+      /* 1. */
+      @font-face {
+        font-family: "Montserrat";
+        src: url(Montserrat/Montserrat-VariableFont_wght.ttf);
+      }
+      /* 2. */
+      body {
+        font-family: Montserrat;
+      }
+
+      /* 3. */
+
+      body > aside {
+
+        background: linear-gradient(#cccccc,white);
+      }
+
+      /* 4. */
+      body > aside {
+        position: absolute;
+        width: 20%;
+        top:2%;
+        left: 2%;
+      }
+
+      /* 5. */
+      body > aside img{
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      /* 6. */
+      body > aside ul{
+
+        list-style-type: none;
+        line-height: 1.125em;
+        font-size: 0.8em;
+        margin-left: -10px;
+        color: #0645AD;
+      }
+
+      /* 7. */
+      body > aside ul > li:first-of-type{
+        text-shadow: blue 1px 1px 1px;
+      }
+
+      /* 8 */
+
+      body > aside ul > li:not(:first-of-type){
+        text-indent: 10px;
+        
+      }
+
+      /* 9. */
+      body > aside h3{
+        color: #333333;
+        font-size: 1.1em;
+        margin-left: 10px;
+        font-variant: small-caps;
+      }
+
+      /* PRINCIPAL / CABECERA ZONA PRINCIPAL */
+      
+      /* 10. */
+      main{
+        background-color: white;
+        position: absolute;
+        width: 70%;
+        top: 2%;
+        left: 25%;
+      }
+
+      /* 11. */
+      main > header{
+        background: -webkit-radial-gradient(top, ellipse, #cccccc , white );
+      }
+
+      /* 12. */
+      main > header ul{
+        width: 40%;
+        float: left;
+        padding: 10px;
+      }
+      
+      /* 13. */
+      main > header ul li{
+        list-style-type: none;
+        display: inline;
+      }
+
+      /* 14. */
+      main > header form{
+        width: 60%;
+        float: left;
+      }
+
+      /* 15. */
+      main > header .fa{
+        position: relative; 
+        top: 10px;
+        right: 130px;
+      }
+
+      /* 16. */
+      main > header .form-control{
+        float: left;
+        height: 30px;
+        width: 70%;
+      }
+
+      /* 17. */
+      main > header form input[type="submit"]{
+
+        
+        float: left;
+        margin-left: 5px;
+        height: 38px;
+        width: 80px;
+        background-color: blue;
+      }
+      /* 18. */
+      main > header img{
+        width: 90%;
+      }
+
+      /* 19 */
+      main > header img:hover{
+        visibility: hidden;
+        
+      }
+
+      /* SECCION PRINCIPAL */
+
+      /* 20. */
+      main > section{
+        width: 60%;
+        float: left;
+      }
+
+      /* 21. */
+      main > aside{
+        width: 35%;
+        float: left;
+      }
+
+      /* 22. */
+      main section p{
+        font-size: 0.9em;
+        line-height: 1.4em;
+        padding-right: 20px;
+        text-align: justify;
+        letter-spacing: 0.5px;
+        word-spacing: 1px;
+
+      }
+
+      main section p::first-line{
+        text-indent: 10%;
+        
+      }
+
+      
+      /* LISTA DEL MAIN */
+
+      /* 23. */
+      main  article:first-of-type{
+        
+        background:  linear-gradient(bottom,#cccccc,white);
+        font-size: 0.8em;
+        width: 70%;
+        margin: auto;
+        
+      }
+
+      /* 24. */
+      main article:first-of-type ul #transporte ul li{
+        font-weight: bold;
+
+      }
+
+      /* 25. */
+      main article:first-of-type ul li ul{
+             
+        text-decoration: underline;
+
+      }
+
+      /* 26 */
+      main article:first-of-type ul li ul li ul li{
+        list-style-type: lower-roman;
+
+      }
+
+      /* TABLA MAIN */
+      /* 27. */
+      main section article:nth-of-type(2) h3:hover{
+        text-shadow: #333 2px 2px 2px;
+
+      }
+
+      /* 28. */
+      main section article:nth-of-type(2) h3{
+        font-size: 0.85em;
+
+      }
+
+      /* 29. */
+      main section article:nth-of-type(2) table:active{
+        transform: scale(120%);
+        margin: 40px 0px;
+      }
+
+      /* 30. */
+      main section article:nth-of-type(2) table tr td{
+        border: 1px solid #cccccc;
+        
+      }
+
+      /* 31. */
+      main section article:nth-of-type(2)  tr td{
+        padding: 6px;
+
+      }
+
+      /* 32. */
+      main section article:nth-of-type(2) table tr td[rowspan]{
+        color: red;
+      }
+
+      /* TABLA LATERAL (CON FOTOS) */
+      /* 33. */
+      main aside h3{
+        border: 5px;
+        margin-top: 20px;
+        font-variant: small-caps;
+        font-size: 3em;
+        padding: 15px;
+        border-top-color: #cccccc;
+        border-bottom-color: #cccccc;
+        border-left-color: #333333;
+        border-right-color: #333333;
+        border-style: double;
+
+
+      }
+      /* 34. */
+      main aside h3{
+        border-radius: 10px/40px;
+      }
+
+      /* 35. */
+      main aside table tr:nth-of-type(2) td{
+        background-image: url(Picto_infobox_map.png);
+        
+        background-repeat: no-repeat;
+        top: 60px;
+        right: 60px;
+        height: 60px;
+      }
+
+      /* 36. */
+      main aside p{
+        width: 240px;
+        height: 100px;
+        overflow: scroll;
+        background:  linear-gradient(top,#cccccc,white);
+      }
+
+      /* PIE DE PÁGINA */
+      /* 37. */
+      main footer{
+        border: 2px solid orange;
+        margin: 20px 0px;
+        float:left;
+        clear: both;
+        font-size: 1em;
+        height: 60px;
+
+      }
+    /*  38. */
+      main footer:active{
+        transition-property: width, font-size;
+            transition-duration: 5s;
+            
+            transition-timing-function: ease-out;
+            width: 100%;
+            font-size: 1.5em;
+      }
+
