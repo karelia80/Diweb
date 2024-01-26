@@ -70,7 +70,7 @@ ON UPDATE CASCADE
  INDEX IDX_Entrenadores_nombre (nombre),
  FOREIGN KEY FK_Entrenadores_cif (Clubes_cif)
 REFERENCES Clubes (cif)
-ON UPDATE CASCADE /*actualizacion en cascada*/
+ON UPDATE CASCADE /*actualizacion en cascada solo en las tablas relacionadas*/
  )ENGINE InnoDB
  COMMENT "Tabla Secundaria Entrenadores";
  

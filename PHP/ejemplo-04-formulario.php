@@ -50,10 +50,10 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     <label for="nac" class="form-label">Fecha de Nacimiento</label>
     <input type="date" name="nac" id="nac" class="form-control"><br>
     
-    <input type="radio" name="sexo" id="mujer" value="true" class="form-check-input" checked ="checked"> 
+    <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="mujer" value="true" checked ="checked"> 
     <label for="mujer" class="form-check-label">Mujer</label><br>
 
-    <input type="radio" name="sexo" id="hombre" value="false" class="form-check-input"> 
+    <input class="form-check-input bg-transparent border border-primary" type="radio" name="sexo" id="hombre" value="false" > 
     <label for="hombre" class="form-check-label">Hombre</label><br>
 
     <input type="submit" value="Enviar" name="enviar" class="form-control border border-dark bg-warning text-light">
