@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS  anidi;
+CREATE DATABASE IF NOT EXISTS anidi
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_spanish_ci;
+
+USE anidi;
+
+ /*DROP TABLE IF EXISTS Alumnos*/
+
+CREATE TABLE Alumnos
+(
+nombre VARCHAR (45) NOT NULL UNIQUE,
+edad TINYINT NOT NULL,
+sexo boolean NOT NULL,
+fechanac DATE NOT NULL,
+PRIMARY KEY PK_Alumnos (nombre)
+)

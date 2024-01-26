@@ -60,3 +60,21 @@ switch ($opcion) {
         echo "Opcion incorrecta <br>";
         break;
 }
+
+echo "----------------------------------<br>";
+// pero no siempre usaremos break en un switch...case
+$dia = "martes";
+
+switch ($dia) {
+    case 'lunes':
+    case 'martes':
+    case 'miércoles':
+    case 'jueves':
+    case 'viernes':
+        echo "Toca dar clase <br>";
+        break;
+    
+    default:
+        echo "No hay clase <br>";
+        break;
+    }

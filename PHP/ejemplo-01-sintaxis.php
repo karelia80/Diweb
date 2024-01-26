@@ -25,9 +25,11 @@ $alumna1 = array(
     "nombre" => "Esther",
     "sexo" => true,
     "edad" => 46,
+    "sueldo" => 2350.55
 );
 echo $alumna1["nombre"] . "<br>";
 echo $alumna1["edad"] . "<br>";
+echo $alumna1["sueldo"] . "Euros <br>";
 
 //Operadores postincremento/decremento
 $num = 1;

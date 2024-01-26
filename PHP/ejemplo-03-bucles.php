@@ -17,6 +17,7 @@ echo "---------------------------<br>";
 for ($a = 1; $a <= 10; $a++) {
     echo "$a <br>";
 }
+echo "----------------------------------<br>";
 
 for ($a = 1; $a <= 10; $a++) {
     if ($a == 5);
@@ -24,7 +25,7 @@ for ($a = 1; $a <= 10; $a++) {
 }
 
 echo "---------------------------<br>";
-//bucle completo (entra en el exam) foreach es el que tiene mas control
+//bucle completo (entra en el exam) foreach es el que tiene mas control FOREACH
 foreach (range(1,10) as $a) {
     echo "$a <br>";
 }
