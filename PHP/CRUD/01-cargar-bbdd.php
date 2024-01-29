@@ -1,6 +1,6 @@
 <?php
-require("../errores.php");
-
+require("errores.php");
+//01 cargar BBDD.
 // conectar a Mysql
 
 $servidor ="localhost";
@@ -18,7 +18,7 @@ if ($conexion->connect_error) {
 <?php
 // tratar formulario
 if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
-    $nombre = $_REQUEST["nombre"];
+   /* $nombre = $_REQUEST["nombre"];
     $edad = $_REQUEST["edad"];
     $sexo = $_REQUEST["sexo"];
     $nac = $_REQUEST["nac"];
@@ -26,10 +26,19 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     echo $nombre . "<br>";
     echo $edad . "<br>";
     echo $sexo . "<br>";
-    echo $nac . "<br>";
-    
+    echo $nac . "<br>";*/
+
+   $archivoSQL = "anidi.sql";
+   $contenidoSQL = file_get_contents($archivoSQL); 
+   $cargaBBDD = $conexion ->multi_query($contenidoSQL);
+   if($cargaBBDD) {
+    $mensaje = "BBDD cargado bien";
+   } else {
+    $mensaje = "ERROR";
+   }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,13 +56,14 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     <p class="alert alert-info w-50">
     <?php
     if (isset($_REQUEST['enviar'])) {
-        echo "Mision Completada!!!";
+        echo $mensaje;
     }
     ?>
     </p>
     <hr>
+    
     <form action="#" method="post" class="form w-50 text-light">
-
+<!--
     <label for="nombre" class="form-label">Nombre</label>
     <input type="text" name="nombre" id="nombre" class="form-control"><br>
 
@@ -68,12 +78,12 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
 
     <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="hombre" value="false"> 
     <label for="hombre" class="form-check-label">Hombre</label><br>
-
-    <input type="submit" value="Enviar" name="enviar" class="form-control border border-dark bg-warning text-light">
+-->
+    <input type="submit" value="Cargar BBDD" name="enviar" class="form-control border border-dark bg-warning text-light">
     </form>
 
     </main>
    
-    
+    <!-- Text,number, password, date, radio, email, color, submit, tel, hidden -->
 </body>
 </html>
