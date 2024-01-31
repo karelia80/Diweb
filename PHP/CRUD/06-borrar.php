@@ -1,25 +1,39 @@
 <?php
 require("errores.php");
 require("funciones.php");
-//04  CONSULTAR.
+//06 Borrar.
 
-// conectar a Mysql (hemos llamado a "funciones.php" para conectar con la bbdd.)
+// conectar a Mysql (hemos llamado a "funciones.php" para conectar con la bbdd. linea 7)
 $conexion = conectar();
 ?>
 <?php
+// tratar formulario
+if (isset($_REQUEST['eliminar'])) { #ojo hay que poner cada campo!!!!
+    $nombre = $_REQUEST["eliminar"];
+    $sql = "DELETE FROM Alumnos WHERE nombre = ?";
+    $sentPreparada = $conexion->prepare ($sql);
+    $sentPreparada->bind_param("s", $nombre);
+    $sentPreparada->execute();
+    $mensaje = "Fila borrada."; 
+}
+?>
+
+<?php //Eliminar en php.
 // tratar formulario
 if (isset($_REQUEST['alumno'])) { #ojo hay que poner cada campo!!!!
     $nombre = $_REQUEST["alumno"];
     $mensaje = "¿Desea borrar la fila de ". $nombre . "?"; 
 }
 ?>
+
+
+
 <?php
 //REALIZAR UNA CONSULTA
 $sql = "SELECT * FROM Alumnos";
 $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en vez de mmultiquery
-$numFilas = $filas->num_rows;
+//$numFilas = $filas->num_rows; esto es para sacar el numero de registro
 /*$mensaje = "Nº de Registro: " .$numFilas;*/
-
 
 ?>
 
@@ -77,16 +91,28 @@ $numFilas = $filas->num_rows;
         <?php
         
         ?>
-        <p class="alert alert-info w-50">
+        <p class="alert alert-info w-100">
+        <?php
+            if (isset($_REQUEST['alumno'])
+             || isset($_REQUEST["eliminar"])) {
+                echo $mensaje;
+             } ?>
+
+
             <?php
             if (isset($_REQUEST['alumno'])) {
-                echo $mensaje;
+                
+                ?>
+              <a href="06-borrar.php?eliminar=<?php echo $nombre?>"
+                class="btn btn-outline-danger">SI</a>  
+              <a href="06-borrar.php" class="btn btn-outline-success">NO</a>  
+              <?php  
             }
             ?>
         </p>
         <hr>
 
-        <form action="#" method="post" class="form w-50 text-light">
+        <!-- <form action="#" method="post" class="form w-50 text-light"> -->
 
             <!-- <label for="nombre" class="form-label">Nombre</label>
             <input type="text" name="nombre" id="nombre" class="form-control"><br>
@@ -110,16 +136,17 @@ $numFilas = $filas->num_rows;
                 <option value="23">Aula23</option>
             </select><br> SE QUITA TODO ESTO PORQUE SOLO VAMOS A PRESENTAR LA TABLA -->
 
-            <input type="submit" value="Consultar tabla" name="enviar" class="form-control border border-dark bg-warning text-light"><br>
-        </form><br>
+            <!-- <input type="submit" value="Consultar tabla" name="enviar" class="form-control border border-dark bg-warning text-light"><br>
+        </form><br> -->
+        
         <section class="row">
             <nav class="col">
                 <a href="01-cargar-bbdd.php" class="btn btn-sm btn-dark w-100">CargarBBDD</a><br><br>
                 <a href="02-login.php" class="btn btn-sm btn-dark w-100">Acceso</a><br><br>
-                <a href="03-insertar.php" class="btn btn-sm btn-warning w-100">Insertar</a><br><br>
+                <a href="03-insertar.php" class="btn btn-sm btn-success w-100">Insertar</a><br><br>
             </nav>
             <nav class="col">
-                <a href="04-consultar.php" class="btn btn-sm btn-warning w-100">Consultar</a><br><br>
+                <a href="04-consultar.php" class="btn btn-sm btn-info w-100">Consultar</a><br><br>
                 <a href="05-actualizar.php" class="btn btn-sm btn-secondary w-100">Actualizar</a><br><br>
                 <a href="06-borrar.php" class="btn btn-sm btn-danger w-100">Borrar</a><br><br>
             </nav>

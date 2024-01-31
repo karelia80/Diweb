@@ -77,10 +77,10 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
             <hr>
 
             <p>Sexo</p>
-            <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="mujer" value="true" checked="checked">
+            <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="mujer" value="1" checked="checked">
             <label for="mujer" class="form-check-label">Mujer</label><br>
 
-            <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="hombre" value="false">
+            <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="hombre" value="0">
             <label for="hombre" class="form-check-label">Hombre</label><br>
             <hr>
 
