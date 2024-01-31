@@ -2,7 +2,7 @@
 tags: [Import-bfe5]
 title: Sistema de Evaluación
 created: '2024-01-15T17:20:12.312Z'
-modified: '2024-01-16T15:35:01.725Z'
+modified: '2024-01-30T08:54:47.108Z'
 ---
 
 ---
@@ -63,3 +63,21 @@ Jueves 25/04
 Viernes 26/04 (Symfony) 
 
 Durante las clases de JavaScript, PHP-POO y Symfony daremos, de forma adicional, y sin que entre en los exámenes, WordPress6, Drupal10 y Subida Web.
+***
+Manuales Eni
+- Sinfony 5 (lo tengo)
+- Mysql y PHP (lo tengo)
+- Angular 16. 2021 / Angular y node.js
+- jakarta EE 2023
+- Java 2022/ 
+Enlaces:
+
+https://www.ediciones-eni.com/libro/jakarta-ee-desarrolle-aplicaciones-web-en-java-9782409039829
+
+https://www.ediciones-eni.com/libro/javascript-y-angular-de-los-fundamentos-del-lenguaje-al-desarrollo-de-una-aplicacion-web-9782409030895 
+
+https://www.ediciones-eni.com/libro/java-los-fundamentos-del-lenguaje-con-ejercicios-corregidos-9782409036873
+
+
+
+

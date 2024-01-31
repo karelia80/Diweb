@@ -70,7 +70,22 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
 
     
     <input type="submit" value="Acceder" name="enviar" class="form-control border border-dark bg-warning text-light">
-    </form>
+    </form><br>
+
+    <section class="row">
+            <nav class="col">
+                <a href="01-cargar-bbdd.php" class="btn btn-sm btn-dark w-100">CargarBBDD</a><br><br>
+                <a href="02-login.php" class="btn btn-sm btn-dark w-100">Acceso</a><br><br>
+                <a href="03-insertar.php" class="btn btn-sm btn-warning w-100">Insertar</a><br><br>
+            </nav>
+            <nav class="col">
+                <a href="04-consultar.php" class="btn btn-sm btn-warning w-100">Consultar</a><br><br>
+                <a href="05-actualizar.php" class="btn btn-sm btn-secondary w-100">Actualizar</a><br><br>
+                <a href="06-borrar.php" class="btn btn-sm btn-danger w-100">Borrar</a><br><br>
+            </nav>
+        </section>
+
+
 
     </main>
    

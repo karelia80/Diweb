@@ -1,5 +1,5 @@
 <?php
-require("errores.php");
+require("errores.php");#aqui no se meten las funciones porque es distinta, 
 //01 cargar BBDD.
 // conectar a Mysql
 
@@ -10,23 +10,13 @@ $clave ="root";
 $conexion = new mysqli($servidor, $usuario, $clave);
 if ($conexion->connect_error) {
     die("ERROR CONEXION");
-} /*else {
-    echo "ENJOY!";
-}*/
+} 
 
 ?>
 <?php
 // tratar formulario
-if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
-   /* $nombre = $_REQUEST["nombre"];
-    $edad = $_REQUEST["edad"];
-    $sexo = $_REQUEST["sexo"];
-    $nac = $_REQUEST["nac"];
-
-    echo $nombre . "<br>";
-    echo $edad . "<br>";
-    echo $sexo . "<br>";
-    echo $nac . "<br>";*/
+if (isset($_REQUEST['enviar'])) { 
+   
 
    $archivoSQL = "anidi.sql";
    $contenidoSQL = file_get_contents($archivoSQL); 
@@ -63,24 +53,21 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     <hr>
     
     <form action="#" method="post" class="form w-50 text-light">
-<!--
-    <label for="nombre" class="form-label">Nombre</label>
-    <input type="text" name="nombre" id="nombre" class="form-control"><br>
 
-    <label for="edad" class="form-label">Edad</label>
-    <input type="number" name="edad" id="edad" class="form-control"><br>
-
-    <label for="nac" class="form-label">Fecha de Nacimiento</label>
-    <input type="date" name="nac" id="nac" class="form-control"><br>
-    
-    <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="mujer" value="true" checked ="checked"> 
-    <label for="mujer" class="form-check-label">Mujer</label><br>
-
-    <input class="form-check-input bg-transparent  border border-primary" type="radio" name="sexo" id="hombre" value="false"> 
-    <label for="hombre" class="form-check-label">Hombre</label><br>
--->
-    <input type="submit" value="Cargar BBDD" name="enviar" class="form-control border border-dark bg-warning text-light">
-    </form>
+    <input type="submit" value="Cargar SQL" name="enviar" class="form-control border border-dark bg-warning text-light">
+    </form><br>
+    <section class="row">
+            <nav class="col">
+                <a href="01-cargar-bbdd.php" class="btn btn-sm btn-dark w-100">CargarBBDD</a><br><br>
+                <a href="02-login.php" class="btn btn-sm btn-dark w-100">Acceso</a><br><br>
+                <a href="03-insertar.php" class="btn btn-sm btn-warning w-100">Insertar</a><br><br>
+            </nav>
+            <nav class="col">
+                <a href="04-consultar.php" class="btn btn-sm btn-warning w-100">Consultar</a><br><br>
+                <a href="05-actualizar.php" class="btn btn-sm btn-secondary w-100">Actualizar</a><br><br>
+                <a href="06-borrar.php" class="btn btn-sm btn-danger w-100">Borrar</a><br><br>
+            </nav>
+        </section>
 
     </main>
    

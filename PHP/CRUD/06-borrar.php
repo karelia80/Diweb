@@ -1,46 +1,28 @@
 <?php
 require("errores.php");
-//03 insertar.
-// conectar a Mysql
+require("funciones.php");
+//04  CONSULTAR.
 
-$servidor = "localhost";
-$usuario = "root";
-$clave = "root";
-$ddbb = "anidi";
-
-$conexion = new mysqli($servidor, $usuario, $clave, $ddbb);
-if ($conexion->connect_error) {
-    die("ERROR CONEXION");
-} /*else {
-    echo "ENJOY!";
-}*/
-
+// conectar a Mysql (hemos llamado a "funciones.php" para conectar con la bbdd.)
+$conexion = conectar();
 ?>
 <?php
 // tratar formulario
-if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
-    $nombre = $_REQUEST["nombre"];
-    $edad = $_REQUEST["edad"];
-    $sexo = $_REQUEST["sexo"];
-    $nac = $_REQUEST["nac"];
-    $numAula = $_REQUEST["numAula"];
-
-    /*echo $nombre . "<br>";
-    echo $edad . "<br>";
-    echo $sexo . "<br>";
-    echo $nac . "<br>";
-    echo $numAula . "<br>";*/
-
-    $sql = "INSERT INTO Alumnos VALUES (?,?,?,?,?)";
-    $sentPreparada = $conexion->prepare($sql);
-    $sentPreparada->bind_param("siisi", $nombre, $edad, $sexo, $nac, $numAula);
-    if ($sentPreparada->execute()) {
-        $mensaje = "Insertada el Aula en la DDBB";
-    }else {
-        $mensaje = "Error!";
-    }
+if (isset($_REQUEST['alumno'])) { #ojo hay que poner cada campo!!!!
+    $nombre = $_REQUEST["alumno"];
+    $mensaje = "¿Desea borrar la fila de ". $nombre . "?"; 
 }
 ?>
+<?php
+//REALIZAR UNA CONSULTA
+$sql = "SELECT * FROM Alumnos";
+$filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en vez de mmultiquery
+$numFilas = $filas->num_rows;
+/*$mensaje = "Nº de Registro: " .$numFilas;*/
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -58,10 +40,47 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     <br>
     <main class="container aling-center w-50 bg-primary p-3">
         <br>
+       
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Nacimiento</th>
+                <th>Aula</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $alumnos = $filas->fetch_all(MYSQLI_ASSOC);//asociado a su campo
+            foreach ($alumnos as $alumno) {
+             ?>
+             <tr>
+                <td><?php echo $alumno['nombre']?></td>
+                <td><?php echo $alumno['edad']?></td>
+                <td><?php echo $alumno['sexo']?></td>
+                <td><?php echo $alumno['fechanac']?></td>
+                <td><?php echo $alumno['numAula']?></td>
+                <td><a href="06-borrar.php?alumno=<?php echo $alumno['nombre']?>"
+                class="btn btn-outline-danger">Borrar</a></td>
+            </tr>
+
+             <?php   
+            }
+            ?>
+           
+        </tbody> 
+    </table>
+
+        <?php
+        
+        ?>
         <p class="alert alert-info w-50">
             <?php
-            if (isset($_REQUEST['enviar'])) {
-                echo "Insertada Aula en la BBDD";
+            if (isset($_REQUEST['alumno'])) {
+                echo $mensaje;
             }
             ?>
         </p>
@@ -69,7 +88,7 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
 
         <form action="#" method="post" class="form w-50 text-light">
 
-            <label for="nombre" class="form-label">Nombre</label>
+            <!-- <label for="nombre" class="form-label">Nombre</label>
             <input type="text" name="nombre" id="nombre" class="form-control"><br>
 
             <label for="edad" class="form-label">Edad</label>
@@ -89,9 +108,9 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
 
             <select class="form-control" name="numAula" id="numAula">
                 <option value="23">Aula23</option>
-            </select><br>
+            </select><br> SE QUITA TODO ESTO PORQUE SOLO VAMOS A PRESENTAR LA TABLA -->
 
-            <input type="submit" value="Insertar Registros" name="enviar" class="form-control border border-dark bg-warning text-light"><br>
+            <input type="submit" value="Consultar tabla" name="enviar" class="form-control border border-dark bg-warning text-light"><br>
         </form><br>
         <section class="row">
             <nav class="col">
