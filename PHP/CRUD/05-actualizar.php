@@ -6,20 +6,31 @@ require("funciones.php");
 $conexion = conectar();
 ?>
 <?php
-// tratar formulario
-if (isset($_REQUEST['eliminar'])) { #ojo hay que poner cada campo!!!!
-    $nombre = $_REQUEST["eliminar"];
-    $sql = "DELETE FROM Alumnos WHERE nombre = ?";
+// tratar formulario para actualizar, sacado de insertar
+if (isset($_REQUEST['enviar'])) { 
+    $nombre = $_REQUEST["nombre"];
+    $edad = $_REQUEST["edad"];
+    $sexo = $_REQUEST["sexo"];
+    $nac = $_REQUEST["nac"];
+    $numAula = $_REQUEST["numAula"];
+
+
+    $sql = "UPDATE Alumnos 
+    SET edad = ?, sexo = ?, fechanac = ?, numAula = ?
+    WHERE nombre = ?";
     $sentPreparada = $conexion->prepare($sql);
-    $sentPreparada->bind_param("s", $nombre);
-    $sentPreparada->execute();
-    $mensaje = "Fila borrada.";
+    $sentPreparada->bind_param("iisis", $edad, $sexo, $nac, $numAula, $nombre); //se ha cambiado el orden
+    if ($sentPreparada->execute()) {
+        $mensaje = "Actualizada la DDBB";
+    }else {
+        $mensaje = "Error!";
+    }
 }
 ?>
 
 <?php //UPDATE
 // tratar formulario
-if (isset($_REQUEST['alumno'])) { #ojo hay que poner cada campo!!!!
+if (isset($_REQUEST['alumno'])) { 
     $nombre = $_REQUEST["alumno"];
     $sql = "SELECT * FROM Alumnos WHERE nombre = ?";
 
@@ -33,16 +44,10 @@ if (isset($_REQUEST['alumno'])) { #ojo hay que poner cada campo!!!!
     $mensaje = "Vas a actualizar la fila: " . $nombre;
 }
 ?>
-
-
-
 <?php
 //REALIZAR UNA CONSULTA
 $sql = "SELECT * FROM Alumnos";
-$filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en vez de mmultiquery
-//$numFilas = $filas->num_rows; esto es para sacar el numero de registro
-/*$mensaje = "Nº de Registro: " .$numFilas;*/
-
+$filas = $conexion->query($sql); 
 ?>
 
 
@@ -102,7 +107,6 @@ $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en v
             <?php
             if (
                 isset($_REQUEST['alumno'])
-                || isset($_REQUEST["eliminar"])
             ) {
                 echo $mensaje;
             } ?>
@@ -119,12 +123,16 @@ $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en v
             <form action="#" method="post" class="form w-50 text-light">
 
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $fila[0]['nombre'] ?>"><br>
+                <input type="text" name="nombre" id="nombre" class="form-control text-bg-secondary" disabled ="disabled"
+                 value="<?php echo $fila[0]['nombre'] ?>"><br> 
+                 <input type="hidden" name="nombre"
+                 value="<?php echo $fila[0]['nombre'] ?>"><br> 
+                 <!-- hay que cambiara a no seleccionado la clave principal y se pone hidden para mandarlo igual por detras-->
 
                 <label for="edad" class="form-label">Edad</label>
                 <input type="number" name="edad" id="edad" class="form-control" value="<?php echo $fila[0]['edad'] ?>"><br>
                 <hr>
-
+         <!-- ========================================================================================= -->
                 <p>Sexo</p>
                 <?php
                 if ($fila[0]['sexo']) {
@@ -136,8 +144,7 @@ $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en v
                 <?php
                 }
                 ?>
-
-
+           
                 <?php
                 if (!$fila[0]['sexo']) {
                 ?>
@@ -148,13 +155,15 @@ $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en v
                 <?php
                 }
                 ?>
+         <!-- ========================================================================================= -->
 
 
                 <hr>
 
-
                 <label for="nac" class="form-label">Fecha de Nacimiento</label>
                 <input type="date" name="nac" id="nac" class="form-control" value="<?php echo $fila[0]['fechanac'] ?>"><br>
+              
+                <!-- Cargar un option especifico, mirar para el examen, aqui no esta explicado en el select -->
 
                 <select class="form-control" name="numAula" id="numAula">
                     <option value="23">Aula23</option>
