@@ -60,9 +60,29 @@ $filas = $conexion->query($sql);
     <title>Formularios</title>
 
     <head>
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <style>
+            .icon-header {
+                text-align: center;
+            }
+
+            .icon-header i {
+                color: #F78DED;
+            }
+
+            a.btn-actualizar {
+                background-color: #F78DED;
+                border-color: #F78DED;
+                color: white;
+            }
+
+            a.btn-actualizar:hover {
+                background-color: #F33C9A;
+            }
+        </style>
     </head>
 
 
@@ -72,7 +92,7 @@ $filas = $conexion->query($sql);
     <br>
     <main class="container aling-center w-50 bg-info p-3">
         <br>
-
+<header class="table-responsive">
         <table class="table table-sm table-striped">
             <thead>
                 <tr>
@@ -80,7 +100,7 @@ $filas = $conexion->query($sql);
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Teléfono</th>
-                    <th style="text-align: center;"><i class="bi bi-arrow-up-circle"></i></th>
+                    <th class="icon-header"><i class="bi bi-arrow-up-circle"></i></th>
                 </tr>
             </thead>
             <tbody>
@@ -93,7 +113,7 @@ $filas = $conexion->query($sql);
                         <td><?php echo $cliente['nombre'] ?></td>
                         <td><?php echo $cliente['correo'] ?></td>
                         <td><?php echo $cliente['telefono'] ?></td>
-                        <td><a href="05-actualizarh.php?cliente=<?php echo $cliente['nif'] ?>" class="btn btn-outline-danger">Actualizar</a></td>
+                        <td><a href="05-actualizarh.php?cliente=<?php echo $cliente['nif'] ?>" class="btn btn-outline-success btn-actualizar">Actualizar</a></td>
 
                     </tr>
 
@@ -102,6 +122,7 @@ $filas = $conexion->query($sql);
                 ?>
             </tbody>
         </table>
+    </header><br>
         <hr>
         <p class="alert alert-info w-100 text-center">
 
@@ -115,27 +136,26 @@ $filas = $conexion->query($sql);
         <?php
         if (isset($_REQUEST['cliente'])) {
         ?>
-        <form action="#" method="post" class="form w-100 text-light">
+            <form action="#" method="post" class="form w-100 text-light">
 
-            <label for="nif" class="form-label text-white">NIF</label>
-            <input type="text" name="nif" id="nif" class="form-control text-bg-secondary" disabled="disabled" value="<?php echo $fila[0]['nif'] ?>"><br>
-            <input type="hidden" name="nif" 
-            value="<?php echo $fila[0]['nif'] ?>">
+                <label for="nif" class="form-label text-white">NIF</label>
+                <input type="text" name="nif" id="nif" class="form-control text-bg-secondary" disabled="disabled" value="<?php echo $fila[0]['nif'] ?>"><br>
+                <input type="hidden" name="nif" value="<?php echo $fila[0]['nif'] ?>">
 
-            <label for="nombre" class="form-label text-white">Nombre</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $fila[0]['nombre'] ?>"><br>
+                <label for="nombre" class="form-label text-white">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $fila[0]['nombre'] ?>"><br>
 
-            <label for="correo" class="form-label text-white">Correo Eléctronico</label>
-            <input type="email" name="correo" id="correo" class="form-control" value="<?php echo $fila[0]['correo'] ?>"><br>
+                <label for="correo" class="form-label text-white">Correo Eléctronico</label>
+                <input type="email" name="correo" id="correo" class="form-control" value="<?php echo $fila[0]['correo'] ?>"><br>
 
-            <label for="telefono" class="form-label text-white">Teléfono de contacto</label>
-            <input type="tel" name="telefono" id="telefono" class="form-control" value="<?php echo $fila[0]['telefono'] ?>"><br>
+                <label for="telefono" class="form-label text-white">Teléfono de contacto</label>
+                <input type="tel" name="telefono" id="telefono" class="form-control" value="<?php echo $fila[0]['telefono'] ?>"><br>
 
-            <input type="submit" value="Actualizar datos" name="enviar" class="form-control border border-white bg-warning text-light">
-        </form><br>
-<?php
-}
-?>
+                <input type="submit" value="Actualizar datos" name="enviar" class="form-control border border-white bg-warning text-light">
+            </form><br>
+        <?php
+        }
+        ?>
         <section class="row">
             <nav class="col">
                 <a href="01-bbddcarga.php" class="btn btn-sm btn-success w-100"><i class="bi bi-database-fill"></i>&nbsp;CargarBBDD</a><br><br>

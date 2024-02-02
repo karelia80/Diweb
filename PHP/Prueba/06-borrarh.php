@@ -39,6 +39,15 @@ $filas = $conexion->query($sql);
     <title>Formularios</title>
 
     <head>
+        <style>
+            .icon-header {
+                text-align: center;
+            }
+
+            .icon-header i {
+                color: red;
+            }
+        </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -51,7 +60,7 @@ $filas = $conexion->query($sql);
     <br>
     <main class="container aling-center w-50 bg-info p-3">
         <br>
-
+<header class="table-responsive">
         <table class="table table-sm table-striped">
             <thead>
                 <tr>
@@ -59,12 +68,12 @@ $filas = $conexion->query($sql);
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Teléfono</th>
-                    <th style="text-align: center;"><i class="bi bi-trash3-fill"></i></th>
+                    <th class="icon-header"><i class="bi bi-trash3-fill"></i></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $Clientes = $filas->fetch_all(MYSQLI_ASSOC); 
+                $Clientes = $filas->fetch_all(MYSQLI_ASSOC);
                 foreach ($Clientes as $cliente) {
                 ?>
                     <tr>
@@ -82,7 +91,7 @@ $filas = $conexion->query($sql);
 
             </tbody>
         </table>
-
+</header><br>
         <p class="alert alert-info w-100 text-center">
             <?php
             if (
