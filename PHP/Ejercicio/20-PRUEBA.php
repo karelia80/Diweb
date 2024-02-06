@@ -3,8 +3,6 @@ require("errores.php");
 require("funcionesh.php");
 
 $conexion = conectar();
-
-
 ?>
 <?php
 // tratar formulario
@@ -28,6 +26,19 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     }
 }
 ?>
+<?php
+// ==============================================================================================
+
+// buscar los modelos, lo hago con un select
+$sql_modelos = "SELECT idModelo, modelo FROM Modelos";
+$result_modelos = $conexion->query($sql_modelos);
+$modelos = [];
+while ($fila_modelo = $result_modelos->fetch_assoc()) {
+    $modelos[$fila_modelo['idModelo']] = $fila_modelo['modelo'];
+}
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -38,7 +49,6 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     <title>Formularios</title>
 
     <head>
-    
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -60,9 +70,7 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
             ?>
         </p>
 
- 
-
-
+        <hr>
 
         <form action="#" method="post" class="form w-100 text-light">
             <label for="matricula" class="form-label text-white">Matricula</label>
@@ -83,48 +91,32 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
             </select><br>
             <hr>
 
-            <label for="idm" class="form-label text-white">Número de Modelo</label>
-            <input type="number" name="idm" id="idm" class="form-control"><br>
+            <label for="idm" class="form-label text-white">Modelo</label>
+            <select name="idm" class="form-select" id="idm">
+                 <option value="" selected disabled="disabled">Elija un modelo</option>
+            <?php
+    // Para mostrar los modelos
+            foreach ($modelos as $idModelo => $nombreModelo) {
+            echo "<option value=\"$idModelo\">$nombreModelo</option>";
+            }
+             ?>
+            </select><br>
+<div class="col-auto">
+<!-- boton del modal -->
+ <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >Insertar cliente</a>
+</div><br>
 
-              <hr>
- <nav> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Insertar Cliente
-</button>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-            <div class="modal-body">
-                
-            <form action="#" method="post" class="form w-100 text-light">
-                
-            <label for="nif" class="form-label text-dark">DNI</label>
-            <input type="text" name="nif" id="nif" class="form-control"><br>
-              
-            <label for="nombre" class="form-label text-dark">Nombre</label>
-            <input type="text" name="nombre" id="nombre" class="form-control"><br>
-                
-            <label for="correo" class="form-label text-dark">Correo Eléctronico</label>
-            <input type="email" name="correo" id="correo" class="form-control"><br>
-              
-            <label for="telefono" class="form-label text-dark">Teléfono de contacto</label>
-            <input type="tel" name="telefono" id="telefono" class="form-control"><br>
 
-            <input type="submit" value="Insertar datos" name="enviar" class="form-control border border-white bg-warning text-light">
-        </form><br>
-        <button type="submit" class="btn btn-primary">Insertar</button>
-           
-            </nav> <br>
+
+            <label for="nifcli" class="form-label text-white">DNI del Cliente</label>
+            <input type="text" name="nifcli" id="nifcli" class="form-control"><br>
 
             <label for="nifven" class="form-label text-white">DNI del Vendedor</label>
             <input type="text" name="nifven" id="nifven" class="form-control"><br>
 
             <input type="submit" value="Insertar nueva venta" name="enviar" class="form-control border border-white bg-warning text-light">
         </form><br>
- </nav>
+    
         <section class="row">
             <nav class="col">
                 <a href="carga_bbdd.php" class="btn btn-sm btn-success w-100"><i class="bi bi-database-fill"></i>&nbsp;CargarBBDD</a><br><br>
@@ -140,7 +132,7 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    <?php include '../Ejercicio/nuevo-Modal.php';?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        
