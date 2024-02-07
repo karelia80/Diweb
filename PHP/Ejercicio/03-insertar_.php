@@ -3,19 +3,17 @@ require("errores.php");
 require("funcionesh.php");
 
 $conexion = conectar();
-
-
 ?>
 <?php
 // tratar formulario
 if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
-    $matricula = $_REQUEST["matricula"];
-    $fecha = $_REQUEST["fecha"];
-    $precio = $_REQUEST["precio"];
-    $bol = $_REQUEST["bol"];
-    $idm = $_REQUEST["idm"];
-    $nifcli = $_REQUEST["nifcli"];
-    $nifven = $_REQUEST["nifven"];
+    $matricula = $_POST["matricula"];
+    $fecha = $_POST["fecha"];
+    $precio = $_POST["precio"];
+    $bol = $_POST["bol"];
+    $idm = $_POST["idm"];
+    $nifcli = $_POST["nifcli"];
+    $nifven = $_POST["nifven"];
  
 
     $sql = "INSERT INTO Ventas VALUES (?,?,?,?,?,?,?)";
@@ -28,6 +26,38 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     }
 }
 ?>
+<?php
+// ==============================================================================================
+
+// buscar los modelos, lo hago con un select
+$sql_modelos = "SELECT idModelo, modelo FROM Modelos";
+$result_modelos = $conexion->query($sql_modelos);
+$modelos = [];
+while ($fila_modelo = $result_modelos->fetch_assoc()) {
+    $modelos[$fila_modelo['idModelo']] = $fila_modelo['modelo'];
+}
+?>
+<?php 
+//buscar los clientes hago un select
+$sql_cliente = "SELECT nif, nombre FROM Clientes";
+$result_cliente = $conexion->query($sql_cliente);
+$nombre = [];
+while ($fila_nombre = $result_cliente->fetch_assoc()) {
+    $nombre [$fila_nombre['nif']] =$fila_nombre ['nombre'];
+
+}
+?>
+<?php 
+//buscar a los vendedores hago un select
+$sql_vendedores = "SELECT nif, nombre FROM Vendedores";
+$result_vendedores = $conexion->query($sql_vendedores);
+$nombreven = [];
+while ($fila_nombreven = $result_vendedores->fetch_assoc()) {
+    $nombreven [$fila_nombreven ['nif']] =$fila_nombreven ['nombre'];
+
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -80,15 +110,41 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
             </select><br>
             <hr>
 
-            <label for="idm" class="form-label text-white">Número de Modelo</label>
-            <input type="number" name="idm" id="idm" class="form-control"><br>
+            <label for="idm" class="form-label text-white">Modelo</label>
+            <select name="idm" class="form-select" id="idm">
+                 <option value="" selected disabled="disabled">Elija un modelo</option>
+            <?php
+    // Para mostrar los modelos
+            foreach ($modelos as $idModelo => $nombreModelo) {
+            echo "<option value=\"$idModelo\">$nombreModelo</option>";
+            }
+             ?>
+            </select><br>
 
-            <label for="nifcli" class="form-label text-white">DNI del Cliente</label>
-            <input type="text" name="nifcli" id="nifcli" class="form-control"><br>
 
-            <label for="nifven" class="form-label text-white">DNI del Vendedor</label>
-            <input type="text" name="nifven" id="nifven" class="form-control"><br>
-
+            <label for="nifcli" class="form-label text-white">Cliente</label>
+            <select name="nifcli" class="form-select" id="nifcli">
+                 <option value="" selected disabled="disabled">Elija un cliente</option>
+            <?php
+            
+    // Para mostrar los clientes
+            foreach ($nombre as $nif => $nombrecliente) {
+            echo "<option value=\"$nif\">$nombrecliente</option>";
+            }
+             ?>
+            </select><br>
+            
+            <label for="nifven" class="form-label text-white">Vendedor</label>
+            <select name="nifven" class="form-select" id="nifven">
+                 <option value="" selected disabled="disabled">Elija un Vendedor</option>
+            <?php
+            
+    // Para mostrar vendedores
+            foreach ($nombreven as $nif => $nombrevendedor) {
+            echo "<option value=\"$nif\">$nombrevendedor</option>";
+            }
+             ?>
+            </select><br>
             <input type="submit" value="Insertar nueva venta" name="enviar" class="form-control border border-white bg-warning text-light">
         </form><br>
     
@@ -107,7 +163,5 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
 
     </main>
 
-    <!-- Text,number, password, date, radio, email, color, submit, tel, hidden -->
-</body>
-
-</html>
+        </body>
+        

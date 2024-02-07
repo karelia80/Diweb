@@ -8,7 +8,7 @@
       </div>
       
       <div class="modal-body">
-        <form action="guarda.php" method="post" enctype="multipart/form-data" class="form w-100 text-light">
+        <form action="guarda.php" method="post" enctype="multipart/form-data" class="form w-100 text-light" id="toast">
             <label for="nif" class="form-label text-dark">NIF</label>
             <input type="text" name="nif" id="nif" class="form-control"><br>
 
@@ -22,12 +22,16 @@
             <input type="tel" name="telefono" id="telefono" class="form-control"><br>
 
         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i>&nbsp;Cancelar</button>
-        <button type="submit" class="btn btn-primary onclick="guardarCliente()"><i class="bi bi-download"></i>&nbsp;Guardar</button>
+        
+        <button type="submit" class="btn btn-primary" onclick="guardarCliente()"><i class="bi bi-download"></i>&nbsp;Guardar</button>
       </div>
+
+</div>
         </form>
       </div>
       
     </div>
   </div>
 </div><br>
+
+

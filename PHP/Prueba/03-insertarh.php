@@ -114,6 +114,7 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     </main>
 
     <?php include '../Prueba/nuevo-Modal.php';?>
+    <?php //include '../Prueba/toast.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Text,number, password, date, radio, email, color, submit, tel, hidden -->

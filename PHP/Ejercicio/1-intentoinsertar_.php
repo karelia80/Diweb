@@ -3,6 +3,8 @@ require("errores.php");
 require("funcionesh.php");
 
 $conexion = conectar();
+
+
 ?>
 <?php
 // tratar formulario
@@ -26,19 +28,6 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     }
 }
 ?>
-<?php
-// ==============================================================================================
-
-// buscar los modelos, lo hago con un select
-$sql_modelos = "SELECT idModelo, modelo FROM Modelos";
-$result_modelos = $conexion->query($sql_modelos);
-$modelos = [];
-while ($fila_modelo = $result_modelos->fetch_assoc()) {
-    $modelos[$fila_modelo['idModelo']] = $fila_modelo['modelo'];
-}
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -91,22 +80,8 @@ while ($fila_modelo = $result_modelos->fetch_assoc()) {
             </select><br>
             <hr>
 
-            <label for="idm" class="form-label text-white">Modelo</label>
-            <select name="idm" class="form-select" id="idm">
-                 <option value="" selected disabled="disabled">Elija un modelo</option>
-            <?php
-    // Para mostrar los modelos
-            foreach ($modelos as $idModelo => $nombreModelo) {
-            echo "<option value=\"$idModelo\">$nombreModelo</option>";
-            }
-             ?>
-            </select><br>
-<div class="col-auto">
-<!-- boton del modal -->
- <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >Insertar cliente</a>
-</div><br>
-
-
+            <label for="idm" class="form-label text-white">Número de Modelo</label>
+            <input type="number" name="idm" id="idm" class="form-control"><br>
 
             <label for="nifcli" class="form-label text-white">DNI del Cliente</label>
             <input type="text" name="nifcli" id="nifcli" class="form-control"><br>
@@ -132,7 +107,7 @@ while ($fila_modelo = $result_modelos->fetch_assoc()) {
 
     </main>
 
-    <?php include '../Ejercicio/nuevo-Modal.php';?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        </body>
-        
+    <!-- Text,number, password, date, radio, email, color, submit, tel, hidden -->
+</body>
+
+</html>
