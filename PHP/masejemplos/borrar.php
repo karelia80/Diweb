@@ -118,7 +118,7 @@ if (isset($_REQUEST['eliminar'])) {
 
     </main>
 
-    <!-- Text,number, password, date, radio, email, color, submit, tel, hidden -->
+ 
 </body>
 
 </html>

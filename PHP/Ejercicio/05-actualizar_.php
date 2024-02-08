@@ -14,17 +14,17 @@ if (isset($_REQUEST['enviar'])) { #ojo hay que poner cada campo!!!!
     $idm = $_REQUEST["idm"];
     $nifcli = $_REQUEST["nifcli"];
     $nifven = $_REQUEST["nifven"];
- 
+
 
     $sql = "UPDATE Ventas
     SET fecha = ?, precio = ?, bol = ?, idm = ?, nifcli = ?, nifven = ? WHERE matricula = ?";
-$sentPreparada = $conexion->prepare($sql);
-$sentPreparada->bind_param("idiisss", $fecha, $precio, $bol, $idm, $nifcli, $nifven, $matricula);
-if ($sentPreparada->execute()) {
-$mensaje = "Cliente actualizado en la DDBB";
-} else {
-$mensaje = "Error!";
-}
+    $sentPreparada = $conexion->prepare($sql);
+    $sentPreparada->bind_param("idiisss", $fecha, $precio, $bol, $idm, $nifcli, $nifven, $matricula);
+    if ($sentPreparada->execute()) {
+        $mensaje = "Cliente actualizado en la DDBB";
+    } else {
+        $mensaje = "Error!";
+    }
 }
 ?>
 <?php
@@ -32,7 +32,7 @@ $mensaje = "Error!";
 $sql = "SELECT * FROM Ventas";
 $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en vez de mmultiquery
 $numFilas = $filas->num_rows;
-$mensaje = "Nº de Registro: " .$numFilas;
+$mensaje = "Nº de Registro: " . $numFilas;
 
 
 ?>
@@ -42,7 +42,7 @@ $mensaje = "Nº de Registro: " .$numFilas;
 if (isset($_REQUEST['matricula'])) {
     $matricula = $_REQUEST["matricula"];
     $sql = "SELECT * FROM Ventas WHERE matricula = ?";
-   
+
 
     $sentPreparada = $conexion->prepare($sql);
     $sentPreparada->bind_param("s", $matricula);
@@ -66,24 +66,22 @@ while ($fila_modelo = $result_modelos->fetch_assoc()) {
     $modelos[$fila_modelo['idModelo']] = $fila_modelo['modelo'];
 }
 ?>
-<?php 
+<?php
 //buscar los clientes hago un select
 $sql_cliente = "SELECT nif, nombre FROM Clientes";
 $result_cliente = $conexion->query($sql_cliente);
 $nombre = [];
 while ($fila_nombre = $result_cliente->fetch_assoc()) {
-    $nombre [$fila_nombre['nif']] =$fila_nombre ['nombre'];
-
+    $nombre[$fila_nombre['nif']] = $fila_nombre['nombre'];
 }
 ?>
-<?php 
+<?php
 //buscar a los vendedores hago un select
 $sql_vendedores = "SELECT nif, nombre FROM Vendedores";
 $result_vendedores = $conexion->query($sql_vendedores);
 $nombreven = [];
 while ($fila_nombreven = $result_vendedores->fetch_assoc()) {
-    $nombreven [$fila_nombreven ['nif']] =$fila_nombreven ['nombre'];
-
+    $nombreven[$fila_nombreven['nif']] = $fila_nombreven['nombre'];
 }
 ?>
 
@@ -109,8 +107,6 @@ while ($fila_nombreven = $result_vendedores->fetch_assoc()) {
             .icon-header i {
                 color: green;
             }
-
-        
         </style>
     </head>
 
@@ -122,45 +118,45 @@ while ($fila_nombreven = $result_vendedores->fetch_assoc()) {
     <main class="container aling-center w-50 bg-info p-3">
         <br>
         <header class="table-responsive">
-        <table class="table table-sm table-striped">
-        <thead>
-            <tr>
-                <th>Matricula</th>
-                <th>Fecha</th>
-                <th>Precio</th>
-                <th>Financiado</th>
-                <th>Modelo</th>
-                <th>DNI Cliente</th>
-                <th>DNI Vendedor</th>
-                <th class="icon-header"><i class="bi bi-box-arrow-in-down"></i></th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            $Ventas = $filas->fetch_all(MYSQLI_ASSOC);//aqui se escribe igual que en mysql
-            foreach ($Ventas as $venta) {
-                //var_dump($Ventas);
-             ?>
-             <tr>
-                <td><?php echo $venta['matricula']?></td>
-                <td><?php echo $venta['fecha']?></td>
-                <td><?php echo $venta['precio']?></td>
-                <td><?php echo $venta['financiado']?></td>
-                <td><?php echo $venta['Modelos_idModelo']?></td>
-                <td><?php echo $venta['Clientes_nif']?></td>
-                <td><?php echo $venta['Vendedores_nif']?></td>
-                <td><a href="05-actualizar_.php?venta=<?php echo $venta['matricula'] ?>" class="btn btn-outline-success">Actualizar</a></td>
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Matricula</th>
+                        <th>Fecha</th>
+                        <th>Precio</th>
+                        <th>Financiado</th>
+                        <th>Modelo</th>
+                        <th>DNI Cliente</th>
+                        <th>DNI Vendedor</th>
+                        <th class="icon-header"><i class="bi bi-box-arrow-in-down"></i></th>
 
-            </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $Ventas = $filas->fetch_all(MYSQLI_ASSOC); //aqui se escribe igual que en mysql
+                    foreach ($Ventas as $venta) {
+                        //var_dump($Ventas);
+                    ?>
+                        <tr>
+                            <td><?php echo $venta['matricula'] ?></td>
+                            <td><?php echo $venta['fecha'] ?></td>
+                            <td><?php echo $venta['precio'] ?></td>
+                            <td><?php echo $venta['financiado'] ?></td>
+                            <td><?php echo $venta['Modelos_idModelo'] ?></td>
+                            <td><?php echo $venta['Clientes_nif'] ?></td>
+                            <td><?php echo $venta['Vendedores_nif'] ?></td>
+                            <td><a href="05-actualizar_.php?venta=<?php echo $venta['matricula'] ?>" class="btn btn-outline-success">Actualizar</a></td>
 
-             <?php   
-            }
-            ?>
-           
-        </tbody> 
-    </table>
-    </header><br>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
+
+                </tbody>
+            </table>
+        </header><br>
         <hr>
         <p class="alert alert-info w-100 text-center">
 
@@ -173,72 +169,72 @@ while ($fila_nombreven = $result_vendedores->fetch_assoc()) {
         <hr>
         <?php
         if (isset($_REQUEST['enviar'])) {
-            
+
         ?>
-        
+
             <form action="#" method="post" class="form w-100 text-light">
-            <label for="matricula" class="form-label text-white">Matricula</label>
-            <input type="text" name="matricula" id="matricula" class="form-control" value="<?php echo $fila[0]['matricula'] ?>"><br>
+                <label for="matricula" class="form-label text-white">Matricula</label>
+                <input type="text" name="matricula" id="matricula" class="form-control" value="<?php echo $fila[0]['matricula'] ?>"><br>
 
-            <label for="fecha" class="form-label text-white">Fecha</label>
-            <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $fila[0]['fecha'] ?>"><br>
-            
-
-            <label for="precio" class="form-label text-white">Precio</label>
-            <input type="number" name="precio" id="precio" class="form-control" value="<?php echo $fila[0]['precio'] ?>"><br>
-
-            <p>Financiación</p>
-            <select name="bol" class="form-select" id="bol" value="<?php echo $fila[0]['bol'] ?>">
-            <option value="" <?php if ($fila[0]['bol'] == "") echo "selected"; ?>>opción</option>
-            <option value="1" <?php if ($fila[0]['bol'] == "") echo "selected"; ?>>Sí</option>
-            <option value="0" <?php if ($fila[0]['bol'] == "") echo "selected"; ?>>No</option>
-            </select><br>
-            <hr>
-
-            <label for="idm" class="form-label text-white">Modelo</label>
-            <select name="idm" class="form-select" id="idm" value="<?php echo $fila[0]['idm'] ?>">
-                 <option value="" selected > modelo</option>
-            <?php
-    // Para mostrar los modelos
-            foreach ($modelos as $idModelo => $nombreModelo) {
-            echo "<option value=\"$idModelo\">$nombreModelo</option>";
-            }
-             ?>
-            </select><br>
+                <label for="fecha" class="form-label text-white">Fecha</label>
+                <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $fila[0]['fecha'] ?>"><br>
 
 
-            <label for="nifcli" class="form-label text-white">Cliente</label>
-            <select name="nifcli" class="form-select" id="nifcli" value="<?php echo $fila[0]['nifcli'] ?>">
-                 <option value="" selected> cliente</option>
-            <?php
-            
-    // Para mostrar los clientes
-            foreach ($nombre as $nif => $nombrecliente) {
-            echo "<option value=\"$nif\">$nombrecliente</option>";
-            }
-             ?>
-            </select><br>
-            
-            <label for="nifven" class="form-label text-white">Vendedor</label>
-            <select name="nifven" class="form-select" id="nifven" value="<?php echo $fila[0]['nifven'] ?>">
-                 <option value="" selected>Elija un Vendedor</option>
-            <?php
-            
-    // Para mostrar vendedores
-            foreach ($nombreven as $nif => $nombrevendedor) {
-            echo "<option value=\"$nif\">$nombrevendedor</option>";
-            }
-             ?>
-            </select><br>
+                <label for="precio" class="form-label text-white">Precio</label>
+                <input type="number" name="precio" id="precio" class="form-control" value="<?php echo $fila[0]['precio'] ?>"><br>
 
-            <input type="submit" value="actualizar" name="enviar" class="form-control border border-white bg-warning text-light">
+                <p>Financiación</p>
+                <select name="bol" class="form-select" id="bol" value="<?php echo $fila[0]['bol'] ?>">
+                    <option value="" <?php if ($fila[0]['bol'] == "") echo "selected"; ?>>opción</option>
+                    <option value="1" <?php if ($fila[0]['bol'] == "") echo "selected"; ?>>Sí</option>
+                    <option value="0" <?php if ($fila[0]['bol'] == "") echo "selected"; ?>>No</option>
+                </select><br>
+                <hr>
+
+                <label for="idm" class="form-label text-white">Modelo</label>
+                <select name="idm" class="form-select" id="idm" value="<?php echo $fila[0]['idm'] ?>">
+                    <option value="" selected> modelo</option>
+                    <?php
+                    // Para mostrar los modelos
+                    foreach ($modelos as $idModelo => $nombreModelo) {
+                        echo "<option value=\"$idModelo\">$nombreModelo</option>";
+                    }
+                    ?>
+                </select><br>
+
+
+                <label for="nifcli" class="form-label text-white">Cliente</label>
+                <select name="nifcli" class="form-select" id="nifcli" value="<?php echo $fila[0]['nifcli'] ?>">
+                    <option value="" selected> cliente</option>
+                    <?php
+
+                    // Para mostrar los clientes
+                    foreach ($nombre as $nif => $nombrecliente) {
+                        echo "<option value=\"$nif\">$nombrecliente</option>";
+                    }
+                    ?>
+                </select><br>
+
+                <label for="nifven" class="form-label text-white">Vendedor</label>
+                <select name="nifven" class="form-select" id="nifven" value="<?php echo $fila[0]['nifven'] ?>">
+                    <option value="" selected>Elija un Vendedor</option>
+                    <?php
+
+                    // Para mostrar vendedores
+                    foreach ($nombreven as $nif => $nombrevendedor) {
+                        echo "<option value=\"$nif\">$nombrevendedor</option>";
+                    }
+                    ?>
+                </select><br>
+
+                <input type="submit" value="actualizar" name="enviar" class="form-control border border-white bg-warning text-light">
 
             </form><br>
         <?php
         }
-            
+
         ?>
-       <section class="row">
+        <section class="row">
             <nav class="col">
                 <a href="carga_bbdd.php" class="btn btn-sm btn-success w-100"><i class="bi bi-database-fill"></i>&nbsp;CargarBBDD</a><br><br>
                 <a href="02-login_.php" class="btn btn-sm btn-dark w-100"><i class="bi bi-person-circle"></i>&nbsp;Acceso</a><br><br>
