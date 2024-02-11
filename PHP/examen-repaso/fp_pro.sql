@@ -46,3 +46,4 @@ SELECT docentes.nif as nifdocentes, docentes.nombre as docente, docentes.edad as
  FROM alumnos, docentes
 where docentes.nif = alumnos.docentes_nif;
 
+SELECT nif, nombre, fechanac, pagado, importe FROM alumnos;

@@ -20,9 +20,9 @@ if (isset($_REQUEST["enviar"])) {
     SET nombre = ?, fechanac = ?, pagado = ?, importe = ?, docentes_nif = ? WHERE nif = ?";
     $sentPreparada = $conexion->prepare($sql);
     $sentPreparada->bind_param(
-        "siisss",
+        "ssiiss",
         $nombre,
-        $nac,
+        $fechanac,
         $pagado,
         $importe,
         $nifdoc,
@@ -71,6 +71,7 @@ while ($fila_nombredoc = $result_docentes->fetch_assoc()) {
     $nombredoc[$fila_nombredoc['nif']] = $fila_nombredoc['nombre'];
 }
 ?>
+
 
 
 
