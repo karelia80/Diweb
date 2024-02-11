@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- la estrucctura del modal -->
 <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1label" aria-hidden="true">
@@ -20,15 +22,14 @@
             <input type="number" name="fundacion" id="fundacion" class="form-control"><br>
 
             <label for="numsocios" class="form-label text-dark">Número de Socios</label>
-            <input type="number" name="numsocios" id="numsocios" class="form-control"><br>
+            <input type="number" name="numsocios" id="numsocios" class="form-control" min="0" max="3000000"><br>
 
 
             <label for="estadio" class="form-label text-dark">Estadio</label>
             <input type="text" name="estadio" id="estadio" class="form-control"><br>
 
-        <div class="modal-footer">
         
-        <button type="submit" class="btn btn-primary"><i class="bi bi-download"></i>&nbsp;Guardar</button>
+        <button type="submit" name= "enviar" class="btn btn-primary"><i class="bi bi-download"></i>&nbsp;Guardar</button>
       </div>
 
 </div>
@@ -38,12 +39,6 @@
     </div>
   </div>
 </div><br>
-
-
-
-
-
-
 
 
 

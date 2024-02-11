@@ -16,7 +16,7 @@ if (isset($_GET['exito']) && $_GET['exito'] == 1) {
 ?>
 
 <?php
-$sql = "SELECT * FROM Clubes";
+$sql = "SELECT * FROM Entrenadores";
 $filas = $conexion->query($sql); //es solo 1 consulta por eso se pone query en vez de mmultiquery
 
 
@@ -35,7 +35,7 @@ echo "Número de filas devueltas: " . $filas->num_rows;*/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clubes</title>
+    <title>Entrenadores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -52,28 +52,30 @@ echo "Número de filas devueltas: " . $filas->num_rows;*/
         </p><br>
 
 
-        <table class="table table-striped">
+        <table class="table table-striped table-responsive">
             <thead>
                 <tr>
-                    <th>CIF</th>
+                    <th>DNI</th>
                     <th>Nombre</th>
-                    <th>Fundacion</th>
-                    <th>Nº Socio</th>
-                    <th>Estadio</th>
+                    <th>Edad</th>
+                    <th>Destituido</th>
+                    <th>Sueldo</th>
+                    <th>Club</th>
 
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $Clubes = $filas->fetch_all(MYSQLI_ASSOC); //asociado a su campo
-                foreach ($Clubes as $club) {
+                $Entrenadores = $filas->fetch_all(MYSQLI_ASSOC); //asociado a su campo
+                foreach ($Entrenadores as $entrenad) {
                 ?>
                     <tr>
-                        <td><?php echo $club['cif'] ?></td>
-                        <td><?php echo $club['nombre'] ?></td>
-                        <td><?php echo $club['fundacion'] ?></td>
-                        <td><?php echo $club['num_socio'] ?></td>
-                        <td><?php echo $club['estadio'] ?></td>
+                        <td><?php echo $entrenad['nif_nie'] ?></td>
+                        <td><?php echo $entrenad['nombre'] ?></td>
+                        <td><?php echo $entrenad['edad'] ?></td>
+                        <td><?php echo $entrenad['destituido'] ?></td>
+                        <td><?php echo $entrenad['ficha'] ?></td>
+                        <td><?php echo $entrenad['Clubes_cif'] ?></td>
 
                     </tr>
 
@@ -107,7 +109,7 @@ echo "Número de filas devueltas: " . $filas->num_rows;*/
             </nav>
         </section>
     </main>
-    <?php include '../masejemplos2/nuevo-Modal.php'; ?>
+    <?php include '../masejemplos2/nuevo-Modal2.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

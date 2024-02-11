@@ -19,9 +19,8 @@
  cif CHAR(9) UNIQUE NOT NULL,
  nombre VARCHAR(45) NOT NULL UNIQUE,
  fundacion YEAR NOT NULL,
- num_socio MEDIUMINT,
+ num_socio MEDIUMINT NOT NULL,
  estadio VARCHAR(45) NOT NULL,
- activo BOOLEAN DEFAULT 1,  /*borrado logico, los datos se mantienen y ponemos un campo boleano que cambia de true a false*/
  PRIMARY KEY PK_Clubes (cif),
  INDEX IDX_clubes_nombre (nombre)
  )ENGINE InnoDB
@@ -96,9 +95,9 @@ REFERENCES Clubes (cif)
  /*Clubles*/
  INSERT INTO Clubes /*aqui se pone los campos entre () pero si los pones todos pones solo el nombre de la tabla solo*/ 
  VALUES 
- ("1111111z", "Real betis", 1907, 61000, "Benito Villamarin", 1),
- ("ASEGUNDA2", "Sevilla Fc", 1905, 41000, "Ramon Sanchez Pizjuan",1),
- ("ASEGUND03", "Real Madrid", 1903, 80000, "Santiago Bernabeu", 1);
+ ("1111111z", "Real betis", 1907, 61000, "Benito Villamarin"),
+ ("ASEGUNDA2", "Sevilla Fc", 1905, 41000, "Ramon Sanchez Pizjuan"),
+ ("ASEGUND03", "Real Madrid", 1903, 80000, "Santiago Bernabeu");
  /*los valores que son cadenas de caracteres o fechas se ponen entre comillas ""/ Si es un numero entero, decimales no se pone entre comillas*/
  
  /*posiciones*/
