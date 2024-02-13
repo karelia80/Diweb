@@ -2,7 +2,7 @@
 tags: [Import-6153]
 title: Instalar en ubuntu
 created: '2024-01-15T17:20:12.312Z'
-modified: '2024-01-30T10:45:09.310Z'
+modified: '2024-02-12T12:41:06.102Z'
 ---
 
 ---
@@ -91,4 +91,20 @@ symfony server:start
 Empezar proyecto
 symfony server:start
 para pararlo server:stop o control+c
+
+***
+
+Usar df -h para ver las particiones
+
+Para instalar symfony en bajo linux
+a. instalar en modo dual (windows +linux)
+b. Usar el wsl2 
+c.Maquina virtual, (Vware o Virtualbox)
+d. Docker
+
+Que es Docker?
+
+
+
+
 
