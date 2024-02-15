@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        p {
+            color: #000599;
+        }
+
+        ol {
+            color: #000599
+        }
+    </style>
+
+    <script>
+        function iniciar() {
+            let mimensaje = "Mi Hola Mundo";
+            mimensaje = alert(mimensaje);
+        }
+    </script>
+    <script>
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        function mes() {
+            meses = alert("Los meses de año son:\n" + meses.join('\n'));
+        }
+    </script>
+    <script>
+        let valores = [true, 5, false, "hola", "adios", 2];
+        let text1 = valores[3];
+        let text2 = valores[4];
+
+        let bol1 = valores[0];
+        let bol2 = valores[2];
+        let resultado1 = bol1 && bol2;
+        let resultado2 = bol1 || bol2;
+
+        let num1 = valores[1];
+        let num2 = valores[5];
+        let sum = num1 + num2;
+        let rest = num1 - num2;
+        let multi = num1 * num2;
+        let divi = num1 / num2;
+        let por100 = num1 % num2;
+
+        function largo() {
+            if (text1.length > text2.length) {
+                alert("la palabra " + text1 + " es mas larga que " + text2);
+            } else {
+                alert("la palabra " + text1 + " es mas corta que " + text2);
+            }
+        }
+    </script>
+    <script>
+        function boleano1() {
+            resultado1 = alert(resultado1);
+        }
+        function boleano2() {
+            resultado2 = alert(resultado2);
+        }
+    </script>
+
+
+    <script>
+        function suma() {
+            sum = alert(sum);
+        }
+
+        function resta() {
+            rest = alert(rest);
+        }
+        function multiplica() {
+            multi = alert(multi);
+        }
+        function division() {
+            divi = alert(divi);
+        }
+        function porciento() {
+            por100 = alert(por100);
+        }
+    </script>
+
+    <script> 
+    let cumpleaños = 0; 
+
+    function cumple() {
+        cumpleaños = window.prompt("Introduce tu edad: ");
+
+        if (cumpleaños >= 18) {
+           alert("Eres mayor de Edad");
+        }  else if(cumpleaños == 18){ 
+            alert("Enhorabuena por tu mayoría de Edad!");
+        } else {
+            alert("Eres menor de edad");
+        }
+    }
+    </script>
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Ejercicios del manual</h1>
+    </section>
+
+    <main class="container pt-5">
+        <section arial-label="titulo">
+            <h2>Ejercicios</h1>
+        </section><br><br>
+
+        <button class="btn btn-outline-info" onclick="iniciar()">Pulsa aquí</button><br><br>
+        <button class="btn btn-outline-warning" onclick="mes()">Los Meses</button><br><br>
+
+        <p><i class="fa-solid fa-4 fa-lg"></i>_&nbsp;&nbsp;A partir del siguiente array que se proporciona: var valores
+            = [true, 5, false, "hola", "adios", 2];</p>
+
+        <ol>
+            <li>Determinar cual de los dos elementos de texto es mayor.</li><button class="btn btn-outline-primary"
+                onclick="largo()">Resultado</button>
+            <li>Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores
+                necesarios para obtener un resultado true y otro resultado false
+                (habrá que emplear AND y OR).</li><button class="btn btn-outline-primary"
+                onclick="boleano1()">False</button>&nbsp;<button class="btn btn-outline-primary"
+                onclick="boleano2()">True</button>
+            <li>Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos
+                elementos numéricos</li>
+            <button class="btn btn-outline-primary" onclick="suma()"><i
+                    class="fa-solid fa-plus"></i>&nbsp;Suma</button>&nbsp;<button class="btn btn-outline-primary"
+                onclick="resta()"><i class="fa-solid fa-minus"></i>&nbsp;Resta</button>&nbsp;
+            <button class="btn btn-outline-primary" onclick="multiplica()"><i
+                    class="fa-solid fa-xmark"></i>&nbsp;Multiplicacion</button>&nbsp;
+            <button class="btn btn-outline-primary" onclick="division()"><i
+                    class="fa-solid fa-square-root-variable"></i>&nbsp;Division</button>&nbsp;
+            <button class="btn btn-outline-primary" onclick="porciento()"><i
+                    class="fa-solid fa-percent"></i></i>&nbsp;Porciento</button>
+        </ol>
+        <br><br>
+        <p><i class="fa-solid fa-5 fa-lg"></i>_&nbsp;&nbsp;Crear un script que pregunte la edad del usuario y lo introduzca en una variable.
+            Si dicha edad es igual o superior a 18, mostrar el mensaje "Eres mayor de Edad".
+            Si tiene JUSTO 18, mostrar además el mensaje "Enhorabuena por tu mayoría de Edad!"
+            Si la edad es inferior a 18, mostrar el mensaje "Eres menor de edad".
+            Se presupone, por ahora, que el usuario sólo va a escribir un valor numérico.</p>
+            <button class="btn btn-outline-primary" onclick="cumple()">¿Que edad tienes?</button>
+
+    </main>
+
+
+
+</body>
+
+</html>
