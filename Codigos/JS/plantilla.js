@@ -4,7 +4,7 @@ window.alert("hola Mundo");
 let numero = 0; //con let hacemos una variable
 numero = window.prompt("Dame un numero: ");
 window.alert("Tu numero es: " + numero);
-
+//window es el objeto el alert es el metodo
 window.alert("hola Mundo");
 numero = parseInt(numero);
 numero = window.prompt("Dame un numero: ");
@@ -35,7 +35,6 @@ function iniciar() {
 
 var dias = ["Lunes", "Martes", "Miercoles"];
 function iniciar() {
-    dias.reverse();// para revertir el arrays
-    alert(dias[2]);
-    
+    dias.reverse();// para revertir el arrays, reverse tb es una funcion del lenguaje, se agrupan como metodos en los objetos
+    // el modulo es el resto de una division entera, para saber si es un numero par o impar,
 }
