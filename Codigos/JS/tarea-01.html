@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        p {
+            color: #000599;
+        }
+
+        ol {
+            color: #000599
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+    </style>
+    <script>//0
+        function fila() {
+            let menu = "1.¿Qué edad tienes? \n" +
+                "2.Usuario y contraseña \n" +
+                "3.Saca tu letra del dni \n" +
+                "4.Dame una Array \n" +
+                "5.La Suma de pares e impares del 1 al 100 \n" +
+                "6.Y la suma de esos dos valores son \n" +
+                "7.Multiplos de 7 \n" +
+                "8.Piramide de * \n";
+            "Elije una opcion: ";
+            let option = 0;
+
+            while (option != 8) {
+
+                let respuesta = prompt(menu);
+                if (respuesta == null)
+                    break;
+                opcion = parseInt(respuesta);
+
+                switch (opcion) {
+                    case 1: cumple(); break;
+                    case 2: usu(); break;
+                    case 3: dni(); break;
+                    case 4: candena(); break;
+                    case 5: imp(); break;
+                    case 6: otro(); break;
+                    case 7: otro2(); break;
+                    case 8: Piramide(); break;
+                    default: alert(" 🤦‍♂️ ERROR!!");
+                        break;
+                }
+
+            }
+            alert("Ha sido horrible");
+        }
+    </script>
+
+    <script>//1
+        let cumpleaños = 18;
+
+        function cumple() {
+            cumpleaños = window.prompt("Introduce tu edad: ");
+
+            if (cumpleaños > 18) {
+                alert("Puedes trabajar ");
+            } else if (cumpleaños == 18) {
+                alert("Bienvenido/a a la mayoría de edad 🎉");
+            } else if (cumpleaños < 18) {
+                alert("Al cole");
+            }
+        }
+    </script>
+
+    <script>//2
+        function usu() {
+            let usuario = prompt("Usuario: ");
+            let pass = prompt("Contraseña: ");
+
+            cont = 0;
+            while (cont < 3) {
+                let pass2 = prompt("Repite la contraseña: ");
+                if (pass2 == pass) {
+                    break;
+                } else {
+                    cont++;//se añade un incremento
+                }
+                if (cont == 3) {
+                    alert("Oye concentrate");
+                }
+            }
+        }
+    </script>
+    <script>//3
+
+        function dni() {
+            let escribe = prompt("Calcula tu legra de dni: ");
+            let cadena = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
+                'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+            let resultado = escribe % 23;
+            posicion = cadena[resultado];
+
+
+            alert("Tu letra del dni es: " + posicion);
+
+        }
+    </script>
+
+    <script>//4 pedir primero el numero de elementos que vas a pedir en el array num = 3, nombres[0]= x, nombres [1] hcer un for (0, 2, ++)
+        function cadena() {
+            let arr = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
+                'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+            let mensaje = "";
+            for (let i = arr; i >= 0; i--) {
+                alert(arr);
+            }
+
+        }
+
+    </script>
+
+    <script>//5
+
+        function imp() {
+
+            let pares = 0
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 == 0) {
+                    pares += i;
+                }
+
+            }
+           
+
+            let impar = 0
+            for (let i = 1; i<= 100; i++){
+                if (i % 2 != 0){
+                    impar += i
+                }
+            }
+             alert("La suma pares es " + pares + " y la suma de los impares es " + impar);
+        }
+
+    </script>
+    <script>//6
+        let num1=2550;
+        let num2=2500;
+        function otro() {
+            resultado= (num1 + num2);
+            alert ("El resultado de 2550 + 2500 es " + resultado);
+        }
+    </script>
+
+    <script>//7
+    
+    function otro2() {
+       divisores= [];
+        for (let numero =100; numero <=400; numero++ ){
+            if (7%numero  == 0);
+            divisores ++;
+          
+             
+        }
+        if (divisores === 2) {
+            alert(numero);
+        }
+        }
+    </script>
+
+
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Tarea 06 JavaScript</h1>
+    </section>
+
+    <main class="container pt-5">
+        <section arial-label="titulo">
+            <h2>Ejercicios</h1>
+        </section><br>
+
+
+        <button class="btn btn-outline-primary" onclick="fila()">Ejercicios</button><br><br>
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>

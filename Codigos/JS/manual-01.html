@@ -17,12 +17,16 @@
 
         ol {
             color: #000599
+        } 
+        h2 {
+            text-decoration: underline;
         }
+        
     </style>
 
     <script>
         function iniciar() {
-            let mimensaje = "Mi Hola Mundo";
+            let mimensaje = "Mi Hola Mundo 🖖🏻";
             mimensaje = alert(mimensaje);
         }
     </script>
@@ -94,9 +98,9 @@
             cumpleaños = window.prompt("Introduce tu edad: ");
 
             if (cumpleaños >= 19) {
-                alert("Eres mayor de Edad");
+                alert("Eres mayor de Edad ");
             } else if (cumpleaños == 18) {
-                alert("Enhorabuena por tu mayoría de Edad!");
+                alert("Enhorabuena por tu mayoría de Edad!🎉");
             } else {
                 alert("Eres menor de edad");
             }
@@ -107,7 +111,7 @@
 
 <body class="bg-white">
     <section class="bg-dark text-white py-4 w-100 text-center">
-        <h1>Ejercicios del manual</h1>
+        <h1>Ejercicios JavaScript</h1>
     </section>
 
     <main class="container pt-5">
@@ -138,7 +142,7 @@
             <button class="btn btn-outline-primary" onclick="division()"><i
                     class="fa-solid fa-square-root-variable"></i>&nbsp;Division</button>&nbsp;
             <button class="btn btn-outline-primary" onclick="porciento()"><i
-                    class="fa-solid fa-percent"></i></i>&nbsp;Resto</button>
+                    class="fa-solid fa-percent"></i></i>&nbsp;Modulo</button>
         </ol>
         <br><br>
         <p><i class="fa-solid fa-5 fa-lg"></i>_&nbsp;&nbsp;Crear un script que pregunte la edad del usuario y lo
@@ -148,6 +152,10 @@
             Si la edad es inferior a 18, mostrar el mensaje "Eres menor de edad".
             Se presupone, por ahora, que el usuario sólo va a escribir un valor numérico.</p>
         <button class="btn btn-outline-primary" onclick="cumple()">¿Que edad tienes?</button><br><br>
+        <p>
+            Realizar un script que haga lo siguiente: Crear un botón que pedirá USUARIO y CONTRASEÑA. Pedir el nombre de usuario que se grabará en una variable global. Pedir una contraseña que se tendrá que repetir. Si AMBAS contraseñas coinciden, se grabará en una variable global.Crear OTRO botón que pedirá el acceso a la web: usuario y contraseña. Mostrar SI el usuario es correcto y SI la contraseña es correcta. Crear un contador (variable global) que tras 3 intentos fallidos de acceso redirija a:
+http://abduzeedo.com/4023    numero 23
+        </p>
 
     </main>
 

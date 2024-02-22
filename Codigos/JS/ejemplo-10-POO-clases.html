@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejemplo POO Clases</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+	<script>
+		//definimo la clase parea crear los objetos
+		class Camion {
+			//1º ponemos los atributos 
+			modelo = "";
+			potencia = 0;
+			electrico = true;
+			precio = 150000.00;
+
+			//2º Luego se ponen los metodos. EL Primero es el CONSTRUCTOR
+			constructor(modelo, nuevaPotencia) {//lo que cambiava dentro es atributos de la plantilla
+				this.modelo = modelo;//en el constructor se pueden añadir atributos que cambian de la plantilla.
+				this.potencia = nuevaPotencia;
+			}
+			//resto de metodos
+			descuento(porcentaje) {
+				let miDescuento = this.precio * porcentaje / 100;
+				this.precio = this.precio - miDescuento; //this.precio -= miDescuento;
+			}
+		}
+
+		function iniciar() {
+			let camion1 = new Camion("Volvo FH", 750);
+			let camion2 = new Camion("Mercedes Actros", 400);
+
+			//El volvo esta de ofereta :)
+			camion1.descuento(25);
+			//mostrarmos los camiones
+			alert("camion 1 : \n" + JSON.stringify(camion1));
+			alert("camion 2 : \n" + JSON.stringify(camion2));
+	
+		}
+
+	</script>
+
+</head>
+
+<body class="bg-white">
+	<section class="bg-dark text-white py-4 w-100 text-center">
+		<h1>Ejemplo 10 POO Clases</h1>
+	</section>
+
+	<main class="container pt-5">
+
+
+		<button class="btn btn-outline-primary" onclick="iniciar()">
+			Iniciar
+		</button><br><br>
+
+
+	</main>
+
+
+</body>
+
+
+</html>
