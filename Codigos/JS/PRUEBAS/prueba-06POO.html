@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script>
+        
+
+        class Camion {
+            //1º Definir los atributos de la clase
+            modelo = ""
+            potencia = 0
+            electrico = true
+            precio = 600000.00
+            //2º se usa el constructor
+            constructor(modelo, newPotencia) {
+                this.modelo = modelo
+                this.potencia = newPotencia
+            }
+            //metodo: se puede imprimir en formato string o formato JSON
+            imprimir() {
+                return `Datos del camion:
+                Modelo: ${this.modelo}
+                Potencia. ${this.potencia} 
+                Electrico: ${this.electrico}
+                Precio: ${this.precio}€`
+            }
+            descuento(porcentaje) {
+                this.precio = this.precio * porcentaje / 100
+            }
+        }
+
+
+        function iniciar() {
+            let camion1 = new Camion("Scania", 450)
+            let camion2 = new Camion("Volvo", 300)
+            camion1.descuento(25)
+            alert(camion1.imprimir())//string
+
+        }
+
+    </script>
+
+
+
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Prueba 06 POO</h1>
+    </section>
+
+    <main class="p-3 m-3 w-50">
+        <!-- los - de los atributos es pque son privados, los mas+ de los metodos es que son publicos, #protecte.
+         
+        -->
+        <button class="btn btn-outline-primary" onclick="iniciar()">Iniciar</button>
+        <br><br>
+
+    </main>
+</body>
+
+</html>

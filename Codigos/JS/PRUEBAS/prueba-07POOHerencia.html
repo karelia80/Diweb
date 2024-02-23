@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script>
+        //La herencia, se hereda todo
+        class Vehiculo {
+            //atributos de clase
+            modelo = ""
+            potencia = 0
+            //definir el constructor
+            constructor(modelo, potencia) {
+                this.modelo = modelo
+                this.potencia = potencia
+            }
+            //tb se añaden metodos, hare imprimir en formato JSON
+            imprimir() {
+                return {//puedo personalizar la clave
+                    modelocamion: this.modelo,
+                    potencia: this.potencia
+                }
+            }
+        }
+
+        class Camion extends Vehiculo {//En la clase se pone la palabra reservada extends
+
+
+            electrico = true
+            precio = 600000.00
+
+            constructor(modelo, potencia, electrico) {//usamos la palabra reservada SUPER para hacer referencia al padre
+                super(modelo, potencia)
+                this.electrico = electrico
+            }
+            //metodo: se puede imprimir en formato string o formato JSON
+            imprimir() {
+                let Json = super.imprimir()
+                Json.electrico = this.electrico
+                Json.precio = this.precio
+
+                //formateamos la salida del alert en JSON
+                return JSON.stringify(Json, null, 2)
+
+            }
+            descuento(porcentaje) {
+                this.precio = this.precio * porcentaje / 100
+            }
+        }
+
+
+        function iniciar() {
+            let camion1 = new Camion("Scania", 450, false)
+            let camion2 = new Camion("Volvo", 300, true)
+            camion1.descuento(25)
+            alert(camion1.imprimir())
+            alert(camion2.imprimir())
+        }
+
+    </script>
+
+
+
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Prueba 07 POO herencia</h1>
+    </section>
+
+    <main class="p-3 m-3 w-50">
+        <!-- los - de los atributos es pque son privados, los mas+ de los metodos es que son publicos, #protecte.
+         
+        -->
+        <button class="btn btn-outline-primary" onclick="iniciar()">Iniciar</button>
+        <br><br>
+
+    </main>
+</body>
+
+</html>
