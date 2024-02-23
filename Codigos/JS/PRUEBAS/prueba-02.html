@@ -1,0 +1,65 @@
+<!-- ejemplo-06-BuclesFOREACH.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo JS</title>
+    <script>
+      // Presenta el json inferior en un alert como una lista
+      // Comprobar que el JSON está bien construido
+      // https://jsonlint.com/ (copiar de "[" a "]")
+      let compra = [
+        {
+          Mercadona: {
+            frutas: "Peras y uvas",
+            drogueria: "Suavizante",
+          },
+        },
+        {
+          MAS: {
+            dulces: "Nocilla",
+            carne: "Ternera",
+          },
+        },
+      ];
+
+        // Usando foreach
+      let mensaje = "";
+      compra.forEach((elemento) => {
+        for (let supermercado in elemento) {
+          mensaje += "Articulos del Super " + supermercado + "\n";
+          for (let clave in elemento[supermercado]) {
+            mensaje += clave + " : " + elemento[supermercado][clave] + "\n";
+          }
+            mensaje += "\n";
+        }
+      });
+      alert(mensaje);
+
+      
+      // El mismo ejemplo usando for..in y for...of
+      mensaje = "";
+      for (let elemento of compra) {
+        for (let supermercado in elemento) {
+          mensaje += "Articulos del Super " + supermercado + "\n";
+          for (let clave in elemento[supermercado]) {
+            mensaje += clave + " : " + elemento[supermercado][clave] + "\n";
+          }
+            mensaje += "\n";
+        }
+      }
+      alert(mensaje);
+
+      // Se puede hacer una conversión de JSON a String
+    let listaCompra = JSON.stringify(compra);
+    alert(listaCompra);
+
+
+    </script>
+  </head>
+  <body>
+    <p>Parrafo</p>
+  </body>
+</html>

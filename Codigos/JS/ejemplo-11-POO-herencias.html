@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo POO Herencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script>
+        //definimo la superclase o clase Padre
+        class Vehiculo {
+            //Definimos atributos
+            modelo = "";
+            potencia = 0;
+
+
+            //añadimos constructor
+            constructor(modelo, potencia) {
+                this.modelo = modelo;
+                this.potencia = potencia;
+            }
+            //añadimos metodo imprimir
+            imprimir() {
+                return "Modelo: " + this.modelo + "\n" + "Potencia: " + this.potencia;
+            }
+
+        }
+
+
+        //================================================================================== ejemplo 10 
+        //Declaramos la clase hija, se va usar la palabra reservada extends
+        class Camion extends Vehiculo {
+            // AHora con la herencia borramos los atributos iguales del padre 
+           
+            electrico = true;
+            precio = 150000.00;
+
+            
+            constructor(modelo, nuevaPotencia) {// del constructor borramos tb los atributos porque tb lo hereda  del padre y usamos el constructor del padre y escribimos super
+                super(modelo, nuevaPotencia);//se pone en el constructor lo que le ponemos en el hijo.
+            }
+            
+            descuento(porcentaje) {
+                let miDescuento = this.precio * porcentaje / 100;
+                this.precio = this.precio - miDescuento; //this.precio -= miDescuento;
+            }
+            //Redefino el metodo imprimir heredado del padre
+            imprimir(){
+                return `${super.imprimir()} \n electrico:${this.electrico} \n precio: ${this.precio}`;
+            }
+
+        }
+
+        function iniciar() {
+            let camion1 = new Camion("Volvo FH", 750);
+            let camion2 = new Camion("Mercedes Actros", 400);
+
+           
+            camion1.descuento(25);
+            //mostrarmos los camiones
+            alert("camion 1 : \n" + camion1.imprimir());
+            alert("camion 2 : \n" + camion2.imprimir());
+            //para probar hago una variante y otro alert
+            let vehiculo1 = new Vehiculo("hyundai kona", 155);
+            alert("Vehiculo: " + vehiculo1.imprimir());
+        }
+
+    </script>
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Ejemplo 11 POO Herencia</h1>
+    </section>
+
+    <main class="container pt-5">
+
+
+        <button class="btn btn-outline-primary" onclick="iniciar()">
+            Iniciar
+        </button><br><br>
+
+
+    </main>
+
+
+</body>
+
+
+</html>

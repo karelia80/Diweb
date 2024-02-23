@@ -1,0 +1,42 @@
+<!-- ejemplo-04-ejemploSWITCH.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo JS</title>
+    <script>
+      /* 
+        Pide la nota. Si tienes 10 o 9, Sobresaliente. Si tienes 8 o 7, Notable
+        Si tienes 6 o 5 Aprobado y si tienes menos de 5, suspenso 
+        */
+      let nota = parseInt(prompt("Dame nota"));
+
+      // Solución con IF
+      if (nota == 10 || nota == 9) {
+        alert("Sobresaliente");
+      } else if (nota == 8 || nota == 7) {
+        alert("Notable");
+      } else if (nota == 6 || nota == 5) {
+        alert("Aprobado");
+      } else {
+        alert("Suspenso");
+      }
+
+      // Solución con SWITCH
+      switch (nota) {
+        case 10:
+        case 9:     alert("Sobresaliente");     break;
+        case 8:
+        case 7:     alert("Notable");           break;
+        case 6:
+        case 5:     alert("Aprobado");          break;
+        default:    alert("Suspenso");          break;
+      }
+    </script>
+  </head>
+  <body>
+    <p>Parrafo</p>
+  </body>
+</html>

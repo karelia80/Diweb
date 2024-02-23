@@ -1,0 +1,36 @@
+<!-- ejemplo-05-BuclesWHILEFOR.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo JS</title>
+    <script>
+        /* 
+            Escribir un mensaje con los números correlativos del 1 al que ponga el usuario
+        */
+        let num = parseInt(prompt("Dame num (1-10)")); // Ej: 5
+
+        // Con While
+        let i = 1;
+        let mensaje = "";
+        while (i <=5) {
+            mensaje  += i + "\n";
+            i++;
+        }
+        alert(mensaje);
+
+        mensaje = "";
+        // Con For
+        // OJO, este i del for es DISTINTO del que está por encima del while
+        for (let i=1; i<=5; i++) {
+            mensaje  += i + "\n";
+        }
+        alert(mensaje);
+    </script>
+  </head>
+  <body>
+    <p>Parrafo</p>
+  </body>
+</html>

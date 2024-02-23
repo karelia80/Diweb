@@ -1,0 +1,33 @@
+<!-- ejemplo-06-BuclesFORIN-FOROF.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo JS</title>
+    <script>
+        // Presenta el array inferior en un alert usando for...in y for...of
+        let frutas = ["Peras", "Kiwis", "Uvas", "Fresas", "Piñas"];
+
+        // Con for...in
+        let mensaje = "";
+        for (let indice in frutas) {
+            mensaje += frutas[indice] + "\n";
+        }
+        alert(mensaje);
+
+        
+        // Con for...of (es similar al foreach de otro lenguajes)
+        mensaje = "";
+        for (let fruta of frutas) {
+          mensaje += fruta + "\n";
+        }
+
+        alert(mensaje);
+    </script>
+  </head>
+  <body>
+    <p>Parrafo</p>
+  </body>
+</html>
