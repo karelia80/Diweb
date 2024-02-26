@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 	<script>
+		//la plantilla es para crear un objeto, y los objetos los creamos para hacer la programacion mas estructurada 
 		//definimo la clase parea crear los objetos
 		class Camion {
 			//1º ponemos los atributos 
@@ -30,14 +31,14 @@
 			}
 		}
 
-		function iniciar() {
+		function iniciar() {//importante poner new para crear los objetos
 			let camion1 = new Camion("Volvo FH", 750);
 			let camion2 = new Camion("Mercedes Actros", 400);
 
 			//El volvo esta de ofereta :)
 			camion1.descuento(25);
 			//mostrarmos los camiones
-			alert("camion 1 : \n" + JSON.stringify(camion1));
+			alert("camion 1 : \n" + JSON.stringify(camion1, null, 2));//JSON formateado
 			alert("camion 2 : \n" + JSON.stringify(camion2));
 		}
 

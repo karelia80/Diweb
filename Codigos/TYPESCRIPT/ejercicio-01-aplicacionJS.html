@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 Aplicacion JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<script>
+    class Tecnologia{
+
+    }
+
+    class Movil extends Tecnologia{
+
+    }
+class Ordenador extends Tecnologia {
+    
+}
+
+</script>
+
+</head>
+
+<body>
+
+    <main class="p-3 w-50 m-3 mx-auto bg-secondary">
+
+        <p id="p1">
+            Parrafo
+        </p>
+
+
+    </main>
+
+    <button class="m-3 btn btn-outline-primary" onclick="iniciar()">Iniciar</button>
+
+    <script>//esto hay que hacerlo abajo porque tiene que estar cargado el DOM
+        function iniciar() {
+
+            let p1 = document.getElementById("p1")
+            p1.textContent = "No quiero dar JS"
+            p1.style.color = "red"
+            
+        }
+
+    </script>
+
+</body>
+
+</html>
