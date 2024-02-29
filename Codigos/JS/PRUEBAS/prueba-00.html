@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        p {
+            color: #000599;
+        }
+
+        ol {
+            color: #000599
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+    </style>
+    <script>//0
+        function fila() {
+            let menu =
+                "1.Funcion factorial \n" +
+                "2.El viaje \n" +
+                "3.Lenght con fruta \n" +
+                "4.Piramide de sumas \n" +
+                "5.Piramide * pegada a la izquierda \n" +
+                "6.Piramide a la derecha \n" +
+                "7.Multiplos de 7 \n" +
+                "8.Piramide de * \n";
+            "Elije una opcion: ";
+            let option = 0;
+
+            while (option != 8) {
+
+                let respuesta = prompt(menu);
+                if (respuesta == null)
+                    break;
+                opcion = parseInt(respuesta);
+
+                switch (opcion) {
+                    case 1: sumAll(); break;
+                    case 2: viajes(); break;
+                    case 3: fruta(); break;
+                    case 4: pirSum(); break;
+                    case 5: pirDec(); break;
+                    case 6: pirIzq(); break;
+                    case 7: otro2(); break;
+                    case 8: Piramide(); break;
+                    default: alert(" 🤦‍♂️ ERROR!!");
+                        break;
+                }
+
+            }
+            alert("Estoy harta");
+        }
+    </script>
+
+    <script>
+        var sumAll = function () {
+            // Pedir al usuario que ingrese los números
+            var a = parseInt(prompt("Ingrese el primer número:"));
+            var b = parseInt(prompt("Ingrese el segundo número:"));
+
+
+            // Calcular la suma
+            let sum = 0;
+            for (let index = a; index <= b; index++) {
+                sum += index;
+            }
+
+            // Mostrar el resultado usando alert
+            alert("La suma de los números desde " + a + " hasta " + b + " es: " + sum);
+        }
+
+        function viajes() {
+            var precioViaje = prompt("Introduzca el precio del viaje");
+            var dineroDisponible = prompt("Introduzca el dinero disponible");
+            var num1 = parseInt(precioViaje);
+            var num2 = parseInt(dineroDisponible);
+
+            if (num2 >= num1) {
+
+                alert("Sácate el billete");
+                num2 = num2 - num1;
+            } else {
+
+                alert("No dispones de suficiente dinero para viajar");
+            }
+
+            alert("Te quedan " + num2 + " euros.");
+        }
+        function fruta() {
+            //declaramos la variable fruit
+            var fruit;
+            //asignamos el valor orange
+            fruit = prompt("Escribe una fruta")
+            //Si su tamaño es mayor:
+            if (fruit.length > 5) {
+                alert('La fruta tiene mas de 5 caracteres.');
+            } else {
+                alert('La fruta tiene 5 o menos caracteres.')
+            }
+        }
+        function pirSum() {
+            var numrep = prompt("Introduce numero de repeticiones");
+            var result = '';
+            for (i = 1; i <= numrep; i++) {
+
+                for (rep = i - 1; rep >= 0; rep--) {
+                    result += ((rep * 2 + 1) + ' ');
+                }
+                result += "\n";
+            }
+            alert(result)
+        }
+
+        function pirDec() {
+            var numPisos = parseInt(prompt("Pon el numero de pisos: "))
+            var result = "";
+
+            for (let i = 0; i < numPisos; i++) {
+                for (let j = 0; j < i + 1; j++) {
+                    result += '*';
+                }
+                result += '\n';
+            }
+            alert(result)
+        }
+        function pirIzq() {
+            var numPisos = parseInt(prompt("Pon el número de pisos: "));
+            var result = "";
+
+            for (let i = 0; i < numPisos; i++) {
+                // Agrega espacios en blanco antes de los asteriscos para alinear a la derecha
+                for (let k = 0; k < numPisos - i - 1; k++) {
+                    result += ' ';
+                }
+                // Agregar  asteriscos
+                for (let j = 0; j < i + 1; j++) {
+                    result += '*';
+                }
+
+                result += '\n';
+            }
+
+            alert(result);
+        }
+
+
+/*RAIZ CUADRADA
+var mostrar = prompt("introduce un numero"); 
+var resultado = Math.sqrt(mostrar);
+console.log(resultado) 
+
+*/
+/* DIBUJAR CUADRADO
+function dibujarCuadrado(lados) {
+    let result = '';
+  
+    // linea de arriba
+    for (let i = 0; i < lados; i++) {
+      result += '* ';
+    }
+    
+    result += '\n';
+  
+    // cuerpo del cuadrado
+    for (let i = 0; i < lados - 2; i++) {
+      result += '*';
+      for (let j = 0; j < lados + lados - 3; j++) {
+        result += ' ';
+      }
+      result += '*\n';
+    }
+  
+    // linea de abajo
+    for (let i = 0; i < lados; i++) {
+      result += '* ';
+    }
+    
+    return result;
+  }
+  
+console.log(dibujarCuadrado(3));
+console.log(dibujarCuadrado(5));
+console.log(dibujarCuadrado(7));
+console.log(dibujarCuadrado(9));
+
+*/
+
+    </script>
+
+
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Tarea 06 JavaScript</h1>
+    </section>
+
+    <main class="container pt-5">
+        <section arial-label="titulo">
+            <h2>Ejercicios</h1>
+        </section><br>
+
+
+        <button class="btn btn-outline-primary" onclick="fila()">Ejercicios</button><br><br>
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 Aplicacion JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script>
+        class Tecnologia {
+            //Declaramos los atributos
+            color = "";
+            #precio = 0.0;
+
+            //Constructor
+            constructor(color, precio) {
+                this.color = color;
+                this.#precio = precio;
+            }
+            // el set escribe en el atriburo oculto
+            set precio(nuevoPrecio) {
+                // issue(problema) Blanca
+                if (nuevoPrecio > 0.0) {
+                    this.#precio = nuevoPrecio;
+                }
+
+            }
+            //lee el dato en el atributo oculto
+            get precio() {
+                return this.#precio
+            }
+
+            //resto de metodos
+            imprimir() {
+                //return JSON.stringify(this, null, 2)
+                //1º forma: esto es en JSON, aqui no sale el atributo # en el imprimir porque esta oculto y no se ha especificado que salga.
+
+                //return `Color: ${this.color}
+                //Precio: ${this.#precio}` 
+                //2º forma: formula de template string. estructura de array
+
+                return {
+                    "Color: ": this.color,
+                    "Precio: ": this.#precio
+
+                } //3º forma:  otra forma de JSON, la mas profesional, en este especificamos el # y por eso sale en el imprimir. 
+            }
+        }
+
+        class Movil extends Tecnologia {
+            marca = "";
+            #es5g = true;
+            constructor(color, precio, marca) {
+                super(color, precio);
+                this.marca = marca;
+
+            }
+            set es5g(siempre5g) {
+                //typeoff ... == tipo es para asegurarse que devuelve del mismo tipo de atributo
+                if (typeof siempre5g == "boolean") {
+                    this.#es5g = siempre5g
+                }
+            }
+
+            get es5g() {
+                return this.#es5g
+            }
+
+            imprimir() {
+                //return `${super.imprimir()}  marca: ${this.marca}`
+
+                //esto es para el valor null :
+                // let valor5g =""
+                // if (this.#es5g ){
+                //     valor5g = "Es 5g"
+                // }else{
+                //     valor5g= "No es 5g"
+                // }
+
+
+                let croissant = super.imprimir();
+                croissant["Marca:"] = this.marca;
+                croissant["Red Movil:"] = this.#es5g//valor5g // se pondria para el valor 5g
+
+                return croissant;
+            }
+
+            descuento(cantidad) {
+                super.precio = super.precio - cantidad;
+
+            }
+        }
+
+
+        class Ordenador extends Tecnologia {
+            modelo = "";
+            ram = 0;
+
+            constructor(color, precio, modelo, ram) {
+                super(color, precio);
+                this.modelo = modelo;
+                this.ram = ram;
+            }
+
+            // set ram(siempreram){
+            //     if (ram > 0) {
+            //         this.ram = siempreram
+            //     }
+            // }
+            // get ram(){
+            //     return this.ram
+            // }
+
+            imprimir() { //el return se basa en el del padre
+                //return `${super.imprimir()}   modelo: ${this.modelo}  ${this.ram}`
+                let tomako = super.imprimir();
+                tomako["Modelo:"] = this.modelo
+                tomako["RAM:"] = this.ram
+
+                return tomako
+            }
+            
+        }
+        //x1 = (-(b) + (Math.sqrt(b*b-4*a*c)))/ (2*a)
+    </script>
+
+</head>
+
+<body>
+
+    <main class="p-3 w-50 m-3 mx-auto bg-secondary">
+
+        <p id="p1">
+            Parrafo
+        </p>
+
+
+    </main>
+
+    <button class="m-3 btn btn-outline-primary" onclick="iniciar()">Iniciar</button>
+
+    <script>//esto hay que hacerlo abajo porque tiene que estar cargado el DOM
+        function iniciar() {
+            let tecno = new Tecnologia("Negro", 299.99);
+            let movil1 = new Movil("Blanco", 449.99, "Nokia")
+            let pc1= new Ordenador("Rojo", 2549.99,"RTXFlag", 32)
+
+            let p1 = document.getElementById("p1")
+            movil1.descuento(300)
+            p1.style.color = "white"
+            //p1.textContent = tecno.imprimir()//para la salida del objeto primero se pone el objeto y luego el metodo, este es para la 1º de JSON
+            p1.textContent = JSON.stringify(tecno.imprimir(), null, 2) + "\n"
+            p1.textContent += JSON.stringify(movil1.imprimir(), null, 2) + "\n"
+            p1.textContent += JSON.stringify(pc1.imprimir(), null, 2)
+        }
+
+    </script>
+    <!--JSON es una array asociativo-->
+</body>
+
+</html>
