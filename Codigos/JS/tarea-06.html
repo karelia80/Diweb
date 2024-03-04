@@ -47,7 +47,7 @@
                     case 1: cumple(); break;
                     case 2: usu(); break;
                     case 3: dni(); break;
-                    case 4: candena(); break;
+                    case 4: cadena(); break;
                     case 5: imp(); break;
                     case 6: otro(); break;
                     case 7: otro2(); break;
@@ -113,13 +113,30 @@
     </script>
 
     <script>//4 pedir primero el numero de elementos que vas a pedir en el array num = 3, nombres[0]= x, nombres [1] hcer un for (0, 2, ++)
+
+
         function cadena() {
-            let arr = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
-                'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+            let elem = parseFloat(prompt("Dame el numero de elementos del array "))
+            let cadena = []
             let mensaje = "";
-            for (let i = arr; i >= 0; i--) {
-                alert(arr);
+
+
+            for (let index = 0; index < elem; index++) {
+                let numEle = parseInt(prompt("Escribe cada elemento " + (index + 1)));
+
+                cadena[index] = numEle
+
             }
+            //hasta aqui se muestra el array que ha dado el usuario
+            alert("Asi es el array= " + cadena)
+
+            //Aqui enseñar la cadena inversa
+            for (let i = 0; i > cadena; i--) {
+                mensaje = i;
+
+            }
+            alert("Y asi es al reves= " + mensaje)
 
         }
 
@@ -136,40 +153,40 @@
                 }
 
             }
-           
+
 
             let impar = 0
-            for (let i = 1; i<= 100; i++){
-                if (i % 2 != 0){
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 != 0) {
                     impar += i
                 }
             }
-             alert("La suma pares es " + pares + " y la suma de los impares es " + impar);
+            alert("La suma pares es " + pares + " y la suma de los impares es " + impar);
         }
 
     </script>
     <script>//6
-        let num1=2550;
-        let num2=2500;
+        let num1 = 2550;
+        let num2 = 2500;
         function otro() {
-            resultado= (num1 + num2);
-            alert ("El resultado de 2550 + 2500 es " + resultado);
+            resultado = (num1 + num2);
+            alert("El resultado de 2550 + 2500 es " + resultado);
         }
     </script>
 
     <script>//7
-    
-    function otro2() {
-       divisores= [];
-        for (let numero =100; numero <=400; numero++ ){
-            if (7%numero  == 0);
-            divisores ++;
-          
-             
-        }
-        if (divisores === 2) {
-            alert(numero);
-        }
+
+        function otro2() {
+            divisores = [];
+            for (let numero = 100; numero <= 400; numero++) {
+                if (7 % numero == 0);
+                divisores++;
+
+
+            }
+            if (divisores === 2) {
+                alert(numero);
+            }
         }
     </script>
 
