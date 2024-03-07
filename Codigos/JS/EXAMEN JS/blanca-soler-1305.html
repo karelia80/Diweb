@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        function menu() {
+            let menu =
+                "I.Tabla \n" +
+                "II.Volúmenes \n" +
+                "III.Futbol \n" +
+                "IV. Islantilla \n" +
+                "V.Salir"
+
+            let option = 0;
+            while (option != 5) {
+                let respuesta = prompt(menu);
+                if (respuesta == null)
+                    break;
+                option = parseInt(respuesta);
+                switch (option) {
+                    case 1: let num1 = parseInt(prompt("Dime num1"));
+                        tabla(num1); break;
+                    case 2: volumenes(); break;
+                    case 3: futbol(); break;
+                    case 4: islantilla(); break;
+                    case 5: alert("Fin del exam"); break;
+                    default: alert(" 🤦‍♂️ ERROR!! Elije del 1 al 5");
+                        break;
+                }
+
+            }
+            alert("Marche usted con Dios!");
+        }
+
+        function tabla(num1) {
+
+            let mensaje = "";
+            for (let i = 10; i >= 1; i--) {
+                let resultado = num1 * i;
+                mensaje += num1 + " x " + i + " = " + resultado + "\n";
+                //mensaje += resultado + "\n";
+                //mensaje= "El resultado es" + num1 + "x"+ i+ "="+resultado+ "\n";
+
+
+                alert(mensaje);
+            }
+        }
+        class Futbol {
+            partido = ""
+            liga = true
+            #precio = 100.00
+            constructor(partido, liga, precio) {
+                this.partido = partido
+                this.liga = liga
+                this.#precio = precio
+            }
+            set precio(nuevoprecio) {
+                if (nuevoprecio > 100.00) {
+                    this.#precio = nuevoprecio
+                }
+            }
+            get precio() {
+                return this.#precio
+            }
+            leerEntrada() {
+                let match = prompt("Di el partido:")
+                let lig = prompt("True o false?:")
+                let price = parseFloat("Di el precio de la entrada:")
+
+                let footb = new Futbol(match, lig, price)
+                return footb
+            }
+            mostrarEnt(entrada) {
+                return {
+                    'Partido': this.partido,
+                    'La Liga es': this.liga,
+                    'El precio es': this.#precio
+                }
+            }
+            partidoUEFA() {
+                let incrementa = this.#precio * 0.15 / 100
+                this.#precio = this.#precio + incrementa
+            }
+            partidoEspecial() {
+                let espcial = this.#precio * 0.25 / 100
+                this.#precio = this.#precio + espcial
+            }
+        }
+        function futbol() {
+            let e1 = 5
+            for (let i = 1; i <= 5; i++) {
+                alert(parseInt(prompt("cuantas entradas?")))
+            }
+
+            let e2 = new Futbol("Sevilla FC", true, 125.00)
+            alert(JSON.stringify(e2, null, 2))
+
+            alert(e2.partidoUEFA())
+
+            alert(e2.partidoEspecial())
+        }
+
+
+    </script>
+    <script>
+
+        class Reservas {
+            cliente = ""
+            entrada = ""
+            dias = 3
+            constructor(cliente, entrada, dias) {
+                this.cliente = cliente
+                this.entradas = entrada
+                this.dias = dias
+            }
+            leer() {
+                let cli = prompt("Nombre del cliente")
+                let ent = prompt("Escribe la fecha entrada")
+                let dias = parseInt(prompt("Di cuantos dias te quedas"))
+                let nuevareserva = new Reservas(cli, ent, dias)
+                return nuevareserva
+            }
+            imprimir() {
+                return {
+                    'Cliente': this.cliente,
+                    'Entrada': this.entrada,
+                    'dias': this.dias
+                }
+            }
+        }
+        class Facturas extends Reservas {
+            importe = 100.00
+            spa = false
+            constructor(cliente, entrada, dias, importe, spa) {
+                super(cliente, entrada, dias)
+                this.importe = importe
+                this.spa = spa
+            }
+            descuento(porcentaje) {
+                let miDescuento = this.precio * porcentaje / 100;
+                this.precio = this.precio - miDescuento;
+            }
+            leerFactura() {
+                super(leer())
+                let importe = parseInt(prompt("Cuanto es?"))
+                let spa = prompt("true o false")
+                let factura = new Facturas(super(imprimir()), importe, spa)
+                alert(factura)
+            }
+            imprimirFactura() {
+                return `${super.imprimir()} 
+       importe: ${this.color}
+        spa: ${this.spa}`;
+            }
+        }
+        function islantilla() {
+            let isla = new Facturas("Javier Scriptus", "2024-05-01", 6, 500.12, false)
+            alert(JSON.stringify(isla.imprimirFactura()))
+        }
+        function volumenes() {
+            let menu = "1.Prisma \n" + "2.Cilindro \n" + "3.Cono \n" + "4.Esfera \n" + "5. Salir 💨\n" + "Elije opcion: ";
+            let opcion = 0;
+
+            while (opcion != 5) {
+                opcion = parseInt(prompt(menu));
+                let respuesta = prompt(menu);
+                if (respuesta == null)
+                    break;
+                opcion = parseInt(respuesta);
+
+
+                switch (opcion) {
+                    case 1: prisma(); break;
+                    case 2: ciliendo(); break;
+                    case 3: cono(); break;
+                    case 4: esfera(); break;
+                    case 5: alert("Fin de la APP"); break;
+                    default: alert(" 🤦‍♂️ ERROR!! Elije del 1 al 5");
+                        break;
+
+                }
+            }
+            alert("Adios!");
+
+        }
+
+    </script>
+
+</head>
+
+<body class="bg-white">
+    <section class="bg-dark text-white py-4 w-100 text-center">
+        <h1>Examen JavaScript</h1>
+    </section><br><br>
+
+    <main class="container pt-5">
+        <button class="btn btn-outline-secondary" onclick="menu()">Examen</button>
+        <hr>
+        <button class="btn btn-secondary" onclick="agregarMensaje()">Mensaje al Profesor</button><br><br>
+        <p class="alert alert-light" role="alert" id="mensaje"></p>
+    </main>
+
+
+    <script>
+        function agregarMensaje() {
+            const parrafoMensaje = document.getElementById("mensaje");
+            const mensaje = "Oh, JavaScript, el lenguaje que ha destrozado tantos sueños de programadores, el compañero de viaje que nadie pidio y el invitado inesperado a la fiesta al que nadie llamo. Es como un gato callejero que se cuela por la ventana y se niega a marcharse. Pero aqui estoy, plantandole cara a este lenguaje despiadado. Por que, JavaScript, por que?, por que me torturas con tus 'undefined' y tus errores inesperados? Al menos lo intente sin perder el sentido del humor, aunque no me haya lucido, solo por el mero hecho de intentarlo algo he aprendido.";
+
+            parrafoMensaje.textContent = mensaje;
+        }
+    </script>
+
+
+</body>
+
+</html>

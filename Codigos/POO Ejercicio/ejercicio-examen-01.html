@@ -82,11 +82,12 @@
                 "2. Coche \n" +
                 "3 Ecuacion \n" +
                 "4. tablasMultiplicar \n" +
-                "5.salir \n" +
+                "5. Balay \n" +
+                "6.salir \n" +
                 "Elige opcion"
 
             let option = 0
-            while (option != 5) {
+            while (option != 6) {
                 let respuesta = prompt(mensaje)
                 if (respuesta == null) {
                     break;
@@ -121,6 +122,9 @@
 
                         tablasMulticplicar(x, y)
                             ; break;
+
+                    case 5: balay(); break;
+
                     default: alert("🤦‍♂️ Adiós"); break;
 
                 }
@@ -216,11 +220,106 @@
             let a = Math.floor(Math.random() * (max - min + 1) + min);
             let num = []
             num[0] = a
-            
+            let b = 0
+            for (i = 1; i <= 2; i++) {
+                b = Math.floor(Math.random() * (max - min + 1) + min);
+                for (j = 0; j < num.length; j++) {
+                    while (b == num[j]) {
+                        b = Math.floor(Math.random() * (max - min + 1) + min);
+                    }
 
-            alert(x)
-            alert(y)
-            alert(a)
+                }
+
+
+                num[i] = b;
+            }
+
+            // alert(x)
+            // alert(y)
+            // alert(a)
+            // alert(num)
+            let cadena = ''
+            for (i = 0; i < 3; i++) {
+                for (j = 1; j <= 5; j++) {
+                    let rdo = num[i] * j
+                    cadena += `${num[i]} x ${j} = ${rdo}` + "\n"
+                }
+                cadena += '\n'
+            }
+            alert(cadena)
+        }
+        //Ejercicio de Balay
+
+        class Productos {
+            denominacion = ''
+            stock = 3
+
+            constructor(denominacion, stock) {
+                this.denominacion = denominacion
+                this.stock = stock
+            }
+
+            leer() {
+                let den = prompt("Dame nombre: ")
+                let st = parseInt(prompt("Dame el stock: "))
+                let producto = new Productos(den, st)
+                return producto
+            }
+
+            imprimir() {
+                return {
+                    'Denominacion': this.denominacion,
+                    'Stock': this.stock
+                }
+            }
+        }
+        class Frigos extends Productos {
+            importe = 100.00
+            noFrost = true
+            fechaVenta = ""
+
+            constructor(denominacion, stock, importe, noFrost, fechaVenta) {
+                super(denominacion, stock)
+                this.importe = importe
+                this.noFrost = noFrost
+                this.fechaVenta = fechaVenta
+            }
+
+            leer() {
+                let den = prompt("Dame nombre: ")
+                let st = parseInt(prompt("Dame el stock: "))
+
+                let importe = parseFloat(prompt("Dame el importa: "))
+                let noFrost = prompt("dame noFrost")
+                let fechaVenta = prompt("Dame la fecha")
+
+                let frigo = new Frigos(den, st, importe, noFrost, fechaVenta)
+                return frigo
+            }
+            imprimir() {
+                let json = super.imprimir()
+                json['importe'] = this.importe
+                json['no-Frost'] = this.noFrost
+                json['fecha venta'] = this.fechaVenta
+                return json
+            }
+
+        }
+
+
+        function balay() {
+            // let pr1 = new Productos("Microondas", 20)
+            // let pr2 = pr1.leer()
+
+
+            // alert(JSON.stringify(pr1.imprimir(), null, 2))
+            // alert(JSON.stringify(pr2.imprimir(), null, 2))
+            let fr1 = new Frigos("Balay", 10, 500.99, true, "2024-03-01")
+            let fr2 = fr1.leer()
+
+            alert(JSON.stringify(fr1.imprimir(), null, 2))
+            alert(JSON.stringify(fr2.imprimir(), null, 2))
+
         }
 
 
