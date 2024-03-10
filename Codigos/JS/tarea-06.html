@@ -32,11 +32,12 @@
                 "5.La Suma de pares e impares del 1 al 100 \n" +
                 "6.Y la suma de esos dos valores son \n" +
                 "7.Multiplos de 7 \n" +
-                "8.Piramide de * \n";
+                "8.Piramide de * \n" +
+                "9.Salir \n"
             "Elije una opcion: ";
             let option = 0;
 
-            while (option != 8) {
+            while (option != 9) {
 
                 let respuesta = prompt(menu);
                 if (respuesta == null)
@@ -51,7 +52,8 @@
                     case 5: imp(); break;
                     case 6: otro(); break;
                     case 7: otro2(); break;
-                    case 8: Piramide(); break;
+                    case 8: piramide(); break;
+                    case 9: alert("Fin de los ejercicios!"); break;
                     default: alert(" 🤦‍♂️ ERROR!!");
                         break;
                 }
@@ -117,27 +119,22 @@
 
         function cadena() {
 
-            let elem = parseFloat(prompt("Dame el numero de elementos del array "))
-            let cadena = []
-            let mensaje = "";
 
-
-            for (let index = 0; index < elem; index++) {
-                let numEle = parseInt(prompt("Escribe cada elemento " + (index + 1)));
-
-                cadena[index] = numEle
-
+            let num = parseInt(prompt("Dime de cuanto es el array"));
+            let nombre = [];
+            for (let i = 0; i < num; i++) {
+                nombre[i] = prompt("Escribe un nombre");
             }
-            //hasta aqui se muestra el array que ha dado el usuario
-            alert("Asi es el array= " + cadena)
 
-            //Aqui enseñar la cadena inversa
-            for (let i = 0; i > cadena; i--) {
-                mensaje = i;
-
+            let nombresInversos = [];
+            for (let i = num - 1; i >= 0; i--) {
+                nombresInversos.push(nombre[i]);
             }
-            alert("Y asi es al reves= " + mensaje)
-
+            let lisNombres = "";
+            for (let i = 0; i < num; i++) {
+                lisNombres += nombresInversos[i] + "\n";
+            }
+            alert(lisNombres);
         }
 
     </script>
@@ -177,17 +174,47 @@
     <script>//7
 
         function otro2() {
-            divisores = [];
-            for (let numero = 100; numero <= 400; numero++) {
-                if (7 % numero == 0);
-                divisores++;
+            let divi = [];
+
+            for (let i = 100; i <= 400; i += 7) {
+
+                divi.push(i);
+            }
 
 
-            }
-            if (divisores === 2) {
-                alert(numero);
-            }
+
+            alert("Los múltiplos de 7 entre 100 y 400 son: " + divi.join(", "));
         }
+    </script>
+
+    <script>//8 Piramide
+        function piramide() {
+            let numNiveles = parseInt(prompt("Dame la base de la piramide:"));
+
+            let piramide = '';
+
+
+            for (let i = 0; i < numNiveles; i++) {
+
+                for (let j = 0; j < numNiveles - i - 1; j++) {
+                    piramide += ' ';
+                }
+
+
+                for (let k = 0; k < 2 * i + 1; k++) {
+                    piramide += '*';
+                }
+
+
+                if (i < numNiveles - 1) {
+                    piramide += '\n';
+                }
+            }
+
+
+            alert(piramide);
+        }
+
     </script>
 
 

@@ -178,13 +178,14 @@
     <script>
         function iniciar3() {
             let menu =
-                "1.Array \n" +
-                "2.Impares del array \n" +
-                "3.Escalera \n" +
-                "4.Salir"
+                "1.Array de 5 enteros\n" +
+                "2.Suma de enteros \n" +
+                "3.Cadena invertida \n" +
+                "4.Calcular el cuadrado de 5 enteros \n" +
+                "5.Salir"
 
             let option = 0;
-            while (option != 4) {
+            while (option != 5) {
                 let respuesta = prompt(menu);
                 if (respuesta == null)
                     break;
@@ -193,7 +194,8 @@
                     case 1: fun(); break;
                     case 2: func(); break;
                     case 3: funcc(); break;
-                    case 4: alert("Fin de los ejercicios"); break;
+                    case 4: funccc(); break;
+                    case 5: alert("Fin de los ejercicios"); break;
                     default: alert(" 🤦‍♂️ ERROR!! Elije del 1 al 4");
                         break;
                 }
@@ -205,33 +207,66 @@
 
     <script>
         function fun() {
-            let li = []
-            let num = prompt("Define el numero de array: ");
-
-            for (let i = 0; i <= num; i++) {
-                li[i] = parseInt(prompt("Añade el número: "));
+            let numeros = [];
+            for (let i = 0; i < 5; i++) {
+                let numero = parseInt(prompt("Di un numero " + (i + 1) + ":"));
+                numeros.push(numero);
             }
 
+            let maximo = numeros[0];
 
-            let listali = li[0];
-            for (let i = 1; i < num; i++) {
-                if (li[i] > listali) {
-                    listali = li[i];
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] > maximo) {
+                    maximo = numeros[i];
                 }
             }
-            alert("El resultado es " + listali);
+
+            alert("El máximo es: " + maximo);
         }
+
     </script>
 
     <script>
         function func() {
-            let num =[];
-            let arri =prompt("Define el array: ");
-            for (let index = 0; index < arri; index++) {
-                num = arri[index];
-                
+            let numeros = [];
+            let suma = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let numero = parseInt(prompt("Ingrese el numero " + (i + 1) + ":"));
+                numeros.push(numero);
+                suma += numero; 
             }
+
+            alert("La suma de los elementos del array es: " + suma);
         }
+
+    </script>
+
+    <script>
+        function funcc() {
+            let cadena = prompt("Escribe una palabra, la que quieras:");
+            let cadenaInvertida = "";
+
+            for (let i = cadena.length - 1; i >= 0; i--) {
+                cadenaInvertida += cadena[i];
+            }
+
+            alert("La cadena invertida es: " + cadenaInvertida);
+        }
+    </script>
+    <script>
+        function funccc() {
+        let numeros = [];
+        let cuadrados = [];
+
+        for (let i = 0; i < 5; i++) {
+            let numero = parseInt(prompt("Di un numero " + (i + 1) + ":"));
+            numeros.push(numero);
+            cuadrados.push(numero * numero);
+        }
+
+        alert("Los cuadrados de los números ingresados son: " + cuadrados.join(", "));
+    }
     </script>
 
 
@@ -278,15 +313,14 @@
         <button class="btn btn-outline-primary" onclick="iniciar2()">Ejercicios</button><br><br>
         <hr>
 
-<h5>FOR</h5>
-<ol>
-    <li> Encontrar el máximo de un array de 5 enteros (no usar Math.max).</li>
-    <li> Sumar los elementos de un array de 5 enteros.</li>
-    <li> Invertir una cadena (usar atributo cadena.length para tamaño cadena en caracteres).</li>
-    <li> Pedir base y exponente. Calcular la potencia de un entero (no usar Math.pow).</li>
-    <li> Calcular el cuadrado de 5 enteros de un array.</li>
-</ol>
-        
+        <h5>FOR</h5>
+        <ol>
+            <li> Encontrar el máximo de un array de 5 enteros (no usar Math.max).</li>
+            <li> Sumar los elementos de un array de 5 enteros.</li>
+            <li> Invertir una cadena (usar atributo cadena.length para tamaño cadena en caracteres).</li>
+            <li> Calcular el cuadrado de 5 enteros de un array.</li>
+        </ol>
+
         <button class="btn btn-outline-primary" onclick="iniciar3()">Ejercicios</button><br><br><br>
 
 
