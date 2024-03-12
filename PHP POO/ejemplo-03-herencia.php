@@ -1,22 +1,35 @@
 <?php
-//Ejemplo 01 Clases
-
-//las clases tienen que ir antes del ISSET!!!!! todas las clases van AL PRINCIPIO DEL CODIGO
+//Ejemplo 03 Herencia
 
 //Manual php pag 311 manual
 class Camion
 {
     //atributos
     public $modelo = "Volvo FH electric";
-    public $precio = 500000;
+    private $precio = 500000;
     public $electrico = "true";
     //Constructor
     public function __construct($modelo, $precio, $electrico)
     {
         $this->modelo = $modelo;
-        $this->precio = $precio;
+        $this->setPrecio($precio);
         $this->electrico = $electrico;
     }
+
+    public function setPrecio($precio)
+    { //aqui controlamos el valor por defecto del camion que no pueda ser menor de X
+        if ($precio > 100000) {
+            $this->precio = $precio;
+        }
+    }
+
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+
+
     public function __toString() //para imprimir
     {
         $valorElectrico = "No";
@@ -24,17 +37,36 @@ class Camion
             $valorElectrico = "Si";
         }
         return "CAMION: Modelo $this->modelo <br>
-                        Precio: $this->precio <br>
-                        Electrico: $valorElectrico ";
+                        Precio:" . $this->getPrecio() . " <br> " . //Ahora ahi hay que CONCATENAR con "" y.
+            "Electrico: $valorElectrico ";
     }
 }
-if (isset($_REQUEST['enviar'])) {
-    $texto = $_REQUEST['texto'];  //texto
-    $num = $_REQUEST['num'];        //number
-    $opcion = $_REQUEST['opcion']; //boolean
+// Ahora se pone la nueva clase hija
+class TrenCarretera extends Camion
+{
+    public $remolque2 = true;
 
-    //crear un OBJETO para imprimir el resultado
-    $camion = new Camion($texto, $num, $opcion);
+    public function __construct($modelo, $precio, $electrico, $remolque)
+    {
+        parent::__construct($modelo, $precio, $electrico);
+        $this->remolque2 = $remolque;
+    }
+    public function __toString(){
+        //Usamos un ternario  <atributo> ? valorTrue : ValorFalse;
+        return parent:: __toString() . "<br>" . 
+        "Remolque: " . ($this->remolque2 ? "Si" : "No");
+    }
+}
+
+if (isset($_REQUEST['enviar'])) {
+    $modelo = $_REQUEST['texto'];
+    $precio = $_REQUEST['num'];
+    $electrico = $_REQUEST['opcion'];
+
+    //$camion = new Camion($modelo, $precio, $electrico);
+//hacemos el objeto Trencarretera
+$trenCarretera = new TrenCarretera($modelo, $precio, $electrico, true);
+   
 }
 
 ?>
@@ -44,7 +76,7 @@ if (isset($_REQUEST['enviar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo 01 PHP POO Clases</title>
+    <title>Ejemplo 03 PHP POO Herencia</title>
     <link href="bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap.bundle.min.js"></script>
     <style>
@@ -72,11 +104,11 @@ if (isset($_REQUEST['enviar'])) {
 <body class="w-70 p-3 m-3">
 
     <main class="bg-primary text-white py-4 w-100 text-center fixed-top">
-        <h1>Clases</h1>
+        <h1>Herencias</h1>
     </main><br><br><br><br>
 
     <section class="container pt-3 m-4">
-        <h2>PHP con POO: Clases</h2><br>
+        <h2>PHP con POO: Herencia con encapsulamiento</h2><br>
     </section>
 
 
@@ -85,11 +117,8 @@ if (isset($_REQUEST['enviar'])) {
         <p class="alert alert-info">
             <?php
             if (isset($_REQUEST['enviar'])) {
-                // echo  $texto . "<br>";
-                // echo  $num . "<br>";
-                // echo  $opcion . "<br>";
-
-                echo $camion;
+              
+                echo $trenCarretera;
             }
 
             ?>

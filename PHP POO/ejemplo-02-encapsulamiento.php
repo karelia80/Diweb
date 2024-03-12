@@ -1,40 +1,77 @@
 <?php
-//Ejemplo 01 Clases
-
-//las clases tienen que ir antes del ISSET!!!!! todas las clases van AL PRINCIPIO DEL CODIGO
+//Ejemplo 02 Encapsular
 
 //Manual php pag 311 manual
 class Camion
 {
     //atributos
     public $modelo = "Volvo FH electric";
-    public $precio = 500000;
-    public $electrico = "true";
+    private $precio = 500000;
+    private $electrico = "true";
     //Constructor
     public function __construct($modelo, $precio, $electrico)
     {
         $this->modelo = $modelo;
-        $this->precio = $precio;
+        // $this->precio = $precio;
+        //  $this->electrico = $electrico;
+
+
+        // 3 Ahora para asignar usamos los SETTER
+
+        $this->setPrecio($precio);
+        $this->setElectrico($electrico);
+    }
+    // 2 Añadimos SETTER y GETTER->que va debajo del constructor
+    public function setPrecio($precio)
+    { //aqui controlamos el valor por defecto del camion que no pueda ser menor de X
+        if ($precio > 100000) {
+            $this->precio = $precio;
+        }
+    }
+    public function setElectrico($electrico)
+    {
         $this->electrico = $electrico;
     }
+
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+
+    public function isElectrico() //Los boolean por convenccion se pone "is" en los GET
+    {
+        return $this->electrico;
+    }
+
+
+    // 4 AQUI usamos los GETTER
+
     public function __toString() //para imprimir
     {
         $valorElectrico = "No";
-        if ($this->electrico) {
+        if ($this->isElectrico()) {
             $valorElectrico = "Si";
         }
         return "CAMION: Modelo $this->modelo <br>
-                        Precio: $this->precio <br>
-                        Electrico: $valorElectrico ";
+                        Precio:" . $this->getPrecio() . " <br> " . //Ahora ahi hay que CONCATENAR con "" y.
+            "Electrico: $valorElectrico ";
     }
 }
 if (isset($_REQUEST['enviar'])) {
-    $texto = $_REQUEST['texto'];  //texto
-    $num = $_REQUEST['num'];        //number
-    $opcion = $_REQUEST['opcion']; //boolean
+    $texto = $_REQUEST['texto'];
+    $num = $_REQUEST['num'];
+    $opcion = $_REQUEST['opcion'];
 
-    //crear un OBJETO para imprimir el resultado
     $camion = new Camion($texto, $num, $opcion);
+
+    //cambiamos el valor del precio
+    
+    // 1 $camion->precio= -50000; //esto da un error, porque no se puede acceder a un atributo privado
+
+    //Pero ahora con el setter y getter si podemos cambiar el precio
+    $camion->setPrecio(500000);
+
 }
 
 ?>
@@ -72,11 +109,11 @@ if (isset($_REQUEST['enviar'])) {
 <body class="w-70 p-3 m-3">
 
     <main class="bg-primary text-white py-4 w-100 text-center fixed-top">
-        <h1>Clases</h1>
+        <h1>Encapsulamiento</h1>
     </main><br><br><br><br>
 
     <section class="container pt-3 m-4">
-        <h2>PHP con POO: Clases</h2><br>
+        <h2>PHP con POO: Encapsular</h2><br>
     </section>
 
 

@@ -1,5 +1,5 @@
 <?php
-//Ejemplo 01 Clases
+//Ejemplo 00 plantilla
 
 if (isset($_REQUEST['enviar'])) {
     $texto = $_REQUEST['texto'];  //texto

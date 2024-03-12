@@ -1,22 +1,35 @@
 <?php
-//Ejemplo 01 Clases
-
-//las clases tienen que ir antes del ISSET!!!!! todas las clases van AL PRINCIPIO DEL CODIGO
+//Ejemplo 04 Estaticos
 
 //Manual php pag 311 manual
 class Camion
 {
     //atributos
     public $modelo = "Volvo FH electric";
-    public $precio = 500000;
+    private $precio = 500000;
     public $electrico = "true";
     //Constructor
     public function __construct($modelo, $precio, $electrico)
     {
         $this->modelo = $modelo;
-        $this->precio = $precio;
+        $this->setPrecio($precio);
         $this->electrico = $electrico;
     }
+
+    public function setPrecio($precio)
+    {
+        if ($precio > 100000) {
+            $this->precio = $precio;
+        }
+    }
+
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+
+
     public function __toString() //para imprimir
     {
         $valorElectrico = "No";
@@ -24,19 +37,46 @@ class Camion
             $valorElectrico = "Si";
         }
         return "CAMION: Modelo $this->modelo <br>
-                        Precio: $this->precio <br>
-                        Electrico: $valorElectrico ";
+                        Precio:" . $this->getPrecio() . " <br> " .
+            "Electrico: $valorElectrico ";
     }
 }
-if (isset($_REQUEST['enviar'])) {
-    $texto = $_REQUEST['texto'];  //texto
-    $num = $_REQUEST['num'];        //number
-    $opcion = $_REQUEST['opcion']; //boolean
 
-    //crear un OBJETO para imprimir el resultado
-    $camion = new Camion($texto, $num, $opcion);
+class TrenCarretera extends Camion
+{
+    public $remolque2 = true;
+
+    public function __construct($modelo, $precio, $electrico, $remolque)
+    {
+        parent::__construct($modelo, $precio, $electrico);
+        $this->remolque2 = $remolque;
+    }
+
+    public static function leeTren($modelo, $precio, $electrico, $remolque)
+    {
+        return new TrenCarretera($modelo, $precio, $electrico, $remolque);
+    }
+
+
+    public function __toString()
+    {
+        //Usamos un ternario  <atributo> ? valorTrue : ValorFalse; el ternario se pone entre ()
+        return parent::__toString() . "<br>" .
+            "Remolque: " . ($this->remolque2 ? "Si" : "No");
+    }
 }
 
+if (isset($_REQUEST['enviar'])) {
+    $modelo = $_REQUEST['texto'];
+    $precio = $_REQUEST['num'];
+    $electrico = $_REQUEST['opcion'];
+
+    //$camion = new Camion($modelo, $precio, $electrico);
+
+    $trenCarretera = new TrenCarretera($modelo, $precio, $electrico, true);
+    $trenCarretera2 =  TrenCarretera::leeTren("Mercedes Tren", $precio, true, true);
+}
+// Los metodos y atributos ESTATICOS son aqueños que no necesitan instanciar una clase para poder ser usados. Hay que usar la palabra reservada 'static'.
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -44,7 +84,7 @@ if (isset($_REQUEST['enviar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo 01 PHP POO Clases</title>
+    <title>Ejemplo 04 PHP POO estaticos</title>
     <link href="bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap.bundle.min.js"></script>
     <style>
@@ -72,11 +112,11 @@ if (isset($_REQUEST['enviar'])) {
 <body class="w-70 p-3 m-3">
 
     <main class="bg-primary text-white py-4 w-100 text-center fixed-top">
-        <h1>Clases</h1>
+        <h1>Estaticos</h1>
     </main><br><br><br><br>
 
     <section class="container pt-3 m-4">
-        <h2>PHP con POO: Clases</h2><br>
+        <h2>PHP con POO: Estaticos</h2><br>
     </section>
 
 
@@ -85,11 +125,9 @@ if (isset($_REQUEST['enviar'])) {
         <p class="alert alert-info">
             <?php
             if (isset($_REQUEST['enviar'])) {
-                // echo  $texto . "<br>";
-                // echo  $num . "<br>";
-                // echo  $opcion . "<br>";
 
-                echo $camion;
+                echo $trenCarretera . "<br><br>";
+                echo $trenCarretera2;
             }
 
             ?>
