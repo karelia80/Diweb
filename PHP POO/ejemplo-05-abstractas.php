@@ -1,8 +1,15 @@
 <?php
-//Ejemplo 04 Estaticos
+//Ejemplo 05 Abstractas
+
+/*HAY QUE SEGUIR ESTOS PASOS
+1_ quitar en el metodo la implementacion
+2_ añadir al metodo abstract
+3_ poner a la clase abstract
+*/
 
 //Manual php pag 311 manual
-class Camion
+//3
+abstract class Camion
 {
     //atributos
     public $modelo = "Volvo FH electric";
@@ -22,7 +29,7 @@ class Camion
             $this->precio = $precio;
         }
     }
-
+    //2
     public function getPrecio()
     {
         return $this->precio;
@@ -30,8 +37,9 @@ class Camion
 
 
 
-    public function __toString() //para imprimir
-    {
+    abstract public function __toString(); //para imprimir
+    //1
+    /* {
         $valorElectrico = "No";
         if ($this->electrico) {
             $valorElectrico = "Si";
@@ -39,7 +47,7 @@ class Camion
         return "CAMION: Modelo $this->modelo <br>
                         Precio:" . $this->getPrecio() . " <br> " .
             "Electrico: $valorElectrico ";
-    }
+    }*/
 }
 
 class TrenCarretera extends Camion
@@ -51,41 +59,45 @@ class TrenCarretera extends Camion
         parent::__construct($modelo, $precio, $electrico);
         $this->remolque2 = $remolque;
     }
-    //==============================================================================
-    //creamos un metodo static                                                     
+
     public static function leeTren($modelo, $precio, $electrico, $remolque)
     {
         return new TrenCarretera($modelo, $precio, $electrico, $remolque);
     }
-    //==============================================================================
 
-    //Vamos a definir otro metodo static: crearflota, para hacer un array 
+
+
     public static function creaFlota($modelo, $precio, $electrico, $numCamiones)
-    {   //defino el array de camiones (vacia)
+    {
         $flota = [];
-        //Añado camion por camion al array
-        //Los camiones seran iguales
+
         for ($i = 0; $i < $numCamiones; $i++) {
             $nuevocamion = TrenCarretera::leeTren($modelo, $precio, $electrico, true);
             $flota[] = $nuevocamion;
         }
         $pintaCamiones = "";
-        //imprimos los camiones (foreach)
+
         foreach ($flota as $num => $camion) {
             $pintaCamiones .= "Datos Tren Carretera Nº" . ($num + 1) . "<br>" . $camion . "<br>";
         }
         return $pintaCamiones;
     }
-    //========================================================================================
 
-    public function __toString()
+
+    public function __toString()//hemos pegado el metodo del padre aqui para la impresion
     {
-        //Usamos un ternario  <atributo> ? valorTrue : ValorFalse; el ternario se pone entre ()
-        return parent::__toString() . "<br>" .
+        $valorElectrico = "No";
+        if ($this->electrico) {
+            $valorElectrico = "Si";
+        }
+
+        return "CAMION: Modelo $this->modelo <br>
+        Precio:" . $this->getPrecio() . " <br> " .
+            "Electrico: $valorElectrico " . "<br>" .
             "Remolque: " . ($this->remolque2 ? "Si" : "No");
     }
 }
-    //=========================================================================================
+
 
 //SCRIPT principal
 
@@ -97,14 +109,12 @@ if (isset($_REQUEST['enviar'])) {
     //$camion = new Camion($modelo, $precio, $electrico);
 
     $trenCarretera = new TrenCarretera($modelo, $precio, $electrico, true);
-    //================Usame el metodo staci leeTren====================================================
+
     $trenCarretera2 =  TrenCarretera::leeTren("Mercedes Tren", $precio, true, true);
-    //================================================================================================
-    //ahora usamos el metodo crear flota (pasamos el numCamiones con el numero que queremos pasar)
+
     $flota = TrenCarretera::creaFlota($modelo, $precio, $electrico, 5);
-    //================================================================================================
 }
-// Los metodos y atributos ESTATICOS son aquellos que no necesitan instanciar una clase para poder ser usados. Hay que usar la palabra reservada 'static'. Son perfectos para crear array de objetos
+// Las clases abstractas son aquellas que tienen al menos un metodo abstracto, que es aquel que no tiene implementación(cuando pones el metodo no tiene desarrollo). con que 1 metodo sea abstracto la clase es abstracta y una clase abstracta no se puede instanciar (no se puede crear un objeto de ella),y se suele emplear para clases padres en herencias.
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -112,7 +122,7 @@ if (isset($_REQUEST['enviar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo 04 PHP POO estaticos</title>
+    <title>Ejemplo 05 PHP POO Abstracta</title>
     <link href="bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap.bundle.min.js"></script>
     <style>
@@ -140,11 +150,11 @@ if (isset($_REQUEST['enviar'])) {
 <body class="w-70 p-3 m-3">
 
     <main class="bg-primary text-white py-4 w-100 text-center fixed-top">
-        <h1>Estaticos</h1>
+        <h1>Abstracta</h1>
     </main><br><br><br><br>
 
     <section class="container pt-3 m-4">
-        <h2>PHP con POO: Estaticos</h2><br>
+        <h2>PHP con POO: Abstractas</h2><br>
     </section>
 
 
@@ -153,7 +163,7 @@ if (isset($_REQUEST['enviar'])) {
         <p class="alert alert-info">
             <?php
             if (isset($_REQUEST['enviar'])) {
-
+                //echo $camion . "<br><br>";
                 echo $trenCarretera . "<br><br>";
                 echo $trenCarretera2 . "<br><br>";
                 echo $flota;
