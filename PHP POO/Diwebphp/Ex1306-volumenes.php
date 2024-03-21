@@ -83,13 +83,18 @@ if (isset($_REQUEST['enviar'])) {
         <fieldset class="w-50">
             <label for="base" class="form-label">A - Área Base: </label>
             <input type="number" name="base" id="base" class="form-control"><br>
+
             <label for="altura" class="form-label">H - Altura: </label>
             <input type="number" name="altura" id="altura" class="form-control"><br>
+
             <label for="radio" class="form-label">r - Radio: </label>
             <input type="number" name="radio" id="radio" class="form-control"><br>
+
             <label for="opcion" class="form-label">Opción: </label>
             <input type="number" name="opcion" id="opcion" class="form-control"><br>
+            
             <input type="submit" value="Enviar" class="form-control" name="enviar">
+
         </fieldset>
     </form>
 
