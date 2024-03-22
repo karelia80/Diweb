@@ -2,12 +2,12 @@
 require("errores.php");
 
 if (isset($_REQUEST['enviar'])) {
-
+    $base = $_REQUEST['base'];
+    $exponente = $_REQUEST['exponente'];  
+    $potencia = pow($base, $exponente);
 
     $mensaje = "";
-    $num = array(42, 17, 95, 30, 63, 10);
-
-    $suma = array_sum($num);
+   
 }
 ?>
 
@@ -36,10 +36,10 @@ if (isset($_REQUEST['enviar'])) {
 <body>
     <main class="container align-center w-50 bg-info p-3 mt-5 text-center border border-primary rounded-5">
         <p class="alert alert-info">
-            Este es el array [42, 17, 95, 30, 63, 10] <br>
+            El Resultado es <br>
             <?php
             if (isset($_REQUEST['enviar'])) {
-                echo "Los numero impares son: " . $suma;
+                echo "La potencia de " . $base . " elevado a la " . $exponente . " es " . $potencia;
             }
             ?>
         </p>
@@ -52,12 +52,11 @@ if (isset($_REQUEST['enviar'])) {
 
         </section>
         <section class="form-container">
-        <form action="#" method="post" class="form">
-               
-                <input type="hidden" name="enviar" value="1">
-                <input type="submit" value="Enviar" class="btn btn-info">
-            </form>
-           
+            <form action="#" method="post" class="form">
+                <input type="number" name="base" id="base" class="form-control" placeholder="Pon la base"><br>
+                <input type="number" name="exponente" id="exponente" class="form-control"  placeholder="Pon el exponente"><br>
+                <input type="submit" value="Enviar" name="enviar" class="btn btn-info">
+
         </section>
     </main>
 
