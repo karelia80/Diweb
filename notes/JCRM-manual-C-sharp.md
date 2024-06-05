@@ -1,9 +1,8 @@
 ---
-pinned: true
 tags: [Import-2682]
 title: JCRM-manual-C-sharp
 created: '2024-01-23T17:56:50.939Z'
-modified: '2024-01-23T18:14:59.181Z'
+modified: '2024-05-20T15:05:28.333Z'
 ---
 
 ---
