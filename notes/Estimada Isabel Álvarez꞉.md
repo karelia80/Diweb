@@ -1,13 +1,12 @@
 ---
-deleted: true
 title: 'Estimada Isabel Álvarez:'
 created: '2024-05-26T15:57:47.938Z'
-modified: '2024-05-26T16:41:08.130Z'
+modified: '2024-08-06T12:32:49.869Z'
 ---
 
 Estimada Isabel Álvarez:
 
-Me dirijo a usted en mi calidad de alumna del curso IFCD0110, impartido en el Centro de FPE AYTO Anidi, para presentar una queja formal acerca de un incidente muy grave que ocurrió el jueves 23 de mayo de 2024 durante las clases.
+Me dirijo a usted en mi calidad de alumna del curso IFCD0110, impartido en el Centro de FPE AYTO Anidi, para presentar una queja formal acerca de un incidente muy grave.
 
 Ese día, sufrí un intento de agresión por parte de una compañera de clase, la Sra. Alba María Jiménez Rodríguez. Este incidente se produjo en plena clase y en presencia de todos los presentes. Alba María, quien se sienta justo detrás de mí, comenzó a dar golpes fuertes. Preocupada por su comportamiento, me di la vuelta para preguntarle si se encontraba bien. Su respuesta fue extremadamente grosera, diciéndome que me girara y que no la mirara. Después de reflexionar, decidí pedirle que no me hablara de esa manera, lo que parece haber desencadenado una reacción violenta por su parte.
 
@@ -21,3 +20,6 @@ Atentamente,
 
 Blanca Soler Navarro
 [Firma]
+
+
+Fecha _____ de _____________ de ________

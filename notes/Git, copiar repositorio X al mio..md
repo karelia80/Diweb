@@ -1,7 +1,7 @@
 ---
 title: 'Git, copiar repositorio X al mio.'
 created: '2024-05-23T14:27:04.549Z'
-modified: '2024-05-23T15:15:31.223Z'
+modified: '2024-12-20T12:52:20.810Z'
 ---
 
 # Git, copiar repositorio X al mio.
@@ -19,6 +19,20 @@ git clone https://github.com/ivanrguez1/symfony7-pokedex
 Ejemplo: pokedex-v7 (no se puede llamar igual)
 Vamos a Github y le damos a a 'Create new repository', eligiendo si publico o privado
 
+----
+# Como subir un repositorio a github
+
+```
+cd /var/www/html/Diweb
+```
+```
+git status
+```
+```
+git add .
+```
+```
+```
 
 
 
