@@ -1,7 +1,7 @@
 ---
 title: 'Git, copiar repositorio X al mio.'
 created: '2024-05-23T14:27:04.549Z'
-modified: '2024-12-20T12:52:20.810Z'
+modified: '2024-12-20T12:53:07.072Z'
 ---
 
 # Git, copiar repositorio X al mio.
@@ -32,6 +32,7 @@ git status
 git add .
 ```
 ```
+git commit -m "Mensaje descriptivo del commit"
 ```
 
 
